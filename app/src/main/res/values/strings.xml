@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FreeToFeel</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="login_text">Login</string>
+    <string name="new_account_text">Create new account</string>
+
+
 </resources>

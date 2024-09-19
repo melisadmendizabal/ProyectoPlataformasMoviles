@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FreeToFeel</string>
+    <string name="welcome_message">Bienvenido</string>
+    <string name="login_text">Iniciar Sesión</string>
+    <string name="new_account_text">Crear una cuenta</string>
+
+
+
+</resources>
