@@ -1,8 +1,23 @@
 <resources>
+    <!-- Formato de comentario -->
     <string name="app_name">FreeToFeel</string>
+
+    <!-- LoginBase -->
     <string name="welcome_message">Welcome</string>
     <string name="login_text">Login</string>
     <string name="new_account_text">Create new account</string>
+
+    <!-- New Account -->
+    <string name="new_account_welcome1">Time to start</string>
+    <string name="new_account_welcome2">again</string>
+    <string name="OTF_user">Register your username</string>
+    <string name="OTF_nick">Enter your nickname</string>
+    <string name="OTF_password1">Enter your password</string>
+    <string name="OTF_password2">Confirm your password</string>
+    <string name="CreateAcc">Create account</string>
+
+
+
 
 
 </resources>
