@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
@@ -27,12 +26,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ColorMatrix
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -55,7 +49,10 @@ fun LoginRoute(
 
 @Composable
 fun LoginBaseScreen(context: Context,languageViewModel: LanguageViewModel) {
-    Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = MaterialTheme.colorScheme.inversePrimary), contentAlignment = Alignment.BottomCenter)
+    Box(modifier = Modifier.fillMaxWidth()
+        .fillMaxHeight()
+        .background(color = MaterialTheme.colorScheme.inversePrimary) //Cambiar cuando se tengan los colores reales
+        ,contentAlignment = Alignment.BottomCenter)
     {
         Image(
             painter = painterResource(id = R.drawable.cloud_bot),
