@@ -16,6 +16,12 @@
     <string name="OTF_password2">Confirma tu contraseña</string>
     <string name="CreateAcc">Crear cuenta</string>
 
+    <!-- FirstPet -->
+    <string name="first_pet_title">¡Alguien necesita tu ayuda!</string>
+    <string name="first_pet_body">Parece un simpático animalito, ¿quieres ayudarlo?</string>
+    <string name="first_pet_confirm">¡Claro!</string>
+
+
 
 
 
