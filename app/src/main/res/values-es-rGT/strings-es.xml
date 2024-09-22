@@ -21,6 +21,12 @@
     <string name="first_pet_body">Parece un simpático animalito, ¿quieres ayudarlo?</string>
     <string name="first_pet_confirm">¡Claro!</string>
 
+    <!-- PetTalk -->
+    <string name="pet_talk_title1">¡Tuve pánico!</string>
+    <string name="pet_talk_body1">Salí a comprar algunas flores para decorar mi casa, ¡pero había tanta gente en la tienda! Entré en pánico, solo quería salir corriendo, pero tal como me has enseñado, guardé la calma y pude comprarlas.</string>
+    <string name="pet_talk_option1A">Hubieras corrido</string>
+    <string name="pet_talk_option1B">Lo bueno es que ya no estás ahí</string>
+    <string name="pet_talk_option1C">¡Qué valiente! La proxima vez te irá mejor</string>
 
 
 
