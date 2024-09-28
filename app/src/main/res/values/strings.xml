@@ -27,13 +27,18 @@
     <string name="pet_talk_option1A">You should have ran away</string>
     <string name="pet_talk_option1B">At least you\'re not there anymore</string>
     <string name="pet_talk_option1C">You\'re so brave! You\'ll see next time will be better</string>
+
+    <!--LoginInput -->
     <string name="login_input_title1">Nice to have you</string>
     <string name="login_input_title2">back</string>
     <string name="LI_user">Enter your username</string>
     <string name="login_button">Login</string>
     <string name="forgot_password">I forgot my password</string>          <!-- Posiblemente intentar que siempre la C sea la correcta, e ir variando la posicion ya dentro de los buttons con un random)? -->
 
-
+    <!-- PetHome -->
+    <string name="pet_home_button1">Tip of the day</string>
+    <string name="pet_home_button2">History</string>
+    <string name="points">Points</string>
 
 
 

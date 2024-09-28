@@ -28,12 +28,19 @@
     <string name="pet_talk_option1B">Lo bueno es que ya no estás ahí</string>
     <string name="pet_talk_option1C">¡Qué valiente! La proxima vez te irá mejor</string>
 
-    <!--LoginInput -->
+    <!-- LoginInput -->
     <string name="login_input_title1">Un gusto tenerte de</string>
     <string name="login_input_title2">vuelta</string>
     <string name="LI_user">Coloca tu usuario</string>
     <string name="login_button">Ingresar</string>
     <string name="forgot_password">Olvidé mi contraseña</string>
+
+    <!-- PetHome -->
+    <string name="pet_home_button1">Consejo del día</string>
+    <string name="pet_home_button2">Historia</string>
+    <string name="points">Puntos</string>
+
+
 
 
 
