@@ -49,6 +49,13 @@
     <string name="pet_select_bee_problem">Workaholic</string>
     <string name="pet_select_jelly_problem">Mourning</string>
 
+    <!-- DailyReco -->
+    <string name="dailyreco_title_example">Tip of the day</string>
+    <string name="dialyreco_text_example">Take care of the Earth! There are more than 1.5 million species on Earth; each one is worth it.
+    Get out of your room and water a plant, feed an animal or, why not, give something to someone as a gift; This way you will value their lives!</string>
+    <string name="dailyreco_val_completed">Filled!</string>
+    <string name="dailyreco_view">Accept</string>
+
 
 
 

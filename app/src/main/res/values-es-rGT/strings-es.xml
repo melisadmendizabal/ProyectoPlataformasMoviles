@@ -49,7 +49,12 @@
     <string name="pet_select_bee_problem">Trabajólico</string>
     <string name="pet_select_jelly_problem">Luto</string>
 
-
+    <!-- DailyReco -->
+    <string name="dailyreco_title_example">Consejo del día</string>
+    <string name="dialyreco_text_example">¡Cuida la Tierra! Existen más de 1.5 millones de especies en la Tierra; cada una vale.
+    Sal de tu cuarto y riega una planta, alimenta un animal o, por qué no, regala algo a alguien; ¡así valorarás sus vidas!</string>
+    <string name="dailyreco_val_completed">¡Completado!</string>
+    <string name="dailyreco_view">Aceptar</string>
 
 
 
