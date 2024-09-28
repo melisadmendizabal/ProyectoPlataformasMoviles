@@ -40,6 +40,16 @@
     <string name="pet_home_button2">History</string>
     <string name="points">Points</string>
 
+    <!-- PetSelect -->
+    <string name="pet_select_topAppBar">Pets</string>
+    <string name="pet_select_mainMSG">Choose a friend</string>
+    <string name="pet_select_sloth">Mimioso</string>
+    <string name="pet_select_sloth_problem">Depression</string>
+    <string name="pet_select_hedgehog_problem">Social anxiety</string>
+    <string name="pet_select_bee_problem">Workaholic</string>
+    <string name="pet_select_jelly_problem">Mourning</string>
+
+
 
 
 </resources>
