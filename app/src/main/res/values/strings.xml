@@ -79,7 +79,13 @@
     <string name="profile_home_viewB">View</string>
     <string name="profile_home_editB">Edit</string>
 
-
+    <!-- Sun Feeling -->
+    <string name="sunFeeling_ask">how do you feel today?</string>
+    <string name="sunFeeling_happy">Happy</string>
+    <string name="sunFeeling_restless">Restless</string>
+    <string name="sunFeeling_sad">Sad</string>
+    <string name="sunFeeling_angry">Angry</string>
+    <string name="sunFeeling_bored">Bored</string>
 
 
 
