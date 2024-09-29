@@ -56,6 +56,19 @@
     <string name="dailyreco_val_completed">Filled!</string>
     <string name="dailyreco_view">Accept</string>
 
+    <!-- PetEvolved -->
+    <string name="pet_evolved_topAppBar">Evolutions</string>
+    <string name="pet_evolved_baseSloth">Normal sloth</string>
+    <string name="pet_evolved_evoSloth">Evolved sloth</string>
+    <string name="pet_evolved_baseBee">Normal bee</string>
+    <string name="pet_evolved_evoBee">Evolved bee</string>
+    <string name="pet_evolved_baseHedgehog">Normal hedgehog</string>
+    <string name="pet_evolved_evoHedgehog">Evolved hedgehog</string>
+    <string name="pet_evolved_baseJelly">Normal jellyfish</string>
+    <string name="pet_evolved_evoJelly">Evolved jellyfish</string>
+
+
+
 
 
 
