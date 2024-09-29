@@ -105,7 +105,10 @@
     <string name="challenge_row3">Relajación</string>
     <string name="challenge_column1">Tecnicas de respiración</string>
 
-
+    <!-- ProfileData -->
+    <string name="profile_data_dateTitle">Date and title</string>
+    <string name="profile_data_text">Texto</string>
+    <string name="profile_data_addB">Agregar</string>
 
 
 
