@@ -67,6 +67,23 @@
     <string name="pet_evolved_baseJelly">Normal jellyfish</string>
     <string name="pet_evolved_evoJelly">Evolved jellyfish</string>
 
+    <!-- ProfileHome -->
+    <string name="profile_home_greeting">Hello!</string>
+    <string name="profile_home_points">Points</string>
+    <string name="profile_home_days">Days</string>
+    <string name="profile_home_tips">Tips and challenges</string>
+    <string name="profile_home_iLike">I like</string>
+    <string name="profile_home_iDisLike">I dislike</string>
+    <string name="profile_home_aboutMe">About me</string>
+    <string name="profile_home_myWritings">My writings</string>
+    <string name="profile_home_viewB">View</string>
+    <string name="profile_home_editB">Edit</string>
+
+
+
+
+
+
 
 
 
