@@ -87,6 +87,11 @@
     <string name="sunFeeling_angry">Angry</string>
     <string name="sunFeeling_bored">Bored</string>
 
+    <!-- SunHome -->
+    <string name="sun_home_question">do you need something?</string>
+    <string name="sun_home_buttonA">Express an emotion</string>
+    <string name="sun_home_buttonB">Describe my day</string>
+    <string name="sun_home_buttonC">Tell something about me</string>
 
 
 
