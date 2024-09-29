@@ -110,6 +110,15 @@
     <string name="profile_data_text">Text</string>
     <string name="profile_data_addB">Add</string>
 
+    <!-- ChallengeChosenScreen -->
+    <string name="challengeChosen_title">Breathing techniques</string>
+    <string name="challengeChosen_type">Relaxation</string>
+    <string name="challengeChosen_descripción1">Stand up, close your eyes and hold your breath for 10s.</string>
+    <string name="challengeChosen_descripción2">Release the air and stretch your entire body.</string>
+    <string name="challengeChosen_descripción3">Repeat the process with a sitting posture and then with a lying posture.</string>
+    <string name="challengeChosen_buttonBack">Back</string>
+    <string name="challengeChosen_buttonAccept">Accept</string>
+
 
 
 

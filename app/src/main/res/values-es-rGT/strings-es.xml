@@ -110,7 +110,14 @@
     <string name="profile_data_text">Texto</string>
     <string name="profile_data_addB">Agregar</string>
 
-
+    <!-- ChallengeChosenScreen -->
+    <string name="challengeChosen_title">Técnicas de respiración</string>
+    <string name="challengeChosen_type">Relajación</string>
+    <string name="challengeChosen_descripción1">Párate, cierra los ojos y mantén la respiración durante 10s.</string>
+    <string name="challengeChosen_descripción2">Libera el aire y estírate de cuerpo completo.</string>
+    <string name="challengeChosen_descripción3">Repite el proceso con una postura sentada y, luego, con una postura estando acostado.</string>
+    <string name="challengeChosen_buttonBack">Regresar</string>
+    <string name="challengeChosen_buttonAccept">Aceptar</string>
 
 
 
