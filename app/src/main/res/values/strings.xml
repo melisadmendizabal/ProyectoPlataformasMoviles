@@ -119,6 +119,12 @@
     <string name="challengeChosen_buttonBack">Back</string>
     <string name="challengeChosen_buttonAccept">Accept</string>
 
+    <!-- SunInputScreen -->
+    <string name="sunInput_title">Write the title or date</string>
+    <string name="sunInput_text">Tell me, how was your day?</string>
+    <string name="sunInput_buttonSave">Save</string>
+    <string name="sunInput_buttonCancel">Cancel</string>
+
 
 
 
