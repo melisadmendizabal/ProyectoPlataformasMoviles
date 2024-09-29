@@ -67,6 +67,22 @@
     <string name="pet_evolved_baseJelly">Medusa base</string>
     <string name="pet_evolved_evoJelly">Medusa evolucionada</string>
 
+    <!-- ProfileHome -->
+    <string name="profile_home_greeting">¡Hola!</string>
+    <string name="profile_home_points">Puntos</string>
+    <string name="profile_home_days">Días</string>
+    <string name="profile_home_tips">Consejos y retos</string>
+    <string name="profile_home_iLike">Me gusta</string>
+    <string name="profile_home_iDisLike">Me disgusta</string>
+    <string name="profile_home_aboutMe">Sobre mí</string>
+    <string name="profile_home_myWritings">Mis escritos</string>
+    <string name="profile_home_viewB">Ver</string>
+    <string name="profile_home_editB">Editar</string>
+
+
+
+
+
 
 
 
