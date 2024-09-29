@@ -56,6 +56,21 @@
     <string name="dailyreco_val_completed">¡Completado!</string>
     <string name="dailyreco_view">Aceptar</string>
 
+    <!-- PetEvolved -->
+    <string name="pet_evolved_topAppBar">Evoluciones</string>
+    <string name="pet_evolved_baseSloth">Perezoso base</string>
+    <string name="pet_evolved_evoSloth">Perezoso evolucionado</string>
+    <string name="pet_evolved_baseBee">Abeja base</string>
+    <string name="pet_evolved_evoBee">Abeja evolucionada</string>
+    <string name="pet_evolved_baseHedgehog">Erizo base</string>
+    <string name="pet_evolved_evoHedgehog">Erizo evolucionado</string>
+    <string name="pet_evolved_baseJelly">Medusa base</string>
+    <string name="pet_evolved_evoJelly">Medusa evolucionada</string>
+
+
+
+
+
 
 
 
