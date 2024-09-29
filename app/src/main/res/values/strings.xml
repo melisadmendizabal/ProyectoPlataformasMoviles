@@ -26,14 +26,14 @@
     <string name="pet_talk_body1">I went out to buy some flowers to decorate my house, but there was a lot of people in the store! I panicked a bit, and I just wanted to run away, but, just as you have taught me, I kept my calm and actually bought them. </string>
     <string name="pet_talk_option1A">You should have ran away</string>
     <string name="pet_talk_option1B">At least you\'re not there anymore</string>
-    <string name="pet_talk_option1C">You\'re so brave! You\'ll see next time will be better</string>
+    <string name="pet_talk_option1C">You\'re so brave! You\'ll see next time will be better</string> <!-- Posiblemente intentar que siempre la C sea la correcta, e ir variando la posicion ya dentro de los buttons con un random)? -->
 
     <!--LoginInput -->
     <string name="login_input_title1">Nice to have you</string>
     <string name="login_input_title2">back</string>
     <string name="LI_user">Enter your username</string>
     <string name="login_button">Login</string>
-    <string name="forgot_password">I forgot my password</string>          <!-- Posiblemente intentar que siempre la C sea la correcta, e ir variando la posicion ya dentro de los buttons con un random)? -->
+    <string name="forgot_password">I forgot my password</string>
 
     <!-- PetHome -->
     <string name="pet_home_button1">Tip of the day</string>
@@ -105,6 +105,10 @@
     <string name="challenge_row3">Relaxation</string>
     <string name="challenge_column1">Breathing techniques</string>
 
+    <!-- ProfileData -->
+    <string name="profile_data_dateTitle">Date and title</string>
+    <string name="profile_data_text">Text</string>
+    <string name="profile_data_addB">Add</string>
 
 
 
