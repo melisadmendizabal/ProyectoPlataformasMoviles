@@ -98,6 +98,13 @@
     <string name="sunTalk_example_text">No te preocupes, de todo se aprende, y todo pasa por algo. Deja que ese enojo fluya, pero que eso no lastime a otros, ¿sí?</string>
     <string name="sunTalk_button">Está bien</string>
 
+    <!-- ChallengeHome -->
+    <string name="Challenge_title">Consejos específicos y retos</string>
+    <string name="challenge_row1">Amor propio</string>
+    <string name="challenge_row2">Interactual con otros</string>
+    <string name="challenge_row3">Relajación</string>
+    <string name="challenge_column1">Tecnicas de respiración</string>
+
 
 
 

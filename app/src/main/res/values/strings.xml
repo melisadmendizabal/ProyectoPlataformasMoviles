@@ -98,6 +98,13 @@
     <string name="sunTalk_example_text">No Problem, you learn from everything, and everything happens for a reason. Let that anger flow, but do not let it hurt others, okay?</string>
     <string name="sunTalk_button">Okay!</string>
 
+    <!-- ChallengeHome -->
+    <string name="Challenge_title">Specific tips and challenges</string>
+    <string name="challenge_row1">Self-love</string>
+    <string name="challenge_row2">Interacting with others</string>
+    <string name="challenge_row3">Relaxation</string>
+    <string name="challenge_column1">Breathing techniques</string>
+
 
 
 
