@@ -93,6 +93,11 @@
     <string name="sun_home_buttonB">Describir mi día</string>
     <string name="sun_home_buttonC">Comentar algo acerca de mí</string>
 
+    <!-- Sun Talk -->
+    <string name="sunTalk_example_title">Oh, ¿algo malo sucedió?</string>
+    <string name="sunTalk_example_text">No te preocupes, de todo se aprende, y todo pasa por algo. Deja que ese enojo fluya, pero que eso no lastime a otros, ¿sí?</string>
+    <string name="sunTalk_button">Está bien</string>
+
 
 
 
