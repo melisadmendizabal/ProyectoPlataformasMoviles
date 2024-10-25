@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
@@ -14,8 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.uvg.freetofeel.loginBase.LoginBaseDestination
-import com.uvg.freetofeel.loginBase.loginBaseScreen
+import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.LoginBaseDestination
+import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.loginBaseScreen
+import com.uvg.freetofeel.presentation.navigation.AppNavigation
 import com.uvg.freetofeel.ui.theme.FreeToFeelTheme
 import java.util.Locale
 
@@ -29,6 +31,7 @@ class MainActivity : ComponentActivity() {
         setContent{
         FreeToFeelTheme {
             val context = LocalContext.current
+            val navController = rememberNavController()
             val languageCode = languageViewModel.selectedLanguage
             updateLocaleLanguage(context, languageCode)
 
@@ -39,23 +42,17 @@ class MainActivity : ComponentActivity() {
             ) {
                 innerPadding ->
 
-                val navController = rememberNavController()
-                NavHost(
-                    navController = navController,
-                    startDestination = LoginBaseDestination,        //Cambiar eventualmente
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding)
-                )
-                {
-                    loginBaseScreen(onButtonClick = {},context,languageViewModel)
-                //Todo el contenido del la lógica de la navegacion
+                Box(modifier = Modifier.padding(innerPadding)){
+                    AppNavigation(
+                        navController,
+                        context,
+                        languageViewModel
+                    )
                 }
-              }
+            }
+            }
         }
     }
-}
-
 }
 
 public fun updateLocaleLanguage(context: Context, languageCode:String){
