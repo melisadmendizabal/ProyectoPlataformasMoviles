@@ -36,13 +36,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
 
+
+@Composable
+fun SunTalkROUTE(
+    onAccept: ()->Unit
+){
+    SunTalkScreen(
+        onAccept = onAccept)
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunTalkScreen(languageViewModel: LanguageViewModel) {
+fun SunTalkScreen(onAccept: () -> Unit) {
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -106,7 +114,7 @@ fun SunTalkScreen(languageViewModel: LanguageViewModel) {
                     color = MaterialTheme.colorScheme.onPrimary,
                     modifier = Modifier.padding(vertical = 5.dp))
                 Row {
-                    TextButton(onClick = { /*TODO*/ }) {
+                    TextButton(onClick = onAccept) {
                         Text(text = stringResource(id = R.string.sunTalk_button),
                             color = MaterialTheme.colorScheme.onSecondary)
                     }
@@ -125,7 +133,7 @@ fun SunTalkScreen(languageViewModel: LanguageViewModel) {
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunTalkScreen(languageViewModel = languageViewModel)
+        SunTalkScreen(onAccept = {})
     }
 }
 
@@ -134,6 +142,6 @@ fun PreviewSUnRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunTalkScreen(languageViewModel = languageViewModel)
+        SunTalkScreen(onAccept = {})
     }
 }

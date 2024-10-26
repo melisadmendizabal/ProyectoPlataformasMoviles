@@ -41,13 +41,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
+
+
+@Composable
+fun SunFeelingROUTE(
+    onEmotionClick: ()->Unit,
+    username: String
+){
+    SunFeelingScreen(
+        onEmotionClick = onEmotionClick, username = username)
+}
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
+fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()
@@ -111,7 +121,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
                     Row(Modifier.weight(0.3f)) {
                         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
                             //Happy
-                            IconButton(onClick = { /*TODO*/ },
+                            IconButton(onClick = onEmotionClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -136,7 +146,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
                             .weight(0.4f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //restless
                         Column {
-                            IconButton(onClick = { /*TODO*/ },
+                            IconButton(onClick = onEmotionClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -156,7 +166,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
 
                         //bored
                         Column {
-                            IconButton(onClick = { /*TODO*/ },
+                            IconButton(onClick = onEmotionClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -184,7 +194,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
                             .weight(0.3f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //Sad
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            IconButton(onClick = { /*TODO*/ },
+                            IconButton(onClick = onEmotionClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -207,7 +217,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
 
                         //Angry
                         Column {
-                            IconButton(onClick = { /*TODO*/ },
+                            IconButton(onClick = onEmotionClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -239,7 +249,7 @@ fun SunFeelingScreen(languageViewModel: LanguageViewModel, username: String){
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(languageViewModel = languageViewModel, username = "UserName")
+        SunFeelingScreen(onEmotionClick = {}, username = "UserName")
     }
 }
 
@@ -248,6 +258,6 @@ fun PreviewDailyRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(languageViewModel = languageViewModel, username = "UserName")
+        SunFeelingScreen(onEmotionClick = {}, username = "UserName")
     }
 }

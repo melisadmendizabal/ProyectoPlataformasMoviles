@@ -37,7 +37,18 @@ import com.uvg.freetofeel.presentation.petPresentation.petSelect.petSelectScreen
 import com.uvg.freetofeel.presentation.petPresentation.petTalk.PetTalkDESTINATION
 import com.uvg.freetofeel.presentation.petPresentation.petTalk.navigateToPetTalk
 import com.uvg.freetofeel.presentation.petPresentation.petTalk.petTalkScreen
-import com.uvg.freetofeel.presentation.sunPresentation.sunHome.sunhomeScren
+import com.uvg.freetofeel.presentation.sunPresentation.sunFeeling.SunFeelingDESTINATION
+import com.uvg.freetofeel.presentation.sunPresentation.sunFeeling.navigateToSunFeeling
+import com.uvg.freetofeel.presentation.sunPresentation.sunFeeling.sunFeelingScreen
+import com.uvg.freetofeel.presentation.sunPresentation.sunHome.SunHomeDESTINATION
+import com.uvg.freetofeel.presentation.sunPresentation.sunHome.navigateToSunHome
+import com.uvg.freetofeel.presentation.sunPresentation.sunHome.sunHomeScreen
+import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputDESTINATION
+import com.uvg.freetofeel.presentation.sunPresentation.sunInput.navigateToSunInput
+import com.uvg.freetofeel.presentation.sunPresentation.sunInput.sunInputScreen
+import com.uvg.freetofeel.presentation.sunPresentation.sunTalk.SunTalkDESTINATION
+import com.uvg.freetofeel.presentation.sunPresentation.sunTalk.navigateToSunTalk
+import com.uvg.freetofeel.presentation.sunPresentation.sunTalk.sunTalkScreen
 
 @Composable
 fun ScreenBotNav(
@@ -100,7 +111,9 @@ fun ScreenBotNav(
                 onHistoryScreenPetHome = {navController.navigateToPetTalk(PetTalkDESTINATION)}
             )
 
-            sunhomeScren()
+            sunHomeScreen(onCommentClick = {navController.navigateToSunInput(SunInputDESTINATION)},
+                onExpressClick = {navController.navigateToSunFeeling(SunFeelingDESTINATION)},
+                onDescribeClick = {navController.navigateToSunInput(SunInputDESTINATION)})
             challengehomeScreen()
             profilehomeScreen()
 
@@ -114,6 +127,11 @@ fun ScreenBotNav(
                     navController.navigateUp()
                 }
             )
+            sunInputScreen(onOption = {navController.navigateUp()}) //cambiar eventualmente para que sí guarde o cancele
+
+            sunFeelingScreen(onEmotionClick = {navController.navigateToSunTalk(SunTalkDESTINATION)}, userName = "R&M") //Cambiar por el nombre real del usuario
+        sunTalkScreen(onAccept = {navController.popBackStack(); navController.navigateToSunHome(SunHomeDESTINATION)})
+
         }
     }
 }

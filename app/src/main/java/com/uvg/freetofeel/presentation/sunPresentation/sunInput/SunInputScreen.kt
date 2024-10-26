@@ -41,12 +41,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.presentation.petPresentation.petTalk.PetTalkScreen
+
+
+@Composable
+fun SunInputROUTE(
+    onOption: ()->Unit
+){
+    SunInputScreen(
+        onOption = onOption)
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunInputScreen(languageViewModel: LanguageViewModel) {
+fun SunInputScreen(onOption: () -> Unit) {
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     var selectedOption by remember { mutableStateOf("") }
     var text by remember { mutableStateOf("") }
     val options = listOf(
@@ -180,7 +189,7 @@ fun SunInputScreen(languageViewModel: LanguageViewModel) {
                         .fillMaxWidth()
                         .padding(vertical = 10.dp),
                     horizontalArrangement = Arrangement.SpaceBetween) {
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = onOption, //Luego validar si la opción es guardar, que guarde
                         Modifier
                             .fillMaxWidth()
                             .weight(0.5f)
@@ -188,7 +197,7 @@ fun SunInputScreen(languageViewModel: LanguageViewModel) {
                         Text(text = stringResource(id = R.string.sunInput_buttonSave))
                     }
 
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = onOption,//Luego validar si la opción es cancelar, que elimine la entrada
                         Modifier
                             .fillMaxWidth()
                             .weight(0.5f)
@@ -208,7 +217,7 @@ fun SunInputScreen(languageViewModel: LanguageViewModel) {
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunInputScreen(languageViewModel = languageViewModel)
+        SunInputScreen(onOption = {})
     }
 }
 
@@ -217,6 +226,6 @@ fun PreviewSUnRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunInputScreen(languageViewModel = languageViewModel)
+        SunInputScreen(onOption = {})
     }
 }

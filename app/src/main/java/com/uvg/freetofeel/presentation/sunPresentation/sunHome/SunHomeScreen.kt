@@ -29,14 +29,14 @@ import com.uvg.freetofeel.R
 
 
 @Composable
-fun SunHomeScreenROUTE(
-
+fun SunHomeROUTE(
+    onDescribeClick: ()->Unit, onExpressClick : ()->Unit, onCommentClick : ()->Unit
 ){
-    SunHomeScreen()
+    SunHomeScreen(onDescribeClick = onDescribeClick, onExpressClick = onExpressClick, onCommentClick = onCommentClick)
 }
 
 @Composable
-fun SunHomeScreen(){
+fun SunHomeScreen(onExpressClick: ()->Unit, onDescribeClick:()->Unit,onCommentClick:()->Unit){
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()
@@ -85,21 +85,21 @@ fun SunHomeScreen(){
             .padding(20.dp),
             verticalArrangement = Arrangement.SpaceAround)
         {
-            Button(onClick = { /*TODO*/ }, modifier = Modifier
+            Button(onClick = onExpressClick, modifier = Modifier
                 .width(315.dp)
                 .height(45.dp)) {
                 Text(text = stringResource(id = R.string.sun_home_buttonA)
                     , style = MaterialTheme.typography.titleMedium
                     , textAlign = TextAlign.Center)
             }
-            Button(onClick = { /*TODO*/ }, modifier = Modifier
+            Button(onClick = onDescribeClick, modifier = Modifier
                 .width(315.dp)
                 .height(45.dp)) {
                 Text(text = stringResource(id = R.string.sun_home_buttonB)
                     , style = MaterialTheme.typography.titleMedium
                     , textAlign = TextAlign.Center)
             }
-            Button(onClick = { /*TODO*/ }, modifier = Modifier
+            Button(onClick = onCommentClick, modifier = Modifier
                 .width(315.dp)
                 .height(45.dp)) {
                 Text(text = stringResource(id = R.string.sun_home_buttonC)
@@ -119,7 +119,7 @@ fun SunHomeScreen(){
 @Composable
 fun PreviewSunHomeScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        SunHomeScreen()
+        SunHomeScreen(onDescribeClick = {}, onExpressClick = {}, onCommentClick = {})
     }
 }
 
@@ -127,6 +127,6 @@ fun PreviewSunHomeScreenLight() {
 @Composable
 fun PreviewSunHomeScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        SunHomeScreen()
+        SunHomeScreen(onDescribeClick = {}, onExpressClick = {}, onCommentClick = {})
     }
 }
