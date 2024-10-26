@@ -47,14 +47,13 @@ import com.uvg.freetofeel.R
 fun DailyRecoROUTE(
     onAcceptDailyReco: ()->Unit
 ){
-    DailyRecoScreen(languageViewModel = LanguageViewModel(),
+    DailyRecoScreen(
         onAcceptDailyReco = onAcceptDailyReco)
 }
 
 @Composable
-fun DailyRecoScreen(languageViewModel: LanguageViewModel, onAcceptDailyReco: ()->Unit) {
+fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     val checkSelect = remember {
         mutableStateOf(true)
     }
@@ -150,7 +149,7 @@ fun DailyRecoScreen(languageViewModel: LanguageViewModel, onAcceptDailyReco: ()-
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        DailyRecoScreen(languageViewModel = languageViewModel, onAcceptDailyReco = {})
+        DailyRecoScreen( onAcceptDailyReco = {})
     }
 }
 
@@ -160,6 +159,6 @@ fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        DailyRecoScreen(languageViewModel = languageViewModel, onAcceptDailyReco = {})
+        DailyRecoScreen( onAcceptDailyReco = {})
     }
 }

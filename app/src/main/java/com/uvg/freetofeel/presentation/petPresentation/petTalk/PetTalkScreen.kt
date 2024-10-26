@@ -30,10 +30,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.DailyRecoScreen
 
 @Composable
-fun PetTalkScreen(){
+fun PetTalkROUTE(
+    onElection: ()->Unit
+){
+    PetTalkScreen(
+        onElection = onElection)
+}
+
+
+
+@Composable
+fun PetTalkScreen(onElection: ()->Unit){
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -70,14 +82,14 @@ fun PetTalkScreen(){
                     , style = MaterialTheme.typography.bodyMedium
                 , textAlign = TextAlign.Center)
 
-                Button(onClick = { /*TODO*/ }, modifier = Modifier
+                Button(onClick = onElection, modifier = Modifier
                     .width(315.dp)
                     .height(45.dp)) {
                     Text(text = stringResource(id = R.string.pet_talk_option1A)
                         , style = MaterialTheme.typography.labelMedium
                         , textAlign = TextAlign.Center)
                 }
-                Button(onClick = { /*TODO*/ }, modifier = Modifier
+                Button(onClick = onElection, modifier = Modifier
                     .width(315.dp)
                     .height(45.dp)
                     ) {
@@ -85,7 +97,7 @@ fun PetTalkScreen(){
                         , style = MaterialTheme.typography.labelMedium
                         , textAlign = TextAlign.Center)
                 }
-                Button(onClick = { /*TODO*/ }, modifier = Modifier
+                Button(onClick = onElection, modifier = Modifier
                     .width(315.dp)
                     .height(45.dp)) {
                     Text(text = stringResource(id = R.string.pet_talk_option1C)
@@ -104,7 +116,7 @@ fun PetTalkScreen(){
 @Composable
 fun PreviewPetTalkScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        PetTalkScreen()
+        PetTalkScreen( onElection = {})
     }
 }
 
@@ -114,6 +126,6 @@ fun PreviewPetTalkScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        PetTalkScreen()
+        PetTalkScreen(onElection = {})
     }
 }

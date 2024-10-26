@@ -22,6 +22,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.uvg.freetofeel.presentation.challengePresenation.challengeHome.challengehomeScreen
+import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.DailyRecoDESTINATION
+import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.dailyRecoScreen
+import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.navigateToDailyReco
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.LoginBaseDestination
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.navigateToLoginBase
 import com.uvg.freetofeel.presentation.loginProfilePresentation.profileHome.profilehomeScreen
@@ -31,6 +34,9 @@ import com.uvg.freetofeel.presentation.petPresentation.petHome.pethomeScreen
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.PetSelectDESTINATION
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.navigateToPetSelect
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.petSelectScreen
+import com.uvg.freetofeel.presentation.petPresentation.petTalk.PetTalkDESTINATION
+import com.uvg.freetofeel.presentation.petPresentation.petTalk.navigateToPetTalk
+import com.uvg.freetofeel.presentation.petPresentation.petTalk.petTalkScreen
 import com.uvg.freetofeel.presentation.sunPresentation.sunHome.sunhomeScren
 
 @Composable
@@ -90,18 +96,22 @@ fun ScreenBotNav(
                 onAllPetsClick = {
                     navController.navigateToPetSelect(PetSelectDESTINATION)
                 },
-                onTipDayPetScreenClick = {},
-                onHistoryScreenPetHome = {}
+                onTipDayPetScreenClick = {navController.navigateToDailyReco(DailyRecoDESTINATION)},
+                onHistoryScreenPetHome = {navController.navigateToPetTalk(PetTalkDESTINATION)}
             )
 
             sunhomeScren()
             challengehomeScreen()
             profilehomeScreen()
 
+            dailyRecoScreen(
+                onAcceptDailyReco = {navController.navigateUp()} //cambiar eventualmente para que sí cambie de mascota
+            )
+            petTalkScreen(onElection = {navController.navigateUp()}) //cambiar eventualmente para que sí dé puntos
 
             petSelectScreen(
                 onBackFromSelectToHomePet = {
-                    //debe regresar uno xd
+                    navController.navigateUp()
                 }
             )
         }
