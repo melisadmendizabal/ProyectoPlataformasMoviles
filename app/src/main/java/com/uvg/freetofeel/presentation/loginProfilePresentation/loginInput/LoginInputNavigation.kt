@@ -18,9 +18,9 @@ fun NavController.navigateToLoginInput(
 }
 
 fun NavGraphBuilder.loginInputScreen(       //Por el momento, es provisional. Revisar al momento de hacer la nav
-
+    onLoginStartClick: () -> Unit
 ) {
-    composable<LoginBaseDestination> {
-        LoginInputROUTE()
+    composable<LoginInputDESTINATION> {
+        LoginInputROUTE(onLoginStartClick = onLoginStartClick)
     }
 }

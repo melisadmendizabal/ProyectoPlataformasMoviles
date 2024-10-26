@@ -60,9 +60,10 @@ fun SunHomeScreen(){
         }
 
     }
+
     Column(modifier = Modifier
         .fillMaxSize()
-        .padding(vertical = 115.dp),
+        .padding(vertical = 10.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally)
     {

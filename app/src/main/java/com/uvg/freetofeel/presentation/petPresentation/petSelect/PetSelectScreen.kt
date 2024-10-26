@@ -39,11 +39,23 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.R
 
+@Composable
+fun PetSelectROUTE(
+    onBackFromSelectToHomePet: ()-> Unit
+){
+    PetSelectScreen(
+        onBackFromSelectToHomePet = onBackFromSelectToHomePet
+    )
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PetSelectScreen(){
+fun PetSelectScreen(
+    onBackFromSelectToHomePet: ()-> Unit
+){
 
-    Column(modifier = Modifier.fillMaxSize()
+    Column(modifier = Modifier
+        .fillMaxSize()
         .background(color = MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally)
@@ -51,7 +63,7 @@ fun PetSelectScreen(){
         CenterAlignedTopAppBar(
             title = { Text(text = stringResource(id = R.string.pet_select_topAppBar) , textAlign = TextAlign.Center, fontFamily = FontFamily.Monospace)},
             navigationIcon = {
-                IconButton(onClick = {/*TODO*/}) {
+                IconButton(onClick = onBackFromSelectToHomePet) {
                     Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                 }
             },
@@ -160,7 +172,7 @@ fun getImageResource(name: String): Int {
 @Composable
 fun PreviewPetSelectScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        PetSelectScreen()
+        PetSelectScreen( onBackFromSelectToHomePet ={})
     }
 }
 
@@ -170,6 +182,6 @@ fun PreviewPetSelectScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        PetSelectScreen()
+        PetSelectScreen(onBackFromSelectToHomePet ={})
     }
 }

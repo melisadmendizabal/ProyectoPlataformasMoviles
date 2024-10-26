@@ -38,11 +38,19 @@ import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
 
-
+@Composable
+fun NewAccountROUTE(
+    onCreateAccountClick:() -> Unit
+){
+    NewAccountScreen(
+        languageViewModel = LanguageViewModel(),
+        onCreateAccountClick = onCreateAccountClick
+        )
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NewAccountScreen(languageViewModel: LanguageViewModel) {
+fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:() -> Unit) {
     var inputText by remember { mutableStateOf("")}
     val selectedLanguage = languageViewModel.selectedLanguage
 
@@ -51,22 +59,22 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel) {
         .fillMaxHeight()
         .background(color = MaterialTheme.colorScheme.inversePrimary)) //Cambiar cuando se tengan los colores reales
     {
-        Column (modifier = Modifier.fillMaxSize(),verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.CenterHorizontally) {
-            Image(
-                painter = painterResource(id = R.drawable.cloud_top),
-                contentDescription = "Nubes superiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.TopCenter,
+        Image(
+            painter = painterResource(id = R.drawable.cloud_top),
+            contentDescription = "Nubes superiores",
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .fillMaxWidth()
 
-                )
-            Image(
-                painter = painterResource(id = R.drawable.cloud_bot),
-                contentDescription = "Nubes Inferiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.BottomCenter,
+        )
+        Image(
+            painter = painterResource(id = R.drawable.cloud_bot),
+            contentDescription = "Nubes Inferiores",
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
 
-                )
-        }
+        )
 
 
     }
@@ -150,7 +158,7 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel) {
 
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = onCreateAccountClick) {
          Text(text = stringResource(id = R.string.CreateAcc))
         }
     }
@@ -164,7 +172,7 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel) {
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        NewAccountScreen(languageViewModel = languageViewModel)
+        NewAccountScreen(languageViewModel = languageViewModel, onCreateAccountClick = {})
     }
 }
 
@@ -174,6 +182,6 @@ fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        NewAccountScreen(languageViewModel = languageViewModel)
+        NewAccountScreen(languageViewModel = languageViewModel, onCreateAccountClick = {})
     }
 }

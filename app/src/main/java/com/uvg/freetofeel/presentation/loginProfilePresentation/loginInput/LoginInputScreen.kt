@@ -41,14 +41,14 @@ import com.uvg.freetofeel.R
 
 @Composable
 fun LoginInputROUTE(
-
+    onLoginStartClick: ()->Unit
 ){
-    LoginInputScreen(languageViewModel = LanguageViewModel())
+    LoginInputScreen(languageViewModel = LanguageViewModel(), onLoginStartClick = onLoginStartClick)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginInputScreen(languageViewModel: LanguageViewModel){
+fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()->Unit){
     var inputText by remember { mutableStateOf("") }
     val selectedLanguage = languageViewModel.selectedLanguage
 
@@ -57,22 +57,22 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel){
         .fillMaxHeight()
         .background(color = MaterialTheme.colorScheme.inversePrimary)) //Cambiar cuando se tengan los colores reales
     {
-        Column (modifier = Modifier.fillMaxSize(),verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.CenterHorizontally) {
-            Image(
-                painter = painterResource(id = R.drawable.cloud_top),
-                contentDescription = "Nubes superiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.TopCenter,
+        Image(
+            painter = painterResource(id = R.drawable.cloud_top),
+            contentDescription = "Nubes superiores",
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .fillMaxWidth()
 
-                )
-            Image(
-                painter = painterResource(id = R.drawable.cloud_bot),
-                contentDescription = "Nubes Inferiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.BottomCenter,
+            )
+        Image(
+            painter = painterResource(id = R.drawable.cloud_bot),
+            contentDescription = "Nubes Inferiores",
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
 
-                )
-        }
+            )
 
 
     }
@@ -124,10 +124,10 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel){
         )
 
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = onLoginStartClick) {
             Text(text = stringResource(id = R.string.login_button))
         }
-       
+
         TextButton(onClick = { /*TODO*/ }) {
             Text(text = stringResource(id = R.string.forgot_password))
         }
@@ -139,7 +139,7 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel){
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        LoginInputScreen(languageViewModel = languageViewModel)
+        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {})
     }
 }
 
@@ -149,6 +149,6 @@ fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        LoginInputScreen(languageViewModel = languageViewModel)
+        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {})
     }
 }

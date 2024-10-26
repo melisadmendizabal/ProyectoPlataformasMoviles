@@ -22,9 +22,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+@Composable
+fun FirstPetROUTE(
+    onFirstPetOk: () -> Unit
+){
+    FirstPetScreen(onFirstPetOk = onFirstPetOk)
+}
 
 @Composable
-fun FirstPetScreen() {
+fun FirstPetScreen(onFirstPetOk: ()-> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -52,7 +58,7 @@ fun FirstPetScreen() {
             title = { Text(text = stringResource(id = R.string.first_pet_title)) },
             text = { Text(text = stringResource(id = R.string.first_pet_body)) },
             confirmButton = {
-                Button(onClick = { /* Lógica de aceptar */ }) {
+                Button(onClick = onFirstPetOk) {
                     Text(text = stringResource(id = R.string.first_pet_confirm))
                 }
             }
@@ -67,7 +73,7 @@ fun FirstPetScreen() {
 fun PreviewFirstPetScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        FirstPetScreen()
+        FirstPetScreen(onFirstPetOk = {})
     }
 }
 
@@ -77,6 +83,6 @@ fun PreviewFirstPetScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        FirstPetScreen()
+        FirstPetScreen(onFirstPetOk = {})
     }
 }

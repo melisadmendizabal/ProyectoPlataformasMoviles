@@ -12,8 +12,6 @@ fun NavGraphBuilder.profilehomeScreen(
 
 ){
     composable<ProfileHomeDESTINATION>{
-        PetHomeROUTE(
-
-        )
+        ProfileHomeROUTE()
     }
 }

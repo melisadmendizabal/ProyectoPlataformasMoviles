@@ -51,9 +51,7 @@ import com.uvg.freetofeel.R
 fun ProfileHomeROUTE(
 
 ){
-    ProfileHomeScreen(
-
-    )
+    ProfileHomeScreen()
 }
 
 @Composable

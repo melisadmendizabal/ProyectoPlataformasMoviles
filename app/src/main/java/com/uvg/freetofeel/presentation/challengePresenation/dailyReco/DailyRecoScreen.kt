@@ -43,9 +43,16 @@ import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DailyRecoScreen(languageViewModel: LanguageViewModel) {
+fun DailyRecoROUTE(
+    onAcceptDailyReco: ()->Unit
+){
+    DailyRecoScreen(languageViewModel = LanguageViewModel(),
+        onAcceptDailyReco = onAcceptDailyReco)
+}
+
+@Composable
+fun DailyRecoScreen(languageViewModel: LanguageViewModel, onAcceptDailyReco: ()->Unit) {
     var inputText by remember { mutableStateOf("") }
     val selectedLanguage = languageViewModel.selectedLanguage
     val checkSelect = remember {
@@ -127,7 +134,7 @@ fun DailyRecoScreen(languageViewModel: LanguageViewModel) {
             } },
 
         confirmButton = {
-            TextButton(onClick = { /*TODO*/ }) {
+            TextButton(onClick = onAcceptDailyReco) {
                 Text(stringResource(id = R.string.dailyreco_view),
                     color = MaterialTheme.colorScheme.onPrimary)
             }
@@ -143,7 +150,7 @@ fun DailyRecoScreen(languageViewModel: LanguageViewModel) {
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        DailyRecoScreen(languageViewModel = languageViewModel)
+        DailyRecoScreen(languageViewModel = languageViewModel, onAcceptDailyReco = {})
     }
 }
 
@@ -153,6 +160,6 @@ fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        DailyRecoScreen(languageViewModel = languageViewModel)
+        DailyRecoScreen(languageViewModel = languageViewModel, onAcceptDailyReco = {})
     }
 }

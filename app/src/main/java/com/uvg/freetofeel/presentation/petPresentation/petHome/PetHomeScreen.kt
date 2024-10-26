@@ -18,11 +18,14 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -47,16 +50,26 @@ import com.uvg.freetofeel.R
 
 @Composable
 fun PetHomeROUTE(
-
+    onAllPetsClick: () -> Unit,
+    onTipDayPetScreenClick: ()-> Unit,
+    onHistoryScreenPetHome: ()-> Unit
 ){
     PetHomeScreen(
-        languageViewModel = LanguageViewModel()
+        languageViewModel = LanguageViewModel(),
+        onAllPetsClick = onAllPetsClick,
+        onTipDayPetScreenClick = onTipDayPetScreenClick,
+        onHistoryScreenPetHome = onHistoryScreenPetHome
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PetHomeScreen(languageViewModel: LanguageViewModel){
+fun PetHomeScreen(
+    languageViewModel: LanguageViewModel,
+    onAllPetsClick: () -> Unit,
+    onTipDayPetScreenClick: ()-> Unit,
+    onHistoryScreenPetHome: ()-> Unit
+){
     var inputText by remember { mutableStateOf("") }
     val selectedLanguage = languageViewModel.selectedLanguage
 
@@ -77,19 +90,19 @@ fun PetHomeScreen(languageViewModel: LanguageViewModel){
 
     Column(modifier = Modifier
         .fillMaxHeight()
-        .padding(vertical = 40.dp, horizontal = 25.dp),
+        .padding(vertical = 40.dp, horizontal = 13.dp),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Row {
                 Icon(Icons.Filled.Star, contentDescription = "points")
                 Text(text = "100 ")
                 Text(text = stringResource(id = R.string.points))
             }
 
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(Icons.Filled.Menu, contentDescription = "More Pets")
+            IconButton(onClick = onAllPetsClick) {
+                Icon(Icons.Filled.Menu, contentDescription = "More Pets", tint = MaterialTheme.colorScheme.primary)
             }
         }
 
@@ -100,41 +113,40 @@ fun PetHomeScreen(languageViewModel: LanguageViewModel){
         }
 
         Row {
-            OutlinedTextField(
-                value = inputText,
-                onValueChange = {inputText = it},
-                shape = CircleShape,
-                label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
-                    id = R.string.pet_home_button1
-                )
-                    ,textAlign = TextAlign.Center) } },
-                textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center)
-                ,modifier = Modifier
-                    .weight(0.5f)
-                    .height(60.dp),
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainer
-                )
 
-            )
-            Spacer(modifier = Modifier.width(15.dp))
+            Button(
+                onClick = onTipDayPetScreenClick,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
 
-            OutlinedTextField(
-                value = inputText,
-                onValueChange = {inputText = it},
-                shape = CircleShape,
-                label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
-                    id = R.string.pet_home_button2
-                )
-                    ,textAlign = TextAlign.Center) } },
-                textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center)
-                ,modifier = Modifier
+                ),
+                modifier = Modifier
                     .weight(0.5f)
-                    .height(60.dp),
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    containerColor = MaterialTheme.colorScheme.tertiaryContainer
-                )
-            )
+                    .height(60.dp)) {
+                Text(text = stringResource(id = R.string.pet_home_button1)
+                    , style = MaterialTheme.typography.titleMedium
+                    , textAlign = TextAlign.Center)
+            }
+
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Button(onClick = onHistoryScreenPetHome,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimary,
+                    contentColor = MaterialTheme.colorScheme.primary
+
+                ),
+                modifier = Modifier
+                    .weight(0.5f)
+                    .height(60.dp)) {
+                Text(text = stringResource(id = R.string.pet_home_button2)
+                    , style = MaterialTheme.typography.titleMedium
+                    , textAlign = TextAlign.Center)
+            }
+
+
         }
     }
 }
@@ -144,7 +156,7 @@ fun PetHomeScreen(languageViewModel: LanguageViewModel){
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        PetHomeScreen(languageViewModel = languageViewModel)
+        PetHomeScreen(languageViewModel = languageViewModel,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
     }
 }
 
@@ -154,6 +166,6 @@ fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        PetHomeScreen(languageViewModel = languageViewModel)
+        PetHomeScreen(languageViewModel = languageViewModel,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
     }
 }
