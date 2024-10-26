@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
@@ -130,21 +131,36 @@ fun ProfileHomeScreen(){
                 }
             }
 
-        Box(modifier = Modifier.weight(0.5f)){
-            Column(
+        Box(modifier = Modifier.weight(0.5f)) {
+            LazyColumn(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceAround
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                ExpandableContent(icono = Icons.Default.FavoriteBorder, title = stringResource(id = R.string.profile_home_iLike))
-                HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
-                ExpandableContent(icono = Icons.Default.Clear, title = stringResource(id = R.string.profile_home_iDisLike))
-                HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
-                ExpandableContent(icono = Icons.Default.Person, title = stringResource(id = R.string.profile_home_aboutMe))
-                HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
-                ExpandableContent(icono = Icons.Default.Edit, title = stringResource(id = R.string.profile_home_myWritings))
+                item {
+                    ExpandableContent(icono = Icons.Default.FavoriteBorder, title = stringResource(id = R.string.profile_home_iLike))
+                }
+                item {
+                    HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
+                }
+                item {
+                    ExpandableContent(icono = Icons.Default.Clear, title = stringResource(id = R.string.profile_home_iDisLike))
+                }
+                item {
+                    HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
+                }
+                item {
+                    ExpandableContent(icono = Icons.Default.Person, title = stringResource(id = R.string.profile_home_aboutMe))
+                }
+                item {
+                    HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
+                }
+                item {
+                    ExpandableContent(icono = Icons.Default.Edit, title = stringResource(id = R.string.profile_home_myWritings))
+                }
             }
         }
+
     }
 }
 
@@ -180,7 +196,7 @@ fun ExpandableContent(icono: ImageVector, title: String) {
             }
         }
         if (title == stringResource(id = R.string.profile_home_myWritings)) {
-            println("Debería de llevarlo a otra pagina jaja")
+            println("Debería de llevarlo a otra pagina jaja")   //Tomar en cuenta
         } else {
             if (isExpanded) {
                 Column(
