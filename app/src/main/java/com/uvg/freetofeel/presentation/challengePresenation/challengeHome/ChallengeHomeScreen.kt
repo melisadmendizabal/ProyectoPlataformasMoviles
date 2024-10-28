@@ -72,7 +72,7 @@ fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
             ) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
 
-                    items() { index ->
+                    items(4) { index ->
                         itemsLazyRow(valueitem = stringResource(id = R.string.challenge_row1))
                     }
                 }
