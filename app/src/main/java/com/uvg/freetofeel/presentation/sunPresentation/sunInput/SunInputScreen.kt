@@ -122,7 +122,7 @@ fun SunInputScreen(onOption: () -> Unit) {
 
                 TextField(
                     value = title,
-                    onValueChange = {newText -> text = newText},
+                    onValueChange = {title = it},
                     placeholder = { Text(stringResource(id = R.string.sunInput_title), color = MaterialTheme.colorScheme.primary)},
                     colors = TextFieldDefaults.textFieldColors(
 
@@ -139,7 +139,7 @@ fun SunInputScreen(onOption: () -> Unit) {
 
                 TextField(
                     value = text,
-                    onValueChange = {newText -> text = newText},
+                    onValueChange = {text = it},
                     placeholder = { Text(stringResource(id = R.string.sunInput_text), color = MaterialTheme.colorScheme.primary)},
                     colors = TextFieldDefaults.textFieldColors(
 
