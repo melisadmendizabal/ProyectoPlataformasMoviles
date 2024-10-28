@@ -82,13 +82,13 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
 
         Column(modifier = Modifier
             .fillMaxSize()
-            .padding(vertical = 150.dp, horizontal = 20.dp),
+            .padding(vertical = 20.dp, horizontal = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceBetween){
-            Box(modifier = Modifier
-                .size(200.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.primary))
+            verticalArrangement = Arrangement.Center){
+            Image(
+                painter = painterResource(id = R.drawable.sun),
+                contentDescription = "sun",
+                )
 
             Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("$username,",

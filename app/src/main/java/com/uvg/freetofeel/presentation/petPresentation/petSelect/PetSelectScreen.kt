@@ -102,7 +102,7 @@ fun PetSelectScreen(
             ) //same
 
         }
-}
+    }
 
 
 }

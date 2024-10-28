@@ -93,12 +93,12 @@ fun PetHomeScreen(
         .padding(vertical = 40.dp, horizontal = 13.dp),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+    ) {
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Row {
-                Icon(Icons.Filled.Star, contentDescription = "points")
-                Text(text = "100 ")
-                Text(text = stringResource(id = R.string.points))
+                Icon(Icons.Filled.Star, contentDescription = "points", tint = MaterialTheme.colorScheme.primary)
+                Text(text = "100 ", color = MaterialTheme.colorScheme.primary)
+                Text(text = stringResource(id = R.string.points), color = MaterialTheme.colorScheme.primary)
             }
 
             IconButton(onClick = onAllPetsClick) {

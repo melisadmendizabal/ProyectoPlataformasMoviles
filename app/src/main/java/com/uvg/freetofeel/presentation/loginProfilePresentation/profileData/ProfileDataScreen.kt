@@ -2,6 +2,7 @@ package com.uvg.freetofeel.presentation.loginProfilePresentation.profileData
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,11 +15,18 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -30,6 +38,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,10 +47,41 @@ import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.R
 
 @Composable
-fun ProfileDataScreen() {
+fun ProfileDataROUTE(
+    onBackProfileData: () -> Unit
+){
+    ProfileDataScreen(
+        onBackProfileData = onBackProfileData
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ProfileDataScreen(
+    onBackProfileData: () -> Unit
+) {
     var itemsList by remember { mutableStateOf(mutableListOf<Pair<String, String>>()) }
     var titleInput by remember { mutableStateOf("") }
     var textInput by remember { mutableStateOf("") }
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(color = MaterialTheme.colorScheme.background),
+        verticalArrangement = Arrangement.SpaceAround,
+        horizontalAlignment = Alignment.CenterHorizontally)
+    {
+        CenterAlignedTopAppBar(
+            title = { Text(text = stringResource(id = R.string.profile_home_myWritings) , textAlign = TextAlign.Center, fontFamily = FontFamily.Monospace)},
+            navigationIcon = {
+                IconButton(onClick = onBackProfileData) {
+                    Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                }
+            },
+            colors = TopAppBarDefaults.topAppBarColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+        )
 
     Column(modifier = Modifier
         .fillMaxSize()
@@ -49,13 +89,13 @@ fun ProfileDataScreen() {
         TextField(
             value = titleInput,
             onValueChange = { titleInput = it },
-            label = { Text(text= stringResource(id = R.string.profile_data_dateTitle)) },
+            label = { Text(text = stringResource(id = R.string.profile_data_dateTitle)) },
             modifier = Modifier.fillMaxWidth()
         )
         TextField(
             value = textInput,
             onValueChange = { textInput = it },
-            label = { Text(text= stringResource(id = R.string.profile_data_text)) },
+            label = { Text(text = stringResource(id = R.string.profile_data_text)) },
             modifier = Modifier.fillMaxWidth()
         )
         Button(
@@ -68,7 +108,7 @@ fun ProfileDataScreen() {
             },
             modifier = Modifier.padding(top = 8.dp)
         ) {
-            Text(text= stringResource(id = R.string.profile_data_addB))
+            Text(text = stringResource(id = R.string.profile_data_addB))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -78,6 +118,7 @@ fun ProfileDataScreen() {
                 UniqueData(title = item.first, text = item.second)
             }
         }
+    }
     }
 }
 
@@ -134,7 +175,7 @@ fun UniqueData(title: String, text: String) {
 @Composable
 fun PreviewProfileDataScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        ProfileDataScreen()
+        ProfileDataScreen(onBackProfileData = {})
     }
 }
 
@@ -144,6 +185,6 @@ fun PreviewProfileDataScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        ProfileDataScreen()
+        ProfileDataScreen(onBackProfileData = {})
     }
 }

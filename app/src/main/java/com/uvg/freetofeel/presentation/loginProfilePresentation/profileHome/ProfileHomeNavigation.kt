@@ -9,9 +9,9 @@ import kotlinx.serialization.Serializable
 data object ProfileHomeDESTINATION
 
 fun NavGraphBuilder.profilehomeScreen(
-
+    onMyWriteClick: ()-> Unit
 ){
     composable<ProfileHomeDESTINATION>{
-        ProfileHomeROUTE()
+        ProfileHomeROUTE( onMyWriteClick = onMyWriteClick)
     }
 }

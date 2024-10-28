@@ -55,7 +55,7 @@ fun DailyRecoROUTE(
 fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
     var inputText by remember { mutableStateOf("") }
     val checkSelect = remember {
-        mutableStateOf(true)
+        mutableStateOf(false)
     }
 
     Box(

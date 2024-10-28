@@ -30,6 +30,9 @@ import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.dailyRecoS
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.navigateToDailyReco
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.LoginBaseDestination
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.navigateToLoginBase
+import com.uvg.freetofeel.presentation.loginProfilePresentation.profileData.ProfileDataDESTINATION
+import com.uvg.freetofeel.presentation.loginProfilePresentation.profileData.navigateToProfileData
+import com.uvg.freetofeel.presentation.loginProfilePresentation.profileData.profileDataScreen
 import com.uvg.freetofeel.presentation.loginProfilePresentation.profileHome.profilehomeScreen
 import com.uvg.freetofeel.presentation.petPresentation.firstPet.FirstPetDESTINATION
 import com.uvg.freetofeel.presentation.petPresentation.petHome.PetHomeDESTINATION
@@ -119,7 +122,17 @@ fun ScreenBotNav(
                 onDescribeClick = {navController.navigateToSunInput(SunInputDESTINATION)})
             challengehomeScreen(onSelect = {navController.navigateToChallengeChosen(ChallengeChosenDESTINATION)})
             challengeChosenScreen(onButton = {navController.navigateUp()}) //TODO: Manejar las opciones
-            profilehomeScreen()
+            profilehomeScreen(
+                onMyWriteClick = {
+                    navController.navigateToProfileData(
+                        ProfileDataDESTINATION
+                    )
+                }
+            )
+
+            profileDataScreen(
+                onBackProfileData = {navController.navigateUp()}
+            )
 
             dailyRecoScreen(
                 onAcceptDailyReco = {navController.navigateUp()} //TODO:cambiar eventualmente para que sí cambie de mascota

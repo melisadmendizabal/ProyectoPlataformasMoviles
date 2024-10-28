@@ -84,13 +84,10 @@ fun SunTalkScreen(onAccept: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight())
-    {
-        Box(contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .size(width = 220.dp, height = 150.dp)
-                .background(MaterialTheme.colorScheme.secondary))
-        {
-            Text(text = "imagen")
+    {   Box{
+        Image(painter = painterResource(id = R.drawable.sunmid),
+            contentDescription = "Sun"
+            )
         }
 
         Box(contentAlignment = Alignment.Center,

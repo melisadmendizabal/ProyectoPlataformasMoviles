@@ -57,6 +57,7 @@ fun SunInputROUTE(
 fun SunInputScreen(onOption: () -> Unit) {
     var inputText by remember { mutableStateOf("") }
     var selectedOption by remember { mutableStateOf("") }
+    var title by remember { mutableStateOf("") }
     var text by remember { mutableStateOf("") }
     val options = listOf(
         stringResource(id = R.string.sunFeeling_happy),
@@ -72,39 +73,37 @@ fun SunInputScreen(onOption: () -> Unit) {
         .fillMaxHeight()
         .background(color = MaterialTheme.colorScheme.inversePrimary)) //Cambiar cuando se tengan los colores reales
     {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.cloud_top),
-                contentDescription = "Nubes superiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.TopCenter,
+        Image(
+            painter = painterResource(id = R.drawable.cloud_top),
+            contentDescription = "Nubes superiores",
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .fillMaxWidth()
 
-                )
-            Image(
-                painter = painterResource(id = R.drawable.cloud_bot),
-                contentDescription = "Nubes Inferiores",
-                modifier = Modifier.fillMaxWidth(),
-                alignment = Alignment.BottomCenter,
+        )
+        Image(
+            painter = painterResource(id = R.drawable.cloud_bot),
+            contentDescription = "Nubes Inferiores",
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
 
-                )
-        }
+        )
+
+
     }
 
     Column(modifier = Modifier
         .fillMaxSize()
-        .padding(vertical = 130.dp, horizontal = 20.dp),
+        .padding(vertical = 20.dp, horizontal = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween) {
-        Box(
-            modifier = Modifier
-                .size(200.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.primary)
-        )
+        Image(
+            painter = painterResource(id = R.drawable.sun),
+            contentDescription = "sun",
+            modifier = Modifier.size(150.dp)
+
+            )
 
         Spacer(modifier = Modifier.padding(10.dp))
 
@@ -122,7 +121,7 @@ fun SunInputScreen(onOption: () -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally) {
 
                 TextField(
-                    value = text,
+                    value = title,
                     onValueChange = {newText -> text = newText},
                     placeholder = { Text(stringResource(id = R.string.sunInput_title), color = MaterialTheme.colorScheme.primary)},
                     colors = TextFieldDefaults.textFieldColors(
@@ -194,7 +193,7 @@ fun SunInputScreen(onOption: () -> Unit) {
                             .fillMaxWidth()
                             .weight(0.5f)
                             .padding(horizontal = 10.dp)) {
-                        Text(text = stringResource(id = R.string.sunInput_buttonSave))
+                        Text(text = stringResource(id = R.string.sunInput_buttonCancel))
                     }
 
                     Button(onClick = onOption,//Luego validar si la opción es cancelar, que elimine la entrada
@@ -202,7 +201,7 @@ fun SunInputScreen(onOption: () -> Unit) {
                             .fillMaxWidth()
                             .weight(0.5f)
                             .padding(horizontal = 10.dp)) {
-                        Text(text = stringResource(id = R.string.sunInput_buttonCancel),
+                        Text(text = stringResource(id = R.string.sunInput_buttonSave ),
                             color = MaterialTheme.colorScheme.onPrimary)
                     }
                 }

@@ -67,7 +67,7 @@ fun SunHomeScreen(onExpressClick: ()->Unit, onDescribeClick:()->Unit,onCommentCl
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally)
     {
-        Image(painter = painterResource(id = R.drawable.ic_launcher_background),
+        Image(painter = painterResource(id = R.drawable.sun),
             contentDescription = "Sun",
             modifier = Modifier.weight(0.5f))
         Column (modifier = Modifier.weight(0.2f),

@@ -50,13 +50,13 @@ import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.R
 @Composable
 fun ProfileHomeROUTE(
-
+    onMyWriteClick: ()-> Unit
 ){
-    ProfileHomeScreen()
+    ProfileHomeScreen(onMyWriteClick = onMyWriteClick)
 }
 
 @Composable
-fun ProfileHomeScreen(){
+fun ProfileHomeScreen(onMyWriteClick: ()-> Unit){
     Column(modifier = Modifier
         .fillMaxSize()
         .background(color = MaterialTheme.colorScheme.primaryContainer)) {
@@ -138,25 +138,25 @@ fun ProfileHomeScreen(){
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 item {
-                    ExpandableContent(icono = Icons.Default.FavoriteBorder, title = stringResource(id = R.string.profile_home_iLike))
+                    ExpandableContent(icono = Icons.Default.FavoriteBorder, title = stringResource(id = R.string.profile_home_iLike), onMyWriteClick = onMyWriteClick)
                 }
                 item {
                     HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
                 }
                 item {
-                    ExpandableContent(icono = Icons.Default.Clear, title = stringResource(id = R.string.profile_home_iDisLike))
+                    ExpandableContent(icono = Icons.Default.Clear, title = stringResource(id = R.string.profile_home_iDisLike), onMyWriteClick = onMyWriteClick)
                 }
                 item {
                     HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
                 }
                 item {
-                    ExpandableContent(icono = Icons.Default.Person, title = stringResource(id = R.string.profile_home_aboutMe))
+                    ExpandableContent(icono = Icons.Default.Person, title = stringResource(id = R.string.profile_home_aboutMe), onMyWriteClick = onMyWriteClick)
                 }
                 item {
                     HorizontalDivider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
                 }
                 item {
-                    ExpandableContent(icono = Icons.Default.Edit, title = stringResource(id = R.string.profile_home_myWritings))
+                    ExpandableContent(icono = Icons.Default.Edit, title = stringResource(id = R.string.profile_home_myWritings), onMyWriteClick = onMyWriteClick)
                 }
             }
         }
@@ -166,7 +166,7 @@ fun ProfileHomeScreen(){
 
 
 @Composable
-fun ExpandableContent(icono: ImageVector, title: String) {
+fun ExpandableContent(icono: ImageVector, title: String, onMyWriteClick: ()-> Unit) {
     var isExpanded by remember { mutableStateOf(false) }    //Se muestra el contenido segun el bool
 
     Column(modifier = Modifier.fillMaxWidth()) {
@@ -188,16 +188,32 @@ fun ExpandableContent(icono: ImageVector, title: String) {
                 textAlign = TextAlign.Center
             )
 
-            IconButton(onClick = { isExpanded = !isExpanded }) {
-                Icon(
-                    imageVector = if (isExpanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
-                    contentDescription = if (isExpanded) "Contraer" else "Expandir"
-                )
+            if (title == stringResource(id = R.string.profile_home_myWritings)){
+                IconButton(
+                    onClick = onMyWriteClick
+                ) {
+                    Icon(
+                        imageVector = if (isExpanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+                        contentDescription = if (isExpanded) "Contraer" else "Expandir"
+                    )
+                }
+            } else {
+                IconButton(
+                    onClick = {
+                        isExpanded = !isExpanded
+                    }
+                ) {
+                    Icon(
+                        imageVector = if (isExpanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+                        contentDescription = if (isExpanded) "Contraer" else "Expandir"
+                    )
+                }
             }
+
+
         }
-        if (title == stringResource(id = R.string.profile_home_myWritings)) {
-            println("Debería de llevarlo a otra pagina jaja")   //Tomar en cuenta
-        } else {
+        if (title != stringResource(id = R.string.profile_home_myWritings)) {
+
             if (isExpanded) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier
@@ -267,7 +283,7 @@ fun UniqueData() {
 @Composable
 fun PreviewProfileHomeScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        ProfileHomeScreen()
+        ProfileHomeScreen(onMyWriteClick = {})
     }
 }
 
@@ -277,6 +293,6 @@ fun PreviewProfileHomeScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        ProfileHomeScreen()
+        ProfileHomeScreen(onMyWriteClick = {})
     }
 }

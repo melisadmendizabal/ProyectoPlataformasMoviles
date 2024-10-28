@@ -29,4 +29,5 @@ fun NavGraphBuilder.pethomeScreen(
             onTipDayPetScreenClick = onTipDayPetScreenClick,
             onHistoryScreenPetHome = onHistoryScreenPetHome)
     }
+
 }

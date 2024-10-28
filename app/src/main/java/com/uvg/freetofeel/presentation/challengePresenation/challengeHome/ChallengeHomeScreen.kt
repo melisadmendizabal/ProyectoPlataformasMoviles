@@ -53,6 +53,7 @@ fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val waaa = List(60){ stringResource(id = R.string.challenge_column1)}
 
+
     Column(Modifier.fillMaxSize()) {
         Column(Modifier.background(MaterialTheme.colorScheme.primary)) {
             TopAppBar(
@@ -70,7 +71,8 @@ fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
                     .padding(5.dp)
             ) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
-                    items(4) { index ->
+
+                    items() { index ->
                         itemsLazyRow(valueitem = stringResource(id = R.string.challenge_row1))
                     }
                 }
