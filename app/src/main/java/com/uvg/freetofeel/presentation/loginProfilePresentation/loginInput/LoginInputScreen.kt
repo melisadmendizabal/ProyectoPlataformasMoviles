@@ -49,7 +49,9 @@ fun LoginInputROUTE(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()->Unit){
-    var inputText by remember { mutableStateOf("") }
+    var inputUser by remember { mutableStateOf("") }
+    var inputPassword by remember { mutableStateOf("") }
+
     val selectedLanguage = languageViewModel.selectedLanguage
 
     Box(modifier = Modifier
@@ -88,8 +90,8 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()
         Spacer(modifier = Modifier.height(25.dp))
 
         OutlinedTextField(
-            value = inputText,
-            onValueChange = {inputText = it},
+            value = inputUser,
+            onValueChange = {inputUser = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
                 id = R.string.LI_user
@@ -106,8 +108,8 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()
         )
 
         OutlinedTextField(
-            value = inputText,
-            onValueChange = {inputText = it},
+            value = inputPassword,
+            onValueChange = {inputPassword = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
                 id = R.string.OTF_password1

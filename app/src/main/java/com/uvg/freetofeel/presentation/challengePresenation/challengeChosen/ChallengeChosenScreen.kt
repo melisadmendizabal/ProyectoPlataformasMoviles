@@ -40,13 +40,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.presentation.challengePresenation.challengeHome.ChallengeHomeScreen
 import com.uvg.freetofeel.presentation.challengePresenation.challengeHome.itemsLazyRow
+
+
+@Composable
+fun ChallengeChosenROUTE(
+    onButton: () -> Unit
+
+){
+    ChallengeChosenScreen(
+        onButton = onButton
+    )
+}
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChallengeChosenScreen(languageViewModel: LanguageViewModel) {
+fun ChallengeChosenScreen(onButton:()->Unit) {
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     val textexample = listOf(
         stringResource(id = R.string.challengeChosen_descripción1),
         stringResource(id = R.string.challengeChosen_descripción2),
@@ -70,7 +82,7 @@ fun ChallengeChosenScreen(languageViewModel: LanguageViewModel) {
                     .padding(5.dp)
             ) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
-                    items(10) { index ->
+                    items(4) { index ->
                         itemsLazyRow(valueitem = stringResource(id = R.string.challenge_row1))
                     }
                 }
@@ -127,11 +139,11 @@ fun ChallengeChosenScreen(languageViewModel: LanguageViewModel) {
 
                 Row(Modifier.fillMaxWidth().padding(horizontal = 0.dp),
                     horizontalArrangement = Arrangement.SpaceBetween) {
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = onButton,
                         Modifier.fillMaxWidth().weight(0.5f).padding(horizontal = 10.dp)) {
                         Text(text = stringResource(id = R.string.challengeChosen_buttonBack))
                     }
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = onButton,  //Agregar lógica de sumar puntos
                         Modifier.fillMaxWidth().weight(0.5f).padding(horizontal = 10.dp)) {
                         Text(text = stringResource(id = R.string.challengeChosen_buttonAccept),
                             color = MaterialTheme.colorScheme.onPrimary)
@@ -148,8 +160,7 @@ fun ChallengeChosenScreen(languageViewModel: LanguageViewModel) {
 @Composable
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        ChallengeChosenScreen(languageViewModel = languageViewModel)
+        ChallengeChosenScreen(onButton = {})
     }
 }
 
@@ -157,7 +168,6 @@ fun PreviewSUnRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        ChallengeChosenScreen(languageViewModel = languageViewModel)
+        ChallengeChosenScreen(onButton = {})
     }
 }

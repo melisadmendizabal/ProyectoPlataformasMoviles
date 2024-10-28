@@ -51,7 +51,12 @@ fun NewAccountROUTE(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:() -> Unit) {
-    var inputText by remember { mutableStateOf("")}
+    var inputUser by remember { mutableStateOf("")}
+    var inputNick by remember { mutableStateOf("")}
+    var inputPassword by remember { mutableStateOf("")}
+    var inputPassword2 by remember { mutableStateOf("")}
+
+
     val selectedLanguage = languageViewModel.selectedLanguage
 
     Box(modifier = Modifier
@@ -90,8 +95,8 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:
     Spacer(modifier = Modifier.height(25.dp))
 
         OutlinedTextField(
-        value = inputText,
-        onValueChange = {inputText = it},
+        value = inputUser,
+        onValueChange = {inputUser = it},
         shape = CircleShape,
         label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
             id = R.string.OTF_user
@@ -107,8 +112,8 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:
 
     )
         OutlinedTextField(
-            value = inputText,
-            onValueChange = {inputText = it},
+            value = inputNick,
+            onValueChange = {inputNick = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
                 id = R.string.OTF_nick
@@ -124,8 +129,8 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:
 
         )
         OutlinedTextField(
-            value = inputText,
-            onValueChange = {inputText = it},
+            value = inputPassword,
+            onValueChange = {inputPassword = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
                 id = R.string.OTF_password1
@@ -141,8 +146,8 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel, onCreateAccountClick:
 
         )
         OutlinedTextField(
-            value = inputText,
-            onValueChange = {inputText = it},
+            value = inputPassword2,
+            onValueChange = {inputPassword2 = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
                 id = R.string.OTF_password2

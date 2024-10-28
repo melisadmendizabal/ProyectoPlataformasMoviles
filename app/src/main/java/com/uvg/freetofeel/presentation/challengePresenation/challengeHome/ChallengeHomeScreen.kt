@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,18 +38,18 @@ import com.uvg.freetofeel.LanguageViewModel
 
 @Composable
 fun ChallengeHomeROUTE(
+    onSelect: (Any) -> Unit
 
 ){
     ChallengeHomeScreen(
-        languageViewModel = LanguageViewModel()
+        onSelect = onSelect
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChallengeHomeScreen(languageViewModel: LanguageViewModel) {
+fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val waaa = List(60){ stringResource(id = R.string.challenge_column1)}
 
@@ -69,7 +70,7 @@ fun ChallengeHomeScreen(languageViewModel: LanguageViewModel) {
                     .padding(5.dp)
             ) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
-                    items(10) { index ->
+                    items(4) { index ->
                         itemsLazyRow(valueitem = stringResource(id = R.string.challenge_row1))
                     }
                 }
@@ -84,7 +85,7 @@ fun ChallengeHomeScreen(languageViewModel: LanguageViewModel) {
                     ){
                         for (item in rowItems) {
                             itemsLazyColumn(valueitem = item,
-                                modifier = Modifier.weight(1f))
+                                modifier = Modifier.weight(1f)){onSelect(item)}
                         }
                     }
 
@@ -96,42 +97,44 @@ fun ChallengeHomeScreen(languageViewModel: LanguageViewModel) {
     }
 }
 
-
 @Composable
-fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier){
-    Box(modifier = modifier
-        .padding(5.dp)
-        .clip(RoundedCornerShape(6.dp))
-        .border(BorderStroke(2.dp, MaterialTheme.colorScheme.primary))
-        .background(MaterialTheme.colorScheme.primary)
-    ){
+fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    Box(
+        modifier = modifier
+            .padding(5.dp)
+            .clip(RoundedCornerShape(6.dp))
+            .border(BorderStroke(2.dp, MaterialTheme.colorScheme.primary))
+            .background(MaterialTheme.colorScheme.primary)
+            .clickable(onClick = onClick)
+    ) {
         Column(
             Modifier
                 .fillMaxWidth()
-                .padding(10.dp)) {
+                .padding(10.dp)
+        ) {
             Box(
                 Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(6.dp))
-            ){
-                Image(painter = painterResource(id = R.drawable.pug),
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.pug),
                     contentDescription = "consejo",
-                    modifier = Modifier.fillMaxWidth())
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
 
             Box(Modifier.fillMaxWidth()) {
-                Text(text = valueitem,
+                Text(
+                    text = valueitem,
                     Modifier.padding(horizontal = 9.dp, vertical = 3.dp),
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center
                 )
             }
-
-
         }
     }
 }
-
 @Composable
 fun itemsLazyRow(valueitem: String){
     Box(modifier = Modifier
@@ -151,7 +154,7 @@ fun itemsLazyRow(valueitem: String){
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        ChallengeHomeScreen(languageViewModel = languageViewModel)
+        ChallengeHomeScreen(onSelect = {})
     }
 }
 
@@ -160,6 +163,6 @@ fun PreviewSUnRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        ChallengeHomeScreen(languageViewModel = languageViewModel)
+        ChallengeHomeScreen(onSelect = {})
     }
 }

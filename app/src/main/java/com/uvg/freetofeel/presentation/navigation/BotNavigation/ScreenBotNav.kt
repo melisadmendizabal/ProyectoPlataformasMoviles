@@ -21,6 +21,9 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.ChallengeChosenDESTINATION
+import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.challengeChosenScreen
+import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.navigateToChallengeChosen
 import com.uvg.freetofeel.presentation.challengePresenation.challengeHome.challengehomeScreen
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.DailyRecoDESTINATION
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.dailyRecoScreen
@@ -114,13 +117,14 @@ fun ScreenBotNav(
             sunHomeScreen(onCommentClick = {navController.navigateToSunInput(SunInputDESTINATION)},
                 onExpressClick = {navController.navigateToSunFeeling(SunFeelingDESTINATION)},
                 onDescribeClick = {navController.navigateToSunInput(SunInputDESTINATION)})
-            challengehomeScreen()
+            challengehomeScreen(onSelect = {navController.navigateToChallengeChosen(ChallengeChosenDESTINATION)})
+            challengeChosenScreen(onButton = {navController.navigateUp()}) //TODO: Manejar las opciones
             profilehomeScreen()
 
             dailyRecoScreen(
-                onAcceptDailyReco = {navController.navigateUp()} //cambiar eventualmente para que sí cambie de mascota
+                onAcceptDailyReco = {navController.navigateUp()} //TODO:cambiar eventualmente para que sí cambie de mascota
             )
-            petTalkScreen(onElection = {navController.navigateUp()}) //cambiar eventualmente para que sí dé puntos
+            petTalkScreen(onElection = {navController.navigateUp()}) //TODO cambiar eventualmente para que sí dé puntos
 
             petSelectScreen(
                 onBackFromSelectToHomePet = {
