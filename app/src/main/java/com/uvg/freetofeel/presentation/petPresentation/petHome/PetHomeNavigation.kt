@@ -8,13 +8,17 @@ import com.uvg.freetofeel.presentation.petPresentation.firstPet.FirstPetDESTINAT
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object PetHomeDESTINATION
+data class PetHomeDESTINATION(
+    val id: Int
+)
 
 fun NavController.navigateToPetHome(
-    destination: PetHomeDESTINATION,
+    id: Int,
     navOptions: NavOptions? = null
 ){
-    this.navigate(destination, navOptions)
+    this.navigate(
+        route = PetHomeDESTINATION(id = id),
+        navOptions = navOptions)
 }
 
 fun NavGraphBuilder.pethomeScreen(

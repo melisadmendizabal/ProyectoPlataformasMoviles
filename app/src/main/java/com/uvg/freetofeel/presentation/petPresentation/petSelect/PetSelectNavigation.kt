@@ -17,12 +17,14 @@ fun NavController.navigateToPetSelect(
 }
 
 fun NavGraphBuilder.petSelectScreen(
-    onBackFromSelectToHomePet: ()-> Unit
+    onBackFromSelectToHomePet: ()-> Unit,
+    onpetselection: (Int) -> Unit
 
 ){
     composable<PetSelectDESTINATION>{
         PetSelectROUTE(
-            onBackFromSelectToHomePet = onBackFromSelectToHomePet
+            onBackFromSelectToHomePet = onBackFromSelectToHomePet,
+            onpetselection = onpetselection
         )
     }
 }

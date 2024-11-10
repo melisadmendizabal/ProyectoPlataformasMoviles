@@ -36,8 +36,11 @@ import com.uvg.freetofeel.presentation.loginProfilePresentation.profileData.prof
 import com.uvg.freetofeel.presentation.loginProfilePresentation.profileHome.profilehomeScreen
 import com.uvg.freetofeel.presentation.petPresentation.firstPet.FirstPetDESTINATION
 import com.uvg.freetofeel.presentation.petPresentation.petHome.PetHomeDESTINATION
+import com.uvg.freetofeel.presentation.petPresentation.petHome.navigateToPetHome
 import com.uvg.freetofeel.presentation.petPresentation.petHome.pethomeScreen
+import com.uvg.freetofeel.presentation.petPresentation.petSelect.ChangeDestination
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.PetSelectDESTINATION
+import com.uvg.freetofeel.presentation.petPresentation.petSelect.changepet
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.navigateToPetSelect
 import com.uvg.freetofeel.presentation.petPresentation.petSelect.petSelectScreen
 import com.uvg.freetofeel.presentation.petPresentation.petTalk.PetTalkDESTINATION
@@ -102,20 +105,14 @@ fun ScreenBotNav(
     ){ innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = PetHomeDESTINATION,
+            startDestination = ChangeDestination,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
         ){
 
 
-            pethomeScreen(
-                onAllPetsClick = {
-                    navController.navigateToPetSelect(PetSelectDESTINATION)
-                },
-                onTipDayPetScreenClick = {navController.navigateToDailyReco(DailyRecoDESTINATION)},
-                onHistoryScreenPetHome = {navController.navigateToPetTalk(PetTalkDESTINATION)}
-            )
+            changepet(navController)
 
             sunHomeScreen(onCommentClick = {navController.navigateToSunInput(SunInputDESTINATION)},
                 onExpressClick = {navController.navigateToSunFeeling(SunFeelingDESTINATION)},
@@ -139,11 +136,7 @@ fun ScreenBotNav(
             )
             petTalkScreen(onElection = {navController.navigateUp()}) //TODO cambiar eventualmente para que sí dé puntos
 
-            petSelectScreen(
-                onBackFromSelectToHomePet = {
-                    navController.navigateUp()
-                }
-            )
+
             sunInputScreen(onOption = {navController.navigateUp()}) //cambiar eventualmente para que sí guarde o cancele
 
             sunFeelingScreen(onEmotionClick = {navController.navigateToSunTalk(SunTalkDESTINATION)}, userName = "R&M") //Cambiar por el nombre real del usuario

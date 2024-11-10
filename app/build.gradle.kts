@@ -74,5 +74,6 @@ dependencies {
 
     implementation(libs.androidx.compose.navigation)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.json.v151)
     implementation(libs.coil.compose)
 }

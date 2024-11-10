@@ -5,7 +5,10 @@ import com.uvg.freetofeel.data.model.Pet
 class PetDB {
     private val pets: List<Pet> = listOf(
         Pet(1,"Mimioso"),
-        Pet (2, "Erizo")
+        Pet(2, "Erizo"),
+        Pet(3, "Ebee"),
+        Pet(4, "gelly"),
+
     )
 
     fun getAllPets(): List<Pet> {
