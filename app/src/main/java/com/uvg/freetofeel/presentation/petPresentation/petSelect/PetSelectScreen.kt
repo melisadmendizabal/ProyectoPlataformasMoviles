@@ -124,10 +124,10 @@ fun PetSelectScreen(
                             PetCards(
                                 modifier = Modifier
                                     .clickable { onpetselection(pet.id) },
-                                points = pet.id,
+                                points = pet.points,
                                 name = pet.name,
-                                problem = "d",
-                                imageID = getImageResource("Bulldog")
+                                problem = stringResource(id =(pet.issue)),
+                                imageID = pet.iconPet
                             )
 
                         }

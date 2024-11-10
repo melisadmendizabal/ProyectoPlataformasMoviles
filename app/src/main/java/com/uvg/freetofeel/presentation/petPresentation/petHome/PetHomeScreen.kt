@@ -105,7 +105,7 @@ fun PetHomeScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.lazy_back), // Se cambia según el animal que esté seleccionado por el usuario
+                        painter = painterResource(pet.backPet), // Se cambia según el animal que esté seleccionado por el usuario
                         contentDescription = "Hábitat de la mascota",
                         alignment = Alignment.Center,
                         modifier = Modifier.fillMaxSize(),
@@ -122,7 +122,7 @@ fun PetHomeScreen(
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                         Row {
                             Icon(Icons.Filled.Star, contentDescription = "points", tint = MaterialTheme.colorScheme.primary)
-                            Text(text = "100 ", color = MaterialTheme.colorScheme.primary)
+                            Text(text = pet.id.toString(), color = MaterialTheme.colorScheme.primary)
                             Text(text = stringResource(id = R.string.points), color = MaterialTheme.colorScheme.primary)
                         }
 
@@ -134,8 +134,8 @@ fun PetHomeScreen(
                     Box(modifier = Modifier
                         .fillMaxWidth()
                     ) {
-                        Image(painter = painterResource(id = R.drawable.lazy_pet), contentDescription = "lazy")
-                        Text(text = (pet.id).toString())
+                        Image(painter = painterResource(pet.imagePet), contentDescription = "lazy")
+
                     }
 
                     Row {

@@ -27,13 +27,13 @@ fun NavGraphBuilder.changepet(
 
         pethomeScreen(
             onAllPetsClick = {
-                //navController.navigateToPetSelect(PetSelectDESTINATION)
+                navController.navigateToPetSelect(PetSelectDESTINATION)
             },
             onTipDayPetScreenClick = {
-            //navController.navigateToDailyReco(DailyRecoDESTINATION)
+            navController.navigateToDailyReco(DailyRecoDESTINATION)
             },
             onHistoryScreenPetHome = {
-                //navController.navigateToPetTalk(PetTalkDESTINATION)
+                navController.navigateToPetTalk(PetTalkDESTINATION)
             }
         )
         //faltan?
