@@ -1,10 +1,16 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
 
-
 }
+val localProperties = rootProject.file("local.properties").inputStream().use {
+    Properties().apply { load(it) }}
+    val supabaseKey: String = localProperties.getProperty("supabaseKey")
+    val supabaseUrl:String = localProperties.getProperty("supabaseUrl")
 
 android {
     namespace = "com.uvg.freetofeel"
@@ -21,6 +27,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "SUPABASE_KEY", "\"${supabaseKey}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"${supabaseUrl}\"")
     }
 
     buildTypes {
@@ -41,6 +49,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig=true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -71,9 +80,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
     implementation(libs.androidx.compose.navigation)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.serialization.json.v151)
     implementation(libs.coil.compose)
+
+    implementation(libs.gotrue.kt)
+    implementation(libs.ktor.client.core) // Esto es necesario para el funcionamiento básico del cliente Ktor
+    implementation(libs.ktor.client.json)  // Si usas JSON
+    implementation(libs.ktor.client.serialization) // Si usas Serialización
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
