@@ -2,6 +2,7 @@ package com.uvg.freetofeel
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.uvg.freetofeel.data.model.UserLoginState
@@ -19,24 +20,27 @@ class SupabaseAuthViewModel:ViewModel() {
 
     fun signUp(
         context: Context,
-        userEmail:String,
-        userPassword:String
-    ){
+        userEmail: String,
+        userPassword: String
+    ) {
         viewModelScope.launch {
-            try{
-                SupabaseClient.client.gotrue.signUpWith(Email){
-                    email=userEmail
-                    password=userPassword
+            _userLoginState.value = UserLoginState.Loading
+            try {
+                val response = SupabaseClient.client.gotrue.signUpWith(Email) {
+                    email = userEmail
+                    password = userPassword
                 }
-
-                saveToken(context)
-                _userLoginState.value = UserLoginState.Success("Registered user successfully")
-            }
-            catch (e:Exception ){
-                _userLoginState.value = UserLoginState.Error("Sign in error in: ${e.message}" )
+                if (response != null) {
+                    saveToken(context)
+                    _userLoginState.value = UserLoginState.Success("Registered user successfully")
+                }
+            } catch (e: Exception) {
+                _userLoginState.value = UserLoginState.Error("Sign up error: ${e.localizedMessage}")
+                Log.e("SupabaseAuth", "Sign up failed: ${e.localizedMessage}", e)
             }
         }
     }
+
 
     private fun saveToken(context: Context){
         viewModelScope.launch {
@@ -57,6 +61,8 @@ class SupabaseAuthViewModel:ViewModel() {
         userPassword:String
     ){
         viewModelScope.launch {
+            _userLoginState.value = UserLoginState.Loading
+
             try {
                 SupabaseClient.client.gotrue.loginWith(Email) {
                     email=userEmail
@@ -72,15 +78,19 @@ class SupabaseAuthViewModel:ViewModel() {
         }
     }
 
-    fun logout(){
+    fun logout(context: Context){
+        val sharedPreferencesHelper = SharedPreferencesHelper(context)
         viewModelScope.launch {
+            _userLoginState.value = UserLoginState.Loading
+
             try {
                 SupabaseClient.client.gotrue.logout()
-                _userLoginState.value = UserLoginState.Success("Logout successfully")
-            }
-            catch (e:Exception){
-                _userLoginState.value = UserLoginState.Error("Logout error in: ${e.message}")
-
+                val sharedPreferencesHelper = SharedPreferencesHelper(context)
+                sharedPreferencesHelper.clearPreferences()
+                _userLoginState.value = UserLoginState.Loading
+                isUserLoggedIn(context)
+            } catch (e: Exception) {
+                _userLoginState.value = UserLoginState.Error("Logout error: ${e.message}")
             }
         }
     }

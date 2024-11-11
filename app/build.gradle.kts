@@ -1,5 +1,4 @@
 import java.util.Properties
-import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.android.application)
@@ -86,8 +85,6 @@ dependencies {
     implementation(libs.coil.compose)
 
     implementation(libs.gotrue.kt)
-    implementation(libs.ktor.client.core) // Esto es necesario para el funcionamiento básico del cliente Ktor
-    implementation(libs.ktor.client.json)  // Si usas JSON
-    implementation(libs.ktor.client.serialization) // Si usas Serialización
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.ktor.ktor.client.cio)
 }

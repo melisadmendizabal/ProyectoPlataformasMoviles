@@ -1,5 +1,6 @@
 package com.uvg.freetofeel.presentation.loginProfilePresentation.profileHome
 
+import android.content.Context
 import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -41,6 +42,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -48,15 +50,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.SupabaseAuthViewModel
+
 @Composable
 fun ProfileHomeROUTE(
-    onMyWriteClick: ()-> Unit
+    onMyWriteClick: ()-> Unit,
+    authViewModel: SupabaseAuthViewModel,
+    context: Context,
+    onLogOutClick: () -> Unit
 ){
-    ProfileHomeScreen(onMyWriteClick = onMyWriteClick)
+    ProfileHomeScreen(onMyWriteClick = onMyWriteClick, authViewModel = authViewModel, context = context, onLogOutClick = onLogOutClick)
 }
 
 @Composable
-fun ProfileHomeScreen(onMyWriteClick: ()-> Unit){
+fun ProfileHomeScreen(onMyWriteClick: ()-> Unit,authViewModel: SupabaseAuthViewModel,context: Context,onLogOutClick:()->Unit){
     Column(modifier = Modifier
         .fillMaxSize()
         .background(color = MaterialTheme.colorScheme.primaryContainer)) {
@@ -157,6 +164,12 @@ fun ProfileHomeScreen(onMyWriteClick: ()-> Unit){
                 }
                 item {
                     ExpandableContent(icono = Icons.Default.Edit, title = stringResource(id = R.string.profile_home_myWritings), onMyWriteClick = onMyWriteClick)
+                }
+                item{
+                    Button(onClick = { onLogOutClick()
+                        authViewModel.logout(context = context) }) {
+                        Text(text = "Padre, me cancelaron")
+                    }
                 }
             }
         }
@@ -283,7 +296,7 @@ fun UniqueData() {
 @Composable
 fun PreviewProfileHomeScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        ProfileHomeScreen(onMyWriteClick = {})
+        ProfileHomeScreen(onMyWriteClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current, onLogOutClick = {})
     }
 }
 
@@ -293,6 +306,6 @@ fun PreviewProfileHomeScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        ProfileHomeScreen(onMyWriteClick = {})
+        ProfileHomeScreen(onMyWriteClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current, onLogOutClick = {})
     }
 }

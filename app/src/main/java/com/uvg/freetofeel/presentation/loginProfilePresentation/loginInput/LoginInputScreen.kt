@@ -1,5 +1,6 @@
 package com.uvg.freetofeel.presentation.loginProfilePresentation.loginInput
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -38,21 +40,32 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.SupabaseAuthViewModel
+import com.uvg.freetofeel.data.model.UserLoginState
 
 @Composable
 fun LoginInputROUTE(
-    onLoginStartClick: ()->Unit
+    onLoginStartClick: ()->Unit,
+    authViewModel: SupabaseAuthViewModel,
+    context: Context
 ){
-    LoginInputScreen(languageViewModel = LanguageViewModel(), onLoginStartClick = onLoginStartClick)
+    LoginInputScreen(languageViewModel = LanguageViewModel(), onLoginStartClick = onLoginStartClick,
+        authViewModel = authViewModel,
+        context = context)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()->Unit){
+fun LoginInputScreen(languageViewModel: LanguageViewModel,
+                     onLoginStartClick: ()->Unit,
+                     authViewModel: SupabaseAuthViewModel,
+                     context: Context)
+{
     var inputUser by remember { mutableStateOf("") }
     var inputPassword by remember { mutableStateOf("") }
-
     val selectedLanguage = languageViewModel.selectedLanguage
+    val userState by authViewModel.userState
+    val isLoading = userState is UserLoginState.Loading
 
     Box(modifier = Modifier
         .fillMaxWidth()
@@ -94,7 +107,7 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()
             onValueChange = {inputUser = it},
             shape = CircleShape,
             label = { Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Text(text = stringResource(
-                id = R.string.LI_user
+                id = R.string.LI_email
             )
                 ,textAlign = TextAlign.Center) } },
             textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center)
@@ -126,7 +139,9 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()
         )
 
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = onLoginStartClick) {
+        Button(onClick = {onLoginStartClick()
+        authViewModel.login(context = context, userEmail = inputUser, userPassword = inputPassword)}, enabled = !isLoading)
+        {
             Text(text = stringResource(id = R.string.login_button))
         }
 
@@ -136,12 +151,19 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel, onLoginStartClick: ()
     }
 
 }
+
+
+
+
+
+
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {})
+        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }
 
@@ -151,6 +173,6 @@ fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
 
-        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {})
+        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }

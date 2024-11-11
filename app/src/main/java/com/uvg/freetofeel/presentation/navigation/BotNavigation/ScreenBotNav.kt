@@ -1,5 +1,6 @@
 package com.uvg.freetofeel.presentation.navigation.BotNavigation
 
+import android.content.Context
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
@@ -21,6 +22,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.uvg.freetofeel.SupabaseAuthViewModel
 import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.ChallengeChosenDESTINATION
 import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.challengeChosenScreen
 import com.uvg.freetofeel.presentation.challengePresenation.challengeChosen.navigateToChallengeChosen
@@ -61,7 +63,10 @@ import com.uvg.freetofeel.presentation.sunPresentation.sunTalk.sunTalkScreen
 
 @Composable
 fun ScreenBotNav(
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
+    authViewModel:SupabaseAuthViewModel,
+    context:Context,
+    onLogOutClick:()->Unit
 ){
     var bottomBarVisible by rememberSaveable {
         mutableStateOf(false)
@@ -119,7 +124,9 @@ fun ScreenBotNav(
                 onDescribeClick = {navController.navigateToSunInput(SunInputDESTINATION)})
             challengehomeScreen(onSelect = {navController.navigateToChallengeChosen(ChallengeChosenDESTINATION)})
             challengeChosenScreen(onButton = {navController.navigateUp()}) //TODO: Manejar las opciones
-            profilehomeScreen(
+            profilehomeScreen(onLogOutClick = onLogOutClick,
+                authViewModel = authViewModel,
+                context = context,
                 onMyWriteClick = {
                     navController.navigateToProfileData(
                         ProfileDataDESTINATION
