@@ -1,4 +1,5 @@
 package com.uvg.freetofeel.data.model
 
-class Challenge {
-}
+data class Challenge(
+    val algo: String
+)

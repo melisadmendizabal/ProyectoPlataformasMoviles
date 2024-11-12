@@ -2,11 +2,20 @@ package com.uvg.freetofeel.presentation.navigation
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.uvg.freetofeel.LanguageViewModel
+import com.uvg.freetofeel.SupabaseAuthViewModel
+import com.uvg.freetofeel.data.model.UserLoginState
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.LoginBaseDestination
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.loginBaseScreen
 import com.uvg.freetofeel.presentation.loginProfilePresentation.loginBase.navigateToLoginBase
@@ -30,12 +39,26 @@ import com.uvg.freetofeel.presentation.petPresentation.petHome.pethomeScreen
 fun AppNavigation(
     navController: NavHostController = rememberNavController(),
     context: Context,
-    languageViewModel: LanguageViewModel
+    languageViewModel: LanguageViewModel,
+    authViewModel: SupabaseAuthViewModel = viewModel()
 ){
+    val userState by authViewModel.userState
+    var currentUserState by remember { mutableStateOf<UserLoginState>(UserLoginState.Loading) }
 
+    LaunchedEffect(Unit) {
+        authViewModel.isUserLoggedIn(context)
+    }
+    LaunchedEffect(userState) {
+        currentUserState = userState
+    }
+
+    val startDestination = when (currentUserState) {
+        is UserLoginState.Success -> FirstPetDESTINATION
+        else -> LoginBaseDestination
+    }
     NavHost(
         navController = navController,
-        startDestination = LoginBaseDestination
+        startDestination = startDestination
     ){
 
         loginBaseScreen(
@@ -51,14 +74,23 @@ fun AppNavigation(
             }
         )
 
-        loginInputScreen(
+        loginInputScreen(authViewModel = authViewModel,
+            context = context,
             onLoginStartClick = {
-                navController.navigateToFirstPet(FirstPetDESTINATION)
+                when(userState){
+                    is UserLoginState.Success -> {
+                        navController.navigateToFirstPet(FirstPetDESTINATION)
+                    }
+
+                    is UserLoginState.Error -> currentUserState = (userState as UserLoginState.Error)
+                    UserLoginState.Loading -> TODO() //no debería pasar?
+                }
             }
         )
 
 
-        newAccountScreen(
+        newAccountScreen(authViewModel = authViewModel,
+            context = context,
             onCreateAccountClick = {
                 navController.navigateToLoginBase(LoginBaseDestination)
             }
@@ -75,10 +107,10 @@ fun AppNavigation(
             }
         )
 
-        screenBotNavigation()
-
-
-
+        screenBotNavigation(authViewModel = authViewModel, context = context, onLogOutClick = {navController.navigateToLoginBase(navOptions = NavOptions.Builder().setPopUpTo<LoginBaseDestination>(
+            inclusive = true
+        ).build(),
+            destination = LoginBaseDestination)})
 
     }
 

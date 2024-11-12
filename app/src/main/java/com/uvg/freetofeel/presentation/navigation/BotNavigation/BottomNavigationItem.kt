@@ -5,6 +5,7 @@ import com.uvg.freetofeel.R
 import com.uvg.freetofeel.presentation.challengePresenation.challengeHome.ChallengeHomeDESTINATION
 import com.uvg.freetofeel.presentation.loginProfilePresentation.profileHome.ProfileHomeDESTINATION
 import com.uvg.freetofeel.presentation.petPresentation.petHome.PetHomeDESTINATION
+import com.uvg.freetofeel.presentation.petPresentation.petSelect.PetSelectDESTINATION
 import com.uvg.freetofeel.presentation.sunPresentation.sunHome.SunHomeDESTINATION
 
 //Se guarda declara el tipo de objeto que se va a utilizar en la barra de navegación de abajo
@@ -46,7 +47,7 @@ val menuItemsBotNav = listOf(
         unselectedIcon = R.drawable.icon_pet_not,
         hasNews = false,
         badgeCount = null,
-        destination = PetHomeDESTINATION
+        destination = PetSelectDESTINATION
     ),
 
     BottonNavigationItem(

@@ -24,7 +24,9 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
     private final AbstractExternalDependencyFactory owner = this;
     private final AndroidxLibraryAccessors laccForAndroidxLibraryAccessors = new AndroidxLibraryAccessors(owner);
     private final CoilLibraryAccessors laccForCoilLibraryAccessors = new CoilLibraryAccessors(owner);
+    private final GotrueLibraryAccessors laccForGotrueLibraryAccessors = new GotrueLibraryAccessors(owner);
     private final KotlinxLibraryAccessors laccForKotlinxLibraryAccessors = new KotlinxLibraryAccessors(owner);
+    private final KtorLibraryAccessors laccForKtorLibraryAccessors = new KtorLibraryAccessors(owner);
     private final VersionAccessors vaccForVersionAccessors = new VersionAccessors(providers, config);
     private final BundleAccessors baccForBundleAccessors = new BundleAccessors(objects, providers, config, attributesFactory, capabilityNotationParser);
     private final PluginAccessors paccForPluginAccessors = new PluginAccessors(providers, config);
@@ -59,10 +61,24 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
     }
 
     /**
+     * Group of libraries at <b>gotrue</b>
+     */
+    public GotrueLibraryAccessors getGotrue() {
+        return laccForGotrueLibraryAccessors;
+    }
+
+    /**
      * Group of libraries at <b>kotlinx</b>
      */
     public KotlinxLibraryAccessors getKotlinx() {
         return laccForKotlinxLibraryAccessors;
+    }
+
+    /**
+     * Group of libraries at <b>ktor</b>
+     */
+    public KtorLibraryAccessors getKtor() {
+        return laccForKtorLibraryAccessors;
     }
 
     /**
@@ -236,6 +252,7 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
 
     public static class AndroidxLifecycleLibraryAccessors extends SubDependencyFactory {
         private final AndroidxLifecycleRuntimeLibraryAccessors laccForAndroidxLifecycleRuntimeLibraryAccessors = new AndroidxLifecycleRuntimeLibraryAccessors(owner);
+        private final AndroidxLifecycleViewmodelLibraryAccessors laccForAndroidxLifecycleViewmodelLibraryAccessors = new AndroidxLifecycleViewmodelLibraryAccessors(owner);
 
         public AndroidxLifecycleLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
 
@@ -244,6 +261,13 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
          */
         public AndroidxLifecycleRuntimeLibraryAccessors getRuntime() {
             return laccForAndroidxLifecycleRuntimeLibraryAccessors;
+        }
+
+        /**
+         * Group of libraries at <b>androidx.lifecycle.viewmodel</b>
+         */
+        public AndroidxLifecycleViewmodelLibraryAccessors getViewmodel() {
+            return laccForAndroidxLifecycleViewmodelLibraryAccessors;
         }
 
     }
@@ -260,6 +284,22 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
          */
         public Provider<MinimalExternalModuleDependency> getKtx() {
             return create("androidx.lifecycle.runtime.ktx");
+        }
+
+    }
+
+    public static class AndroidxLifecycleViewmodelLibraryAccessors extends SubDependencyFactory {
+
+        public AndroidxLifecycleViewmodelLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>compose</b> with <b>androidx.lifecycle:lifecycle-viewmodel-compose</b> coordinates and
+         * with version reference <b>lifecycleViewmodelCompose</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getCompose() {
+            return create("androidx.lifecycle.viewmodel.compose");
         }
 
     }
@@ -374,6 +414,22 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
 
     }
 
+    public static class GotrueLibraryAccessors extends SubDependencyFactory {
+
+        public GotrueLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>kt</b> with <b>io.github.jan-tennert.supabase:gotrue-kt</b> coordinates and
+         * with version reference <b>gotrueKt</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getKt() {
+            return create("gotrue.kt");
+        }
+
+    }
+
     public static class KotlinxLibraryAccessors extends SubDependencyFactory {
         private final KotlinxSerializationLibraryAccessors laccForKotlinxSerializationLibraryAccessors = new KotlinxSerializationLibraryAccessors(owner);
 
@@ -389,17 +445,149 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
     }
 
     public static class KotlinxSerializationLibraryAccessors extends SubDependencyFactory {
+        private final KotlinxSerializationJsonLibraryAccessors laccForKotlinxSerializationJsonLibraryAccessors = new KotlinxSerializationJsonLibraryAccessors(owner);
 
         public KotlinxSerializationLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
 
         /**
+         * Group of libraries at <b>kotlinx.serialization.json</b>
+         */
+        public KotlinxSerializationJsonLibraryAccessors getJson() {
+            return laccForKotlinxSerializationJsonLibraryAccessors;
+        }
+
+    }
+
+    public static class KotlinxSerializationJsonLibraryAccessors extends SubDependencyFactory implements DependencyNotationSupplier {
+
+        public KotlinxSerializationJsonLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
          * Dependency provider for <b>json</b> with <b>org.jetbrains.kotlinx:kotlinx-serialization-json</b> coordinates and
-         * with version <b>1.6.3</b>
+         * with version <b>kotlinSerialization</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> asProvider() {
+            return create("kotlinx.serialization.json");
+        }
+
+        /**
+         * Dependency provider for <b>v151</b> with <b>org.jetbrains.kotlinx:kotlinx-serialization-json</b> coordinates and
+         * with version reference <b>kotlinxSerializationJsonV151</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getV151() {
+            return create("kotlinx.serialization.json.v151");
+        }
+
+    }
+
+    public static class KtorLibraryAccessors extends SubDependencyFactory {
+        private final KtorClientLibraryAccessors laccForKtorClientLibraryAccessors = new KtorClientLibraryAccessors(owner);
+        private final KtorKtorLibraryAccessors laccForKtorKtorLibraryAccessors = new KtorKtorLibraryAccessors(owner);
+
+        public KtorLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Group of libraries at <b>ktor.client</b>
+         */
+        public KtorClientLibraryAccessors getClient() {
+            return laccForKtorClientLibraryAccessors;
+        }
+
+        /**
+         * Group of libraries at <b>ktor.ktor</b>
+         */
+        public KtorKtorLibraryAccessors getKtor() {
+            return laccForKtorKtorLibraryAccessors;
+        }
+
+    }
+
+    public static class KtorClientLibraryAccessors extends SubDependencyFactory {
+
+        public KtorClientLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>cio</b> with <b>io.ktor:ktor-client.cio</b> coordinates and
+         * with version reference <b>ktorClientCio</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getCio() {
+            return create("ktor.client.cio");
+        }
+
+        /**
+         * Dependency provider for <b>core</b> with <b>io.ktor:ktor-client-core</b> coordinates and
+         * with version reference <b>ktorClientCore</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getCore() {
+            return create("ktor.client.core");
+        }
+
+        /**
+         * Dependency provider for <b>json</b> with <b>io.ktor:ktor-client-json</b> coordinates and
+         * with version reference <b>ktorClientJson</b>
          * <p>
          * This dependency was declared in catalog libs.versions.toml
          */
         public Provider<MinimalExternalModuleDependency> getJson() {
-            return create("kotlinx.serialization.json");
+            return create("ktor.client.json");
+        }
+
+        /**
+         * Dependency provider for <b>okhttp</b> with <b>io.ktor:ktor-client-okhttp</b> coordinates and
+         * with version reference <b>ktorClientOkhttp</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getOkhttp() {
+            return create("ktor.client.okhttp");
+        }
+
+        /**
+         * Dependency provider for <b>serialization</b> with <b>io.ktor:ktor-client-serialization</b> coordinates and
+         * with version reference <b>ktorClientSerialization</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getSerialization() {
+            return create("ktor.client.serialization");
+        }
+
+    }
+
+    public static class KtorKtorLibraryAccessors extends SubDependencyFactory {
+        private final KtorKtorClientLibraryAccessors laccForKtorKtorClientLibraryAccessors = new KtorKtorClientLibraryAccessors(owner);
+
+        public KtorKtorLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Group of libraries at <b>ktor.ktor.client</b>
+         */
+        public KtorKtorClientLibraryAccessors getClient() {
+            return laccForKtorKtorClientLibraryAccessors;
+        }
+
+    }
+
+    public static class KtorKtorClientLibraryAccessors extends SubDependencyFactory {
+
+        public KtorKtorClientLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>cio</b> with <b>io.ktor:ktor-client-cio</b> coordinates and
+         * with version reference <b>ktorClientCioVersion</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         */
+        public Provider<MinimalExternalModuleDependency> getCio() {
+            return create("ktor.ktor.client.cio");
         }
 
     }
@@ -469,6 +657,16 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public Provider<String> getEspressoCore() { return getVersion("espressoCore"); }
 
         /**
+         * Version alias <b>gotrueKt</b> with value <b>1.3.2</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getGotrueKt() { return getVersion("gotrueKt"); }
+
+        /**
          * Version alias <b>junit</b> with value <b>4.13.2</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
@@ -509,6 +707,76 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
         public Provider<String> getKotlinSerialization() { return getVersion("kotlinSerialization"); }
 
         /**
+         * Version alias <b>kotlinxSerializationJsonV151</b> with value <b>1.5.1</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKotlinxSerializationJsonV151() { return getVersion("kotlinxSerializationJsonV151"); }
+
+        /**
+         * Version alias <b>ktorClientCio</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCio() { return getVersion("ktorClientCio"); }
+
+        /**
+         * Version alias <b>ktorClientCioVersion</b> with value <b>2.3.12</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCioVersion() { return getVersion("ktorClientCioVersion"); }
+
+        /**
+         * Version alias <b>ktorClientCore</b> with value <b>2.3.12</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCore() { return getVersion("ktorClientCore"); }
+
+        /**
+         * Version alias <b>ktorClientJson</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientJson() { return getVersion("ktorClientJson"); }
+
+        /**
+         * Version alias <b>ktorClientOkhttp</b> with value <b>2.3.0</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientOkhttp() { return getVersion("ktorClientOkhttp"); }
+
+        /**
+         * Version alias <b>ktorClientSerialization</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientSerialization() { return getVersion("ktorClientSerialization"); }
+
+        /**
          * Version alias <b>lifecycleRuntimeKtx</b> with value <b>2.8.5</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
@@ -517,6 +785,16 @@ public class LibrariesForLibs extends AbstractExternalDependencyFactory {
          * This version was declared in catalog libs.versions.toml
          */
         public Provider<String> getLifecycleRuntimeKtx() { return getVersion("lifecycleRuntimeKtx"); }
+
+        /**
+         * Version alias <b>lifecycleViewmodelCompose</b> with value <b>2.8.7</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getLifecycleViewmodelCompose() { return getVersion("lifecycleViewmodelCompose"); }
 
         /**
          * Version alias <b>navigationCompose</b> with value <b>2.8.0-rc01</b>

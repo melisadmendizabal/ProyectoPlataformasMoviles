@@ -11,7 +11,7 @@
     <string name="new_account_welcome1">Hora de un nuevo</string>
     <string name="new_account_welcome2">comienzo</string>
     <string name="OTF_user">Registra tu usuario</string>
-    <string name="OTF_nick">Ingresa tu apodo</string>
+    <string name="OTF_email">Ingresa tu correo</string>
     <string name="OTF_password1">Coloca tu contraseña</string>
     <string name="OTF_password2">Confirma tu contraseña</string>
     <string name="CreateAcc">Crear cuenta</string>
@@ -31,7 +31,7 @@
     <!-- LoginInput -->
     <string name="login_input_title1">Un gusto tenerte de</string>
     <string name="login_input_title2">vuelta</string>
-    <string name="LI_user">Coloca tu usuario</string>
+    <string name="LI_email">Coloca tu correo</string>
     <string name="login_button">Ingresar</string>
     <string name="forgot_password">Olvidé mi contraseña</string>
 

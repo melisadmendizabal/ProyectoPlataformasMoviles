@@ -1,10 +1,15 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
     alias(libs.plugins.jetbrains.kotlin.serialization)
 
 }
+val localProperties = rootProject.file("local.properties").inputStream().use {
+    Properties().apply { load(it) }}
+    val supabaseKey: String = localProperties.getProperty("supabaseKey")
+    val supabaseUrl:String = localProperties.getProperty("supabaseUrl")
 
 android {
     namespace = "com.uvg.freetofeel"
@@ -21,6 +26,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "SUPABASE_KEY", "\"${supabaseKey}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"${supabaseUrl}\"")
     }
 
     buildTypes {
@@ -41,6 +48,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig=true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -71,8 +79,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
     implementation(libs.androidx.compose.navigation)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.json.v151)
     implementation(libs.coil.compose)
+
+    implementation(libs.gotrue.kt)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.ktor.ktor.client.cio)
 }
