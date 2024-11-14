@@ -269,7 +269,7 @@ fun SunFeelingScreen(onHappyClick: () -> Unit,
 @Composable
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
+
         SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }
@@ -278,7 +278,7 @@ fun PreviewDailyRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
+
         SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }

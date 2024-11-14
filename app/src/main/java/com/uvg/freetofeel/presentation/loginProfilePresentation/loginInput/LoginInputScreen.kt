@@ -49,21 +49,20 @@ fun LoginInputROUTE(
     authViewModel: SupabaseAuthViewModel,
     context: Context
 ){
-    LoginInputScreen(languageViewModel = LanguageViewModel(), onLoginStartClick = onLoginStartClick,
+    LoginInputScreen(onLoginStartClick = onLoginStartClick,
         authViewModel = authViewModel,
         context = context)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginInputScreen(languageViewModel: LanguageViewModel,
+fun LoginInputScreen(
                      onLoginStartClick: ()->Unit,
                      authViewModel: SupabaseAuthViewModel,
                      context: Context)
 {
     var inputUser by remember { mutableStateOf("") }
     var inputPassword by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
     val userState by authViewModel.userState
     val isLoading = userState is UserLoginState.Loading
 
@@ -162,8 +161,8 @@ fun LoginInputScreen(languageViewModel: LanguageViewModel,
 @Composable
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
+
+        LoginInputScreen(onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }
 
@@ -171,8 +170,8 @@ fun PreviewNewAccountScreenLight() {
 @Composable
 fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
 
-        LoginInputScreen(languageViewModel = languageViewModel, onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
+
+        LoginInputScreen(onLoginStartClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }

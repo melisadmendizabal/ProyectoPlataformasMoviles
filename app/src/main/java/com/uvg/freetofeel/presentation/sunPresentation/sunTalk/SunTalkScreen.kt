@@ -132,7 +132,6 @@ fun SunTalkScreen(onAccept: () -> Unit,state: SunTalkState) {
 @Composable
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
         SunTalkScreen(onAccept = {}, state = SunTalkState())
     }
 }
@@ -141,7 +140,6 @@ fun PreviewSUnRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        SunTalkScreen(onAccept = {}, state = SunTalkState())
+            SunTalkScreen(onAccept = {}, state = SunTalkState())
     }
 }

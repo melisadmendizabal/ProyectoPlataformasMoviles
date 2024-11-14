@@ -148,7 +148,6 @@ fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
 @Composable
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
         DailyRecoScreen( onAcceptDailyReco = {})
     }
 }
@@ -157,7 +156,6 @@ fun PreviewDailyRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
 
         DailyRecoScreen( onAcceptDailyReco = {})
     }
