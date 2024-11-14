@@ -26,8 +26,8 @@ class FeelingRepositoryImpl(
 
     }
 
-    override suspend fun getSingleRandomFeelingByEmotion(feelingList: List<Feeling>): Feeling {
-        val randomFeelingEntity = feelingDAO.getSingleRandomFeelingByEmotion(feelingList.random().emotion)
+    override suspend fun getSingleRandomFeelingByEmotion(emotion: String): Feeling {
+        val randomFeelingEntity = feelingDAO.getSingleRandomFeelingByEmotion(emotion)
         return randomFeelingEntity.mapToModel()
 
     }

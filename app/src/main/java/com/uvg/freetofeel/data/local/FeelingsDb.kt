@@ -6,9 +6,10 @@ import com.uvg.freetofeel.data.model.Feeling
 
 class FeelingsDb{
 private val feelings: List<Feeling> = listOf(
-    Feeling(title =R.string.sunTalk_example_title, body = R.string.sunTalk_example_text, emotion = "Angry"),
-    Feeling(title = R.string.sunTalk_sad1_title, body = R.string.sunTalk_sad1_body, emotion = "Sad")
-
+    Feeling(title =R.string.sunTalk_example_title, body = R.string.sunTalk_example_text, emotion = " "),
+    Feeling(title = R.string.sunTalk_sad1_title, body = R.string.sunTalk_sad1_body, emotion = "Sad"),
+    Feeling(title = R.string.sunTalk_angry1_title, body = R.string.sunTalk_angry1_body, emotion = "Angry"),
+    Feeling(title = R.string.sunTalk_angry2_title, body = R.string.sunTalk_angry2_body, emotion = "Angry")
 )
 
     fun getAllFeelings(): List<Feeling>{

@@ -8,16 +8,10 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.toRoute
-import coil.transition.Transition
-import com.uvg.freetofeel.data.local.dao.FeelingDAO
-import com.uvg.freetofeel.data.local.entity.mapToModel
 import com.uvg.freetofeel.dependencies.Dependencies
 import com.uvg.freetofeel.repositories.FeelingsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -40,7 +34,7 @@ class SunTalkViewModel (
                         state.copy(isLoading = true)
                     }
                     val feelingList = feelingsRepository.getFeelingsByEmotion(sunTalk.emotion)
-                    val feeling = feelingsRepository.getSingleRandomFeelingByEmotion(feelingList)
+                    val feeling = feelingsRepository.getSingleRandomFeelingByEmotion(feelingList.random().emotion)
 
                     _state.update { state ->
                         state.copy(

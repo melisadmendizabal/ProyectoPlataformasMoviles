@@ -146,7 +146,12 @@ fun ScreenBotNav(
 
             sunInputScreen(onOption = {navController.navigateUp()}) //cambiar eventualmente para que sí guarde o cancele
 
-            sunFeelingScreen(onEmotionClick = {navController.navigateToSunTalk(SunTalkDESTINATION.toString())}, userName = "R&M") //Cambiar por el nombre real del usuario
+            sunFeelingScreen(onHappyClick = {navController.navigateToSunTalk("Happy")},
+                onBoredClick = {navController.navigateToSunTalk("Bored")},
+                onAngryClick = {navController.navigateToSunTalk("Angry")},
+                onSadClick = {navController.navigateToSunTalk("Sad")},
+                onRestlessClick = {navController.navigateToSunTalk("Restless")},
+                userName = "R&M") //Cambiar por el nombre real del usuario
         sunTalkScreen(onAccept = {navController.popBackStack(); navController.navigateToSunHome(SunHomeDESTINATION)})
 
         }

@@ -109,7 +109,7 @@ fun SunTalkScreen(onAccept: () -> Unit,state: SunTalkState) {
                     fontWeight = FontWeight.ExtraBold,
                     lineHeight = 33.sp
                 )
-                Text(text = stringResource(id = R.string.sunTalk_example_text), //Ejemplo del texto
+                Text(text = stringResource(id = state.data?.body?:R.string.sunTalk_example_text),
                     textAlign = TextAlign.Justify,
                     color = MaterialTheme.colorScheme.onPrimary,
                     modifier = Modifier.padding(vertical = 5.dp))

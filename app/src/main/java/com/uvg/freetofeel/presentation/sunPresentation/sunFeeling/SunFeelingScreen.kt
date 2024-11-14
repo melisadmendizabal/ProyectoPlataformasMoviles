@@ -49,20 +49,35 @@ import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
 
 @Composable
 fun SunFeelingROUTE(
-    onEmotionClick: ()->Unit,
+    onHappyClick: () -> Unit,
+    onBoredClick: () -> Unit,
+    onAngryClick: () -> Unit,
+    onSadClick: () -> Unit,
+    onRestlessClick: () -> Unit,
     username: String,
     viewModel: SunFeelingViewModel = viewModel(factory=SunFeelingViewModel.Factory)
 ){
     val state by viewModel.state.collectAsStateWithLifecycle()
     SunFeelingScreen(
         state = state,
-        onEmotionClick = onEmotionClick, username = username)
+        onHappyClick = onHappyClick,
+        onBoredClick = onBoredClick,
+        onAngryClick = onAngryClick,
+        onSadClick = onSadClick,
+        onRestlessClick = onRestlessClick,
+        username = username)
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeelingState){
+fun SunFeelingScreen(onHappyClick: () -> Unit,
+                     onBoredClick:() -> Unit,
+                     onAngryClick:() -> Unit,
+                     onSadClick:() -> Unit,
+                     onRestlessClick:() -> Unit ,
+                     username: String,
+                     state: SunFeelingState){
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()
@@ -103,6 +118,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
                     fontWeight = FontWeight.Bold
                 )
                 Text(text = stringResource(id = R.string.sunFeeling_ask),
+                    textAlign = TextAlign.Center,
                     fontSize = 30.sp,
                     color = MaterialTheme.colorScheme.primary,
                     fontStyle = FontStyle.Italic,)
@@ -126,7 +142,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
                     Row(Modifier.weight(0.3f)) {
                         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
                             //Happy
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onHappyClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -151,7 +167,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
                             .weight(0.4f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //restless
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onRestlessClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -171,7 +187,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
 
                         //bored
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onBoredClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -199,9 +215,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
                             .weight(0.3f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //Sad
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            IconButton(onClick = {onEmotionClick()
-                                                 var algo = state.feelings.filter { it.emotion == "Sad" }
-                                                 },
+                            IconButton(onClick = onSadClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -224,7 +238,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
 
                         //Angry
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onAngryClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -256,7 +270,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String,state: SunFeel
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(onEmotionClick = {}, username = "UserName", state = SunFeelingState())
+        SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }
 
@@ -265,6 +279,6 @@ fun PreviewDailyRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(onEmotionClick = {}, username = "UserName", state = SunFeelingState())
+        SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }

@@ -95,10 +95,15 @@
 
     <!-- Sun Talk -->
     <string name="sunTalk_example_title">Oh, ¿algo malo sucedió?</string>
-    <string name="sunTalk_example_text">No te preocupes, de todo se aprende, y todo pasa por algo. Deja que ese enojo fluya, pero que eso no lastime a otros, ¿sí?</string>
+    <string name="sunTalk_example_text">No te preocupes, de todo se aprende, y todo pasa por algo. Deja que ese sentimiento fluya, pero que eso no lastime a otros, ¿sí?</string>
     <string name="sunTalk_button">Está bien</string>
     <string name="sunTalk_sad1_title">Lamento escuchar que estás triste</string>
     <string name="sunTalk_sad1_body">Intenta distraerte de lo que te está poniendo triste. Respira hondo y piensa en lo que te hace feliz.</string>
+    <string name="sunTalk_angry1_title">Es normal sentirse enojado</string>
+    <string name="sunTalk_angry1_body">Solo no lastimes a nadie mientras lo estés. Relájate escuchando música y deja que tu mente se libere del enojo.</string>
+    <string name="sunTalk_angry2_title">Todo va a estar bien</string>
+    <string name="sunTalk_angry2_body">Lo que sea que te haya hecho enojar, no durará para siempre. No gastes tu tiempo sintiéndote enojado, cuando podrías estar en paz.</string>
+
 
 
     <!-- ChallengeHome -->
