@@ -20,6 +20,8 @@ navigationCompose = "2.8.0-rc01"
 kotlinSerialization = "1.6.3"
 kotlinxSerializationJsonV151 = "1.5.1"
 coilCompose = "2.7.0"
+room = "2.6.1"
+roomKtx = "2.6.1"
 
 
 
@@ -51,6 +53,10 @@ ktor-client-json = { module = "io.ktor:ktor-client-json", version.ref = "ktorCli
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorClientOkhttp" }
 ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktorClientSerialization" }
 ktor-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCioVersion" }
+
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime={group="androidx.room",name="room-runtime",version.ref="room"}
+androidx-room-compiler={group="androidx.room",name="room-compiler",version.ref="room"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

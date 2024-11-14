@@ -97,6 +97,9 @@
     <string name="sunTalk_example_title">Oh, something bad happened?</string>
     <string name="sunTalk_example_text">No Problem, you learn from everything, and everything happens for a reason. Let that anger flow, but do not let it hurt others, okay?</string>
     <string name="sunTalk_button">Okay!</string>
+    <string name="sunTalk_sad1_title">I\'m sorry to hear you are sad</string>
+    <string name="sunTalk_sad1_body">Try to distract from what\'s making you sad. Breathe slowly and think of what makes you happy.</string>
+
 
     <!-- ChallengeHome -->
     <string name="Challenge_title">Specific tips and challenges</string>

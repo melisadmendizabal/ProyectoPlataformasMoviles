@@ -34,6 +34,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
 import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
@@ -41,22 +43,23 @@ import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
 
 @Composable
 fun SunTalkROUTE(
-    onAccept: ()->Unit
+    onAccept: ()->Unit,
+    viewModel: SunTalkViewModel = viewModel(factory = SunTalkViewModel.Factory)
 ){
-    SunTalkScreen(
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    SunTalkScreen(state = state,
         onAccept = onAccept)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunTalkScreen(onAccept: () -> Unit) {
-    var inputText by remember { mutableStateOf("") }
+fun SunTalkScreen(onAccept: () -> Unit,state: SunTalkState) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
             .background(color = MaterialTheme.colorScheme.inversePrimary)
-    ) //Cambiar cuando se tengan los colores reales
+    )
     {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -99,7 +102,7 @@ fun SunTalkScreen(onAccept: () -> Unit) {
             Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceBetween,modifier = Modifier
                 .fillMaxSize()
                 .padding(18.dp)) {
-                Text(text = stringResource(id = R.string.sunTalk_example_title),
+                Text(text = stringResource(id = state.data?.title ?: R.string.sunTalk_example_title),
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colorScheme.onPrimary,
                     fontSize = 30.sp,
@@ -130,7 +133,7 @@ fun SunTalkScreen(onAccept: () -> Unit) {
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunTalkScreen(onAccept = {})
+        SunTalkScreen(onAccept = {}, state = SunTalkState())
     }
 }
 
@@ -139,6 +142,6 @@ fun PreviewSUnRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
         val languageViewModel = LanguageViewModel()
-        SunTalkScreen(onAccept = {})
+        SunTalkScreen(onAccept = {}, state = SunTalkState())
     }
 }

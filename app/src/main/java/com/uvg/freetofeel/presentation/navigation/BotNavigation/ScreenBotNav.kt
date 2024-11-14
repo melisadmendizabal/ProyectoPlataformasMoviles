@@ -139,14 +139,14 @@ fun ScreenBotNav(
             )
 
             dailyRecoScreen(
-                onAcceptDailyReco = {navController.navigateUp()} //TODO:cambiar eventualmente para que sí cambie de mascota
+                onAcceptDailyReco = {navController.navigateUp()}
             )
-            petTalkScreen(onElection = {navController.navigateUp()}) //TODO cambiar eventualmente para que sí dé puntos
+            petTalkScreen(onElection = {navController.navigateUp()})
 
 
             sunInputScreen(onOption = {navController.navigateUp()}) //cambiar eventualmente para que sí guarde o cancele
 
-            sunFeelingScreen(onEmotionClick = {navController.navigateToSunTalk(SunTalkDESTINATION)}, userName = "R&M") //Cambiar por el nombre real del usuario
+            sunFeelingScreen(onEmotionClick = {navController.navigateToSunTalk(SunTalkDESTINATION.toString())}, userName = "R&M") //Cambiar por el nombre real del usuario
         sunTalkScreen(onAccept = {navController.popBackStack(); navController.navigateToSunHome(SunHomeDESTINATION)})
 
         }
