@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.uvg.freetofeel.R
 import com.uvg.freetofeel.LanguageViewModel
 
@@ -119,11 +120,9 @@ fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier, onClick: (
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(6.dp))
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.pug),
-                    contentDescription = "consejo",
-                    modifier = Modifier.fillMaxWidth()
-                )
+                AsyncImage(model =
+                "https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2022/06/perro_salchicha_caracteristicas_shedara_weinsberg_shutterstock_portada.jpg"
+                    , contentDescription = "ChallengeImg")
             }
 
             Box(Modifier.fillMaxWidth()) {
