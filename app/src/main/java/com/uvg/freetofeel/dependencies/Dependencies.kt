@@ -15,7 +15,7 @@ object Dependencies {
         return Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "full.db"
+            "FreeToFeel.db"
         ).build()
     }
 
