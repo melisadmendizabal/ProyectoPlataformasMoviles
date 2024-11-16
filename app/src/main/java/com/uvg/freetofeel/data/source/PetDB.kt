@@ -10,13 +10,13 @@ class PetDB {
             imagePet = R.drawable.lazy_pet),
         Pet(id = 2, name = "Erizo", issue = R.string.pet_select_hedgehog_problem,
             points = 10, iconPet = R.drawable.icon_happy_not, backPet = R.drawable.hedgehog_back,
-            imagePet = R.drawable.lazy_pet),
+            imagePet = R.drawable.hedgehog_pet),
         Pet(id = 3, name = "Abejoide", issue = R.string.pet_select_bee_problem,
             points = 10, iconPet = R.drawable.icon_angry_not, backPet = R.drawable.bee_back,
-            imagePet = R.drawable.lazy_pet),
+            imagePet = R.drawable.bee_pet),
         Pet(id = 4, name = "Medusín", issue = R.string.pet_select_jelly_problem,
             points = 10, iconPet = R.drawable.icon_happy_not, backPet = R.drawable.jelly_back,
-            imagePet = R.drawable.lazy_pet),
+            imagePet = R.drawable.jelly_pet),
 
 
     )
