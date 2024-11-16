@@ -20,11 +20,19 @@ fun NavController.navigateToSunFeeling(
 }
 
 fun NavGraphBuilder.sunFeelingScreen(
-    onEmotionClick: () -> Unit,
+    onHappyClick: () -> Unit,
+    onBoredClick: () -> Unit,
+    onAngryClick: () -> Unit,
+    onSadClick: () -> Unit,
+    onRestlessClick: () -> Unit,
     userName:String
 
 ){
     composable<SunFeelingDESTINATION>{
-        SunFeelingROUTE(onEmotionClick = onEmotionClick, username = userName)
+        SunFeelingROUTE(onHappyClick = onHappyClick,
+            onBoredClick = onBoredClick,
+            onAngryClick = onAngryClick,
+            onSadClick = onSadClick,
+            onRestlessClick = onRestlessClick, username = userName)
     }
 }

@@ -31,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
@@ -39,6 +40,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
 import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
@@ -46,18 +49,35 @@ import com.uvg.freetofeel.presentation.sunPresentation.sunInput.SunInputScreen
 
 @Composable
 fun SunFeelingROUTE(
-    onEmotionClick: ()->Unit,
-    username: String
+    onHappyClick: () -> Unit,
+    onBoredClick: () -> Unit,
+    onAngryClick: () -> Unit,
+    onSadClick: () -> Unit,
+    onRestlessClick: () -> Unit,
+    username: String,
+    viewModel: SunFeelingViewModel = viewModel(factory=SunFeelingViewModel.Factory)
 ){
+    val state by viewModel.state.collectAsStateWithLifecycle()
     SunFeelingScreen(
-        onEmotionClick = onEmotionClick, username = username)
+        state = state,
+        onHappyClick = onHappyClick,
+        onBoredClick = onBoredClick,
+        onAngryClick = onAngryClick,
+        onSadClick = onSadClick,
+        onRestlessClick = onRestlessClick,
+        username = username)
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
-    var inputText by remember { mutableStateOf("") }
+fun SunFeelingScreen(onHappyClick: () -> Unit,
+                     onBoredClick:() -> Unit,
+                     onAngryClick:() -> Unit,
+                     onSadClick:() -> Unit,
+                     onRestlessClick:() -> Unit ,
+                     username: String,
+                     state: SunFeelingState){
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()
@@ -98,6 +118,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
                     fontWeight = FontWeight.Bold
                 )
                 Text(text = stringResource(id = R.string.sunFeeling_ask),
+                    textAlign = TextAlign.Center,
                     fontSize = 30.sp,
                     color = MaterialTheme.colorScheme.primary,
                     fontStyle = FontStyle.Italic,)
@@ -121,7 +142,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
                     Row(Modifier.weight(0.3f)) {
                         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
                             //Happy
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onHappyClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -146,7 +167,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
                             .weight(0.4f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //restless
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onRestlessClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -166,7 +187,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
 
                         //bored
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onBoredClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -194,7 +215,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
                             .weight(0.3f), horizontalArrangement = Arrangement.SpaceBetween) {
                         //Sad
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onSadClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary))
@@ -217,7 +238,7 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
 
                         //Angry
                         Column {
-                            IconButton(onClick = onEmotionClick,
+                            IconButton(onClick = onAngryClick,
                                 colors = IconButtonDefaults.iconButtonColors(
                                     containerColor = MaterialTheme.colorScheme.primary,
                                     contentColor = MaterialTheme.colorScheme.onPrimary
@@ -248,8 +269,8 @@ fun SunFeelingScreen(onEmotionClick: () -> Unit, username: String){
 @Composable
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(onEmotionClick = {}, username = "UserName")
+
+        SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }
 
@@ -257,7 +278,7 @@ fun PreviewDailyRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        SunFeelingScreen(onEmotionClick = {}, username = "UserName")
+
+        SunFeelingScreen(onRestlessClick = {}, username = "UserName", onAngryClick = {}, onBoredClick = {}, onHappyClick = {}, onSadClick = {},state = SunFeelingState())
     }
 }

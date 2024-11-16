@@ -79,7 +79,6 @@ class SupabaseAuthViewModel:ViewModel() {
     }
 
     fun logout(context: Context){
-        val sharedPreferencesHelper = SharedPreferencesHelper(context)
         viewModelScope.launch {
             _userLoginState.value = UserLoginState.Loading
 

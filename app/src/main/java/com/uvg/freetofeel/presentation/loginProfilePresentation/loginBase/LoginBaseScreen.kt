@@ -163,7 +163,7 @@ fun LoginBaseScreen(context: Context,
 @Preview(showBackground = true)
 @Composable
 fun PreviewLoginBaseScreen() {
-    val languageViewModel = LanguageViewModel()
+    val languageViewModel = LanguageViewModel(LocalContext.current)
     // Aquí puedes usar un color sólido o una imagen de prueba
     LoginBaseScreen(context = LocalContext.current, languageViewModel = languageViewModel, onLoginClick = {}, onNewAccClick = {})
 }
@@ -173,7 +173,7 @@ fun PreviewLoginBaseScreen() {
 @Composable
 fun PreviewLoginBaseScreenDark() {
     // Simula un contexto para la vista previa
-    val languageViewModel = LanguageViewModel() // Crea una instancia del ViewModel
+    val languageViewModel = LanguageViewModel(LocalContext.current) // Crea una instancia del ViewModel
     val context = LocalContext.current // Obtén el contexto
 
     // Aplica el tema oscuro

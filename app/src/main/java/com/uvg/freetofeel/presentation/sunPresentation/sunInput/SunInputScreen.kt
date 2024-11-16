@@ -215,7 +215,6 @@ fun SunInputScreen(onOption: () -> Unit) {
 @Composable
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
         SunInputScreen(onOption = {})
     }
 }
@@ -224,7 +223,6 @@ fun PreviewSUnRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
         SunInputScreen(onOption = {})
     }
 }

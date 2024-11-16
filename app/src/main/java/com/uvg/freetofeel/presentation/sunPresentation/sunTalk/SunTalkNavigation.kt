@@ -9,13 +9,15 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data object SunTalkDESTINATION
+data class SunTalkDESTINATION(
+    val emotion:String
+)
 
 fun NavController.navigateToSunTalk(
-    destination: SunTalkDESTINATION,
+    destination: String,
     navOptions: NavOptions? = null
 ){
-    this.navigate(destination, navOptions)
+    this.navigate(SunTalkDESTINATION(emotion = destination), navOptions)
 }
 
 fun NavGraphBuilder.sunTalkScreen(

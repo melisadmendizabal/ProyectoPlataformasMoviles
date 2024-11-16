@@ -56,7 +56,6 @@ fun NewAccountROUTE(
     context: Context
 ){
     NewAccountScreen(
-        languageViewModel = LanguageViewModel(),
         onCreateAccountClick = onCreateAccountClick,
         authViewModel = authViewModel,
         context = context
@@ -65,7 +64,7 @@ fun NewAccountROUTE(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NewAccountScreen(languageViewModel: LanguageViewModel,
+fun NewAccountScreen(
                      onCreateAccountClick:() -> Unit,
                      authViewModel: SupabaseAuthViewModel,
                      context: Context)
@@ -229,8 +228,8 @@ fun NewAccountScreen(languageViewModel: LanguageViewModel,
 @Composable
 fun PreviewNewAccountScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        NewAccountScreen(languageViewModel = languageViewModel, onCreateAccountClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
+
+        NewAccountScreen( onCreateAccountClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }
 
@@ -238,8 +237,8 @@ fun PreviewNewAccountScreenLight() {
 @Composable
 fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
 
-        NewAccountScreen(languageViewModel = languageViewModel, onCreateAccountClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
+
+        NewAccountScreen( onCreateAccountClick = {}, authViewModel = SupabaseAuthViewModel(), context = LocalContext.current)
     }
 }

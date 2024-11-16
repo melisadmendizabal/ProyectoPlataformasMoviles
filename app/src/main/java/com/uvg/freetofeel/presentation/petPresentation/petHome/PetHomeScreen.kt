@@ -67,7 +67,6 @@ fun PetHomeROUTE(
     PetHomeScreen(
         state = state,
         pet = state.showPet,
-        languageViewModel = LanguageViewModel(),
         onAllPetsClick = onAllPetsClick,
         onTipDayPetScreenClick = onTipDayPetScreenClick,
         onHistoryScreenPetHome = onHistoryScreenPetHome
@@ -82,14 +81,13 @@ fun PetHomeROUTE(
 fun PetHomeScreen(
     state: PetHomeState,
     pet: Pet?,
-    languageViewModel: LanguageViewModel,
+
     onAllPetsClick: () -> Unit,
     onTipDayPetScreenClick: ()-> Unit,
     onHistoryScreenPetHome: ()-> Unit
 ){
 
     var inputText by remember { mutableStateOf("") }
-    val selectedLanguage = languageViewModel.selectedLanguage
 
     Box{
         when{
@@ -185,8 +183,8 @@ fun PetHomeScreen(
 fun PreviewNewAccountScreenLight() {
 
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
-        PetHomeScreen(state = PetHomeState(), pet = PetHomeState().showPet,languageViewModel = languageViewModel,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
+
+        PetHomeScreen(state = PetHomeState(), pet = PetHomeState().showPet,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
     }
 }
 
@@ -194,8 +192,7 @@ fun PreviewNewAccountScreenLight() {
 @Composable
 fun PreviewNewAccountScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        val languageViewModel = LanguageViewModel()
 
-        PetHomeScreen(state = PetHomeState(), pet = PetHomeState().showPet,languageViewModel = languageViewModel,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
+        PetHomeScreen(state = PetHomeState(), pet = PetHomeState().showPet,onAllPetsClick = { }, onTipDayPetScreenClick = {}, onHistoryScreenPetHome = {})
     }
 }

@@ -72,7 +72,6 @@ fun FirstPetScreen(onFirstPetOk: ()-> Unit) {
 @Composable
 fun PreviewFirstPetScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        val languageViewModel = LanguageViewModel()
         FirstPetScreen(onFirstPetOk = {})
     }
 }

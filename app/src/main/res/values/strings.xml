@@ -95,8 +95,16 @@
 
     <!-- Sun Talk -->
     <string name="sunTalk_example_title">Oh, something bad happened?</string>
-    <string name="sunTalk_example_text">No Problem, you learn from everything, and everything happens for a reason. Let that anger flow, but do not let it hurt others, okay?</string>
+    <string name="sunTalk_example_text">No Problem, you learn from everything, and everything happens for a reason. Let that emotion flow, but do not let it hurt others, okay?</string>
     <string name="sunTalk_button">Okay!</string>
+    <string name="sunTalk_sad1_title">I\'m sorry to hear you are sad</string>
+    <string name="sunTalk_sad1_body">Try to distract from what\'s making you sad. Breathe slowly and think of what makes you happy.</string>
+    <string name="sunTalk_angry1_title">It\'s OK to be angry</string>
+    <string name="sunTalk_angry1_body">Just do not hurt other people while doing so. Relax listening to music and let your mind blow off the anger.</string>
+    <string name="sunTalk_angry2_title">Everything will be fine</string>
+    <string name="sunTalk_angry2_body">Whatever made you angry will eventually stop. Don\'t waste your time my being angry, while you can be feeling in peace.</string>
+
+
 
     <!-- ChallengeHome -->
     <string name="Challenge_title">Specific tips and challenges</string>
