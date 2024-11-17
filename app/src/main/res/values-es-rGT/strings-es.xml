@@ -17,8 +17,9 @@
     <string name="CreateAcc">Crear cuenta</string>
 
     <!-- FirstPet -->
-    <string name="first_pet_title">¡Alguien necesita tu ayuda!</string>
-    <string name="first_pet_body">Parece un simpático animalito, ¿quieres ayudarlo?</string>
+    <string name="first_pet_title">¡Bienvenido a esta emocionante aventura!</string>
+    <string name="first_pet_body1"> Soy Sun, guardián de este universo lleno de armonía y calma. Últimamente, cuatro pequeños habitantes han enfrentado desafíos y se sienten decaídos. ¿Te unirías a mí para devolverles la alegría y iluminar sus mundos? Juntos, podemos marcar la diferencia y, en el proceso, aprender valiosas lecciones.</string>
+    <string name="first_pet_body2">¿Podrías unirte a mí para tenderles una mano y devolverles la alegría? ¡Estoy seguro de que, con tu ayuda, lograremos iluminar nuevamente sus mundos!</string>
     <string name="first_pet_confirm">¡Claro!</string>
 
     <!-- PetTalk -->
@@ -41,7 +42,7 @@
     <string name="points">Puntos</string>
 
     <!-- PetSelect -->
-    <string name="pet_select_topAppBar">Mascotas</string>
+    <string name="pet_select_topAppBar">Criaturas</string>
     <string name="pet_select_mainMSG">Selecciona a un amigo</string>
     <string name="pet_select_sloth">Mimioso</string>
     <string name="pet_select_sloth_problem">Depresión</string>
@@ -97,12 +98,169 @@
     <string name="sunTalk_example_title">Oh, ¿algo malo sucedió?</string>
     <string name="sunTalk_example_text">No te preocupes, de todo se aprende, y todo pasa por algo. Deja que ese sentimiento fluya, pero que eso no lastime a otros, ¿sí?</string>
     <string name="sunTalk_button">Está bien</string>
+
+
+
+
+    <!-- Sun Talk Sad -->
     <string name="sunTalk_sad1_title">Lamento escuchar que estás triste</string>
     <string name="sunTalk_sad1_body">Intenta distraerte de lo que te está poniendo triste. Respira hondo y piensa en lo que te hace feliz.</string>
+    <string name="sunTalk_sad2_title">¿Te sientes decaído?</string>
+    <string name="sunTalk_sad2_body">Está bien sentirse triste a veces. Permítete procesar la emoción y recuerda que vienen días más brillantes.</string>
+    <string name="sunTalk_sad3_title">No estás solo</string>
+    <string name="sunTalk_sad3_body">Incluso en la tristeza, hay fortaleza. Busca a alguien que se preocupe por ti; nunca estás solo en esto.</string>
+    <string name="sunTalk_sad4_title">¿Es un día nublado?</string>
+    <string name="sunTalk_sad4_body">Las nubes pueden cubrir el sol, pero sigue brillando detrás de ellas. ¡Tu luz está esperando para brillar de nuevo!</string>
+    <string name="sunTalk_sad5_title">Esto también pasará</string>
+    <string name="sunTalk_sad5_body">Cada sentimiento es temporal. Date tiempo y sé amable contigo mismo; pronto te sentirás mejor.</string>
+    <string name="sunTalk_sad6_title">Toma un respiro profundo</string>
+    <string name="sunTalk_sad6_body">A veces, solo necesitas un momento para pausar, respirar y dejar que la tristeza se calme.</string>
+    <string name="sunTalk_sad7_title">Eres más fuerte de lo que crees</string>
+    <string name="sunTalk_sad7_body">La tristeza es una señal de que eres humano, es normal sentirse así. Puedes superar esto.</string>
+    <string name="sunTalk_sad8_title">Está bien llorar</string>
+    <string name="sunTalk_sad8_body">Las lágrimas son la forma en que el corazón habla cuando las palabras no pueden. Déjalas fluir; ellas sanan.</string>
+    <string name="sunTalk_sad9_title">Encuentra la lección</string>
+    <string name="sunTalk_sad9_body">Incluso en la tristeza, la vida nos enseña algo valioso. Busca la lección; siempre hay una ahí.</string>
+    <string name="sunTalk_sad10_title">Mereces bondad</string>
+    <string name="sunTalk_sad10_body">Sé amable contigo mismo. Sentir tristeza es difícil, pero recuerda que siempre merecerás bondad y amor.</string>
+    <string name="sunTalk_sad11_title">Un nuevo día te espera</string>
+    <string name="sunTalk_sad11_body">Puede que hoy haya sido un mal día, pero el mañana siempre trae nueva esperanza.</string>
+    <string name="sunTalk_sad12_title">Abraza tu humanidad</string>
+    <string name="sunTalk_sad12_body">La tristeza es parte del ser humano. Significa que sientes mucho, y eso es hermoso.</string>
+    <string name="sunTalk_sad13_title">Eres suficiente</string>
+    <string name="sunTalk_sad13_body">Incluso en la tristeza, eres único, valioso y suficiente. No dejes que esta tristeza te consuma.</string>
+    <string name="sunTalk_sad14_title">Estás sanando</string>
+    <string name="sunTalk_sad14_body">Cada lágrima, cada llanto, es un paso hacia la sanación. Confía en el proceso.</string>
+
+
+    <!-- Sun Talk Angry -->
     <string name="sunTalk_angry1_title">Es normal sentirse enojado</string>
     <string name="sunTalk_angry1_body">Solo no lastimes a nadie mientras lo estés. Relájate escuchando música y deja que tu mente se libere del enojo.</string>
     <string name="sunTalk_angry2_title">Todo va a estar bien</string>
     <string name="sunTalk_angry2_body">Lo que sea que te haya hecho enojar, no durará para siempre. No gastes tu tiempo sintiéndote enojado, cuando podrías estar en paz.</string>
+    <string name="sunTalk_angry3_title">Respira profundamente</string>
+    <string name="sunTalk_angry3_body">El enojo puede nublar tus pensamientos. Respira hondo y deja que tus emociones se calmen antes de actuar.</string>
+    <string name="sunTalk_angry4_title">Espera, es temporal</string>
+    <string name="sunTalk_angry4_body">El enojo es pasajero. No dejes que defina tu día o tus acciones.</string>
+    <string name="sunTalk_angry5_title">Déjalo ir</string>
+    <string name="sunTalk_angry5_body">Aferrarte al enojo solo te causa peso. Libéralo por tu propia paz.</string>
+    <string name="sunTalk_angry6_title">Sonríe ante todo</string>
+    <string name="sunTalk_angry6_body">Una sonrisa puede ayudarte a romper el ciclo del enojo. Inténtalo.</string>
+    <string name="sunTalk_angry7_title">Tú tienes el control</string>
+    <string name="sunTalk_angry7_body">El enojo no te controla a menos que lo permitas. Tú tienes el poder de elegir la calma.</string>
+    <string name="sunTalk_angry8_title">Canaliza tu energía</string>
+    <string name="sunTalk_angry8_body">El enojo es energía. Úsala para construir algo, no para destruir.</string>
+    <string name="sunTalk_angry9_title">Piensa en mañana</string>
+    <string name="sunTalk_angry9_body">Cómo manejes este momento moldeará cómo te sentirás mañana. Piensa a futuro.</string>
+    <string name="sunTalk_angry10_title">Sal a caminar</string>
+    <string name="sunTalk_angry10_body">A veces, alejarse es la mejor manera de continuar. Camina y toma un respiro. </string>
+    <string name="sunTalk_angry11_title">Concéntrate en soluciones</string>
+    <string name="sunTalk_angry11_body">Cambia del problema a la solución. El enojo no arreglará lo que está mal.</string>
+    <string name="sunTalk_angry12_title">Detente antes de reaccionar</string>
+    <string name="sunTalk_angry12_body">Reaccionar con enojo rara vez ayuda. Haz una pausa, piensa tranquilo, y responde con calma.</string>
+    <string name="sunTalk_angry13_title">Piensa a futuro</string>
+    <string name="sunTalk_angry13_body">¿Esto importará en una semana, un mes o un año? Mantén la perspectiva general en mente.</string>
+    <string name="sunTalk_angry14_title">El enojo es un gran maestro</string>
+    <string name="sunTalk_angry14_body">El enojo demuestra lo que te en verdad te importa. Aprende de ello sin dejar que te consuma.</string>
+    <string name="sunTalk_angry15_title">Está bien sentir</string>
+    <string name="sunTalk_angry15_body">Sentir enojo es normal. Permítete sentirlo, pero no dejes que te controle.</string>
+    <string name="sunTalk_angry16_title">El enojo se va, los recuerdos quedan</string>
+    <string name="sunTalk_angry16_body">No dejes que el enojo cree momentos que lamentes. Actúa con amabilidad.</string>
+
+
+
+
+    <!-- Sun Talk bored -->
+    <string name="sunTalk_bored1_title">¡Es hora de algo nuevo!</string>
+    <string name="sunTalk_bored1_body">El aburrimiento es una señal de que estás listo para una nueva aventura. ¡Intenta algo que nunca hayas hecho!</string>
+    <string name="sunTalk_bored2_title">Crea tu propia diversión</string>
+    <string name="sunTalk_bored2_body">¿Ves algo que puedes crear o construir ahora mismo? ¡La diversión comienza contigo!</string>
+    <string name="sunTalk_bored3_title">Explora lo desconocido</string>
+    <string name="sunTalk_bored3_body">El aburrimiento es una invitación a explorar. ¡Abre un libro, un mapa o tu imaginación!</string>
+    <string name="sunTalk_bored4_title">Ponte retos</string>
+    <string name="sunTalk_bored4_body">Ponte un pequeño desafío y supéralo. ¡La emoción está cerca!</string>
+    <string name="sunTalk_bored5_title">Cada momento cuenta</string>
+    <string name="sunTalk_bored5_body">Incluso los momentos tranquilos pueden ser significativos. Encuentra algo que apreciar ahora mismo.</string>
+    <string name="sunTalk_bored6_title">¡Intenta algo emocionante!</string>
+    <string name="sunTalk_bored6_body">Haz algo inesperado. ¡Deja que el aburrimiento te lleve a la espontaneidad!</string>
+    <string name="sunTalk_bored7_title">Aprende una nueva habilidad</string>
+    <string name="sunTalk_bored7_body">¡Usa este tiempo para crecer! Empieza a aprender una habilidad que siempre quisiste.</string>
+    <string name="sunTalk_bored8_title">Apaga el piloto automático</string>
+    <string name="sunTalk_bored8_body">El aburrimiento significa que estás en piloto automático. ¡Cambia las cosas y toma el control!</string>
+    <string name="sunTalk_bored9_title">Conéctate con alguien</string>
+    <string name="sunTalk_bored9_body">Comunícate con un amigo o familiar. Las conversaciones inspiran.</string>
+    <string name="sunTalk_bored10_title">Tu artista interior espera</string>
+    <string name="sunTalk_bored10_body">Pinta, dibuja o escribe algo divertido. ¡La creatividad florece en el aburrimiento!</string>
+    <string name="sunTalk_bored11_title">Revisita viejos sueños</string>
+    <string name="sunTalk_bored11_body">¿Recuerdas ese pasatiempo o sueño que olvidaste? ¡Retómalo!</string>
+    <string name="sunTalk_bored12_title">Sal afuera</string>
+    <string name="sunTalk_bored12_body">Sal a la naturaleza y deja que el aire fresco renueve tu mente.</string>
+    <string name="sunTalk_bored13_title">Juega como un niño</string>
+    <string name="sunTalk_bored13_body">Haz algo divertido y juguetón, como bailar o leer un libro. ¡La diversión te espera!</string>
+    <string name="sunTalk_bored14_title">Escríbelo</string>
+    <string name="sunTalk_bored14_body">Escribe sobre tu aburrimiento. ¡Podrías descubrir lo que realmente deseas!</string>
+    <string name="sunTalk_bored15_title">Conviértelo en gratitud</string>
+    <string name="sunTalk_bored15_body">El aburrimiento significa que tienes tiempo para reflexionar. ¿De qué estás agradecido hoy?</string>
+
+
+
+    <!-- Sun Talk Restless -->
+    <string name="sunTalk_restless1_title">Tómate un tiempo</string>
+    <string name="sunTalk_restless1_body">Está bien sentirte así. Respira profundamente, cuenta hasta cinco y recuérdate que estás a salvo.</string>
+    <string name="sunTalk_restless2_title">Puedes con esto</string>
+    <string name="sunTalk_restless2_body">La ansiedad no te define. Eres más fuerte que esta sensación; pronto pasará.</string>
+    <string name="sunTalk_restless3_title">No estás solo</string>
+    <string name="sunTalk_restless3_body">Muchas personas se sienten así. Está bien pedir ayuda cuando la necesites.</string>
+    <string name="sunTalk_restless4_title">Paso a paso</string>
+    <string name="sunTalk_restless4_body">Concéntrate en una cosa a la vez. No tienes que resolverlo todo ahora mismo.</string>
+    <string name="sunTalk_restless5_title">Es temporal</string>
+    <string name="sunTalk_restless5_body">Esta sensación es temporal. Lo vas a superar y lo harás siempre.</string>
+    <string name="sunTalk_restless6_title">Tu calma interior</string>
+    <string name="sunTalk_restless6_body">Dentro de ti hay un lugar de calma. Cierra los ojos e intenta encontrarlo.</string>
+    <string name="sunTalk_restless7_title">Está bien pausar</string>
+    <string name="sunTalk_restless7_body">Tómate un momento para hacer una pausa y reiniciar. Tu bienestar importa.</string>
+    <string name="sunTalk_restless8_title">Los pequeños logros importan</string>
+    <string name="sunTalk_restless8_body">Celebra las pequeñas victorias. Cada una te acerca a la paz.</string>
+    <string name="sunTalk_restless9_title">Déjalo salir</string>
+    <string name="sunTalk_restless9_body">Está bien expresar tus sentimientos. Llora, habla o escribe. Libera la tensión.</string>
+    <string name="sunTalk_restless10_title">Esto no es para siempre</string>
+    <string name="sunTalk_restless10_body">La ansiedad es pasajera, no permanente. Se irá con el tiempo.</string>
+    <string name="sunTalk_restless11_title">Eres valiente</string>
+    <string name="sunTalk_restless11_body">Enfrentar la ansiedad requiere valor. Lo estás haciendo mejor de lo que crees.</string>
+    <string name="sunTalk_restless12_title">Encuentra tu centro</string>
+    <string name="sunTalk_restless12_body">Concéntrate en lo que ves, escuchas y sientes a tu alrededor. Sé presente en este instante.</string>
+    <string name="sunTalk_restless13_title">Está bien no ser perfecto</string>
+    <string name="sunTalk_restless13_body">Nadie es perfecto. Está bien sentir ansiedad; es parte de ser humano.</string>
+    <string name="sunTalk_restless14_title">Mereces paz</string>
+    <string name="sunTalk_restless14_body">La paz está a tu alcance. Tienes permitido descansar y soltar tus preocupaciones.</string>
+
+
+
+    <!-- Sun Talk happy -->
+    <string name="sunTalk_happy1_title">¡Siente la alegría!</string>
+    <string name="sunTalk_happy1_body">La felicidad es contagiosa. ¡Espárcela donde vayas!</string>
+    <string name="sunTalk_happy2_title">La vida es un regalo</string>
+    <string name="sunTalk_happy2_body">Cada sonrisa que haces es una pequeña celebración de la vida.</string>
+    <string name="sunTalk_happy3_title">Vive el momento</string>
+    <string name="sunTalk_happy3_body">La felicidad no está en el futuro, ¡está aquí y ahora!</string>
+    <string name="sunTalk_happy4_title">Irradia positividad</string>
+    <string name="sunTalk_happy4_body">¡Un corazón feliz ilumina los días más oscuros!</string>
+    <string name="sunTalk_happy5_title">Abraza la luz</string>
+    <string name="sunTalk_happy5_body">La felicidad no es la ausencia de problemas, es la fuerza para enfrentarlos.</string>
+    <string name="sunTalk_happy6_title">Encuentra tu chispa</string>
+    <string name="sunTalk_happy6_body">La felicidad a menudo viene desde adentro. Confía en tu luz interior para guiarte.</string>
+    <string name="sunTalk_happy7_title">Disfruta el camino</string>
+    <string name="sunTalk_happy7_body">La felicidad no es solo un destino; es el viaje.</string>
+    <string name="sunTalk_happy8_title">Siente tu luz</string>
+    <string name="sunTalk_happy8_body">Deja que la calidez de la positividad ilumine tu día.</string>
+    <string name="sunTalk_happy9_title">Tu alegría te pertenece</string>
+    <string name="sunTalk_happy9_body">Nadie puede quitarte tu felicidad, ¡es tuya!</string>
+    <string name="sunTalk_happy10_title">Corazón lleno de sonrisas</string>
+    <string name="sunTalk_happy10_body">Cada sonrisa es un paso hacia un mañana más brillante.</string>
+    <string name="sunTalk_happy11_title">Déjate brillar</string>
+    <string name="sunTalk_happy11_body">Tu felicidad inspira a los demás. ¡Compártela!</string>
+    <string name="sunTalk_happy12_title">Elige la felicidad</string>
+    <string name="sunTalk_happy12_body">Cada día ofrece una elección: ¡abraza la alegría!</string>
 
 
 

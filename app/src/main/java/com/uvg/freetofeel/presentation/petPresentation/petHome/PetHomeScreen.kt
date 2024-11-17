@@ -40,6 +40,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -119,13 +120,16 @@ fun PetHomeScreen(
                 ) {
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                         Row {
-                            Icon(Icons.Filled.Star, contentDescription = "points", tint = MaterialTheme.colorScheme.primary)
-                            Text(text = pet.id.toString(), color = MaterialTheme.colorScheme.primary)
-                            Text(text = stringResource(id = R.string.points), color = MaterialTheme.colorScheme.primary)
+                            Icon(Icons.Filled.Star, contentDescription = "points", tint = MaterialTheme.colorScheme.onPrimary)
+                            Text(text = pet.id.toString(), color = MaterialTheme.colorScheme.onPrimary)
+                            Text(text = stringResource(id = R.string.points), color = MaterialTheme.colorScheme.onPrimary)
                         }
 
-                        IconButton(onClick = onAllPetsClick) {
-                            Icon(Icons.Filled.Menu, contentDescription = "More Pets", tint = MaterialTheme.colorScheme.primary)
+                        IconButton(onClick = onAllPetsClick, ) {
+                            Box {
+                                Icon(Icons.Filled.Menu, contentDescription = "More Pets", tint = MaterialTheme.colorScheme.onPrimary)
+                            }
+
                         }
                     }
 

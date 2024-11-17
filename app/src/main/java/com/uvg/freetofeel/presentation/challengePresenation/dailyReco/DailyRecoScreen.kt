@@ -40,19 +40,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
 
 @Composable
 fun DailyRecoROUTE(
-    onAcceptDailyReco: ()->Unit
+    onAcceptDailyReco: ()->Unit,
+    viewModel: DailyRecoViewModel = viewModel(factory = DailyRecoViewModel.Factory)
 ){
+    val state by viewModel.state.collectAsStateWithLifecycle()
     DailyRecoScreen(
+        state= state,
         onAcceptDailyReco = onAcceptDailyReco)
 }
 
 @Composable
-fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
+fun DailyRecoScreen( onAcceptDailyReco: ()->Unit, state: DailyRecoState) {
     var inputText by remember { mutableStateOf("") }
     val checkSelect = remember {
         mutableStateOf(false)
@@ -81,7 +86,7 @@ fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
 
     AlertDialog(
         onDismissRequest = { /*TODO*/ },
-        title = {Text(text = stringResource(id = R.string.dailyreco_title_example),
+        title = {Text(text = stringResource(id = state.data?.title?:R.string.dailyreco_title_example),
             color = MaterialTheme.colorScheme.onPrimary,  //ejemplo de texto
             textAlign = TextAlign.Center,
             modifier = Modifier.fillMaxWidth())},
@@ -106,11 +111,11 @@ fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
                             .size(40.dp)
                             .clip(CircleShape)
                             .background(MaterialTheme.colorScheme.onPrimary)
-                    ){
-                        Icon(Icons.Outlined.FavoriteBorder, contentDescription = "like",
-                            modifier = Modifier.align(Alignment.Center),
-                            tint = MaterialTheme.colorScheme.primary)
-                    }
+                        ){
+                            Icon(Icons.Outlined.FavoriteBorder, contentDescription = "like",
+                                modifier = Modifier.align(Alignment.Center),
+                                tint = MaterialTheme.colorScheme.primary)
+                        }
 
                         Text(text = stringResource(id = R.string.dailyreco_val_completed),
                             color = MaterialTheme.colorScheme.onPrimary,
@@ -148,7 +153,7 @@ fun DailyRecoScreen( onAcceptDailyReco: ()->Unit) {
 @Composable
 fun PreviewDailyRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        DailyRecoScreen( onAcceptDailyReco = {})
+        DailyRecoScreen( onAcceptDailyReco = {}, state = DailyRecoState())
     }
 }
 
@@ -157,6 +162,6 @@ fun PreviewDailyRecoScreenLight() {
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
 
-        DailyRecoScreen( onAcceptDailyReco = {})
+        DailyRecoScreen( onAcceptDailyReco = {}, state = DailyRecoState())
     }
 }

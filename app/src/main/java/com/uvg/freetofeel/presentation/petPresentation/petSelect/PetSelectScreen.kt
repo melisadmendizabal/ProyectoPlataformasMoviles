@@ -10,12 +10,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Card
@@ -85,7 +87,7 @@ fun PetSelectScreen(
             else -> {
                 Column(modifier = Modifier
                     .fillMaxSize()
-                    .background(color = MaterialTheme.colorScheme.background),
+                    .background(color = MaterialTheme.colorScheme.primary),
                     verticalArrangement = Arrangement.SpaceAround,
                     horizontalAlignment = Alignment.CenterHorizontally)
                 {
@@ -108,16 +110,27 @@ fun PetSelectScreen(
                             titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                         )
                     )
-                    Text(
-                        text = stringResource(id = R.string.pet_select_mainMSG),
-                        style = MaterialTheme.typography.headlineLarge,
-                        color = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.weight(0.1f)
-                    )
+                    Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp), horizontalArrangement = Arrangement.Center) {
+                        Box(modifier = Modifier.size(50.dp)) {
+                            Image(painter = painterResource(id = R.drawable.sun),
+                                contentDescription = "Sun"
+                            )
+                        }
+
+                        Text(
+                            text = stringResource(id = R.string.pet_select_mainMSG),
+                            style = MaterialTheme.typography.headlineLarge,
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            modifier = Modifier
+                                .padding(vertical = 10.dp)
+                                .weight(0.1f)
+                        )
+                    }
+
 
                     LazyColumn(
-                        verticalArrangement = Arrangement.spacedBy(7.dp),
-                        modifier = Modifier.padding(10.dp)
+                        verticalArrangement = Arrangement.spacedBy(3.dp),
+                        modifier = Modifier.padding(horizontal = 10.dp)
                     ) {
 
                         items(pets) { pet ->
@@ -151,23 +164,26 @@ fun PetSelectScreen(
 @Composable
 fun PetCards(modifier: Modifier,points: Int,name:String, problem:String,imageID:Int){
 
-    Card(modifier = modifier.height(130.dp)) {
+    Box(modifier = modifier
+        .height(130.dp)
+        .clip(RoundedCornerShape(10.dp))
+        .background(MaterialTheme.colorScheme.onPrimary)) {
         Row(horizontalArrangement = Arrangement.Center
             , verticalAlignment = Alignment.CenterVertically
             ,modifier = Modifier
-                .padding(7.dp)
+                .padding(vertical = 7.dp, horizontal = 20.dp)
                 .fillMaxSize()) {
             Box(
                 modifier = Modifier
                     .size(70.dp)
                     .background(
-                        color = MaterialTheme.colorScheme.tertiaryContainer,
+                        color = MaterialTheme.colorScheme.primary,
                         shape = CircleShape
                     )
                     .weight(0.2f)
                 , contentAlignment = Alignment.Center
             ) {
-                Text(text = points.toString(), color = MaterialTheme.colorScheme.onTertiaryContainer) //Cambiar por una variable que contenga la cantidad de puntos según la mascota
+                Text(text = points.toString(), color = MaterialTheme.colorScheme.onPrimary) //Cambiar por una variable que contenga la cantidad de puntos según la mascota
             }
 
             Column (modifier = Modifier
@@ -179,13 +195,15 @@ fun PetCards(modifier: Modifier,points: Int,name:String, problem:String,imageID:
                 Text(text = problem,
                     style = MaterialTheme.typography.labelLarge)
             }
-            Image(painter = painterResource(id = imageID),
-                contentDescription = "PetImage",
-                modifier = Modifier
-                    .weight(0.3f)
-                    .clip(
-                        CircleShape
-                    ))
+            Box(modifier = Modifier
+                .weight(0.3f)
+                .clip(CircleShape)
+                .background(MaterialTheme.colorScheme.primary)) {
+                Image(painter = painterResource(id = imageID),
+                    contentDescription = "PetImage",
+                    )
+            }
+
         }
     }
     Spacer(modifier = Modifier.height(30.dp))

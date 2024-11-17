@@ -17,8 +17,9 @@
     <string name="CreateAcc">Create account</string>
 
     <!-- FirstPet -->
-    <string name="first_pet_title">Someone needs your help!</string>
-    <string name="first_pet_body">Seems it\'s a cute little animal, would you like to help it?</string>
+    <string name="first_pet_title">Welcome to this exciting adventure!</string>
+    <string name="first_pet_body1">I’m Sun, the guardian of this universe full of harmony and calm. Recently, four little inhabitants have been facing challenges and feeling down. Would you join me in bringing joy back to their lives and lighting up their worlds? Together, we can make a difference. </string>
+    <string name="first_pet_body2">Could you join me in lending them a hand and bringing their happiness back? I am sure that, with your help, we will brighten their worlds once again!</string>
     <string name="first_pet_confirm">Sure!</string>
 
     <!-- PetTalk -->
@@ -41,7 +42,7 @@
     <string name="points">Points</string>
 
     <!-- PetSelect -->
-    <string name="pet_select_topAppBar">Pets</string>
+    <string name="pet_select_topAppBar">Creatures</string>
     <string name="pet_select_mainMSG">Choose a friend</string>
     <string name="pet_select_sloth">Mimioso</string>
     <string name="pet_select_sloth_problem">Depression</string>
@@ -97,12 +98,165 @@
     <string name="sunTalk_example_title">Oh, something bad happened?</string>
     <string name="sunTalk_example_text">No Problem, you learn from everything, and everything happens for a reason. Let that emotion flow, but do not let it hurt others, okay?</string>
     <string name="sunTalk_button">Okay!</string>
+
+    <!-- Sun Talk Sad -->
     <string name="sunTalk_sad1_title">I\'m sorry to hear you are sad</string>
     <string name="sunTalk_sad1_body">Try to distract from what\'s making you sad. Breathe slowly and think of what makes you happy.</string>
+    <string name="sunTalk_sad2_title">Feeling down?</string>
+    <string name="sunTalk_sad2_body">It\'s okay to feel sad sometimes. Let yourself process the emotion, and remember brighter days are ahead.</string>
+    <string name="sunTalk_sad3_title">You\'re not alone</string>
+    <string name="sunTalk_sad3_body">Even in sadness, there\'s strength. Reach out to someone who cares; you\'re never alone in this.</string>
+    <string name="sunTalk_sad4_title">A cloudy moment?</string>
+    <string name="sunTalk_sad4_body">Clouds may cover the sun, but it’s still shining behind them. Your light is waiting to shine again!</string>
+    <string name="sunTalk_sad5_title">This, too, shall pass</string>
+    <string name="sunTalk_sad5_body">Every feeling is temporary. Give yourself time and kindness; you’ll feel better soon.</string>
+    <string name="sunTalk_sad6_title">Take a deep breath</string>
+    <string name="sunTalk_sad6_body">Sometimes all it takes is a moment to pause, breathe, and let the sadness settle.</string>
+    <string name="sunTalk_sad7_title">You are stronger than you think</string>
+    <string name="sunTalk_sad7_body">Sadness shows you are human, it’s normal to feel so. You can overcome this.</string>
+    <string name="sunTalk_sad8_title">It’s okay to cry</string>
+    <string name="sunTalk_sad8_body">Tears are how the heart speaks when words cannot. Let them flow; they heal.</string>
+    <string name="sunTalk_sad9_title">Find the lesson</string>
+    <string name="sunTalk_sad9_body">Even in sadness, life teaches us something valuable. Look for the lesson; it’s always there.</string>
+    <string name="sunTalk_sad10_title">You deserve kindness</string>
+    <string name="sunTalk_sad10_body">Be gentle with yourself. Sadness is tough, but you deserve care and love, always.</string>
+    <string name="sunTalk_sad11_title">A new day awaits</string>
+    <string name="sunTalk_sad11_body">Today may feel heavy, but tomorrow always brings new hope.</string>
+    <string name="sunTalk_sad12_title">Embrace your humanity</string>
+    <string name="sunTalk_sad12_body">Sadness is part of the human being. It means you care deeply, and that’s beautiful.</string>
+    <string name="sunTalk_sad13_title">You’re enough</string>
+    <string name="sunTalk_sad13_body">Even in sadness, you’re whole, worthy, and enough. Don’t let this sadness consume you.</string>
+    <string name="sunTalk_sad14_title">You’re healing</string>
+    <string name="sunTalk_sad14_body">Every tear, every cry, is a step toward healing. Trust the process.</string>
+
+
+    <!-- Sun Talk Angry -->
     <string name="sunTalk_angry1_title">It\'s OK to be angry</string>
     <string name="sunTalk_angry1_body">Just do not hurt other people while doing so. Relax listening to music and let your mind blow off the anger.</string>
     <string name="sunTalk_angry2_title">Everything will be fine</string>
     <string name="sunTalk_angry2_body">Whatever made you angry will eventually stop. Don\'t waste your time my being angry, while you can be feeling in peace.</string>
+    <string name="sunTalk_angry3_title">Take a deep breath</string>
+    <string name="sunTalk_angry3_body">Anger can cloud your thoughts. Breathe deeply, and let your emotions settle before acting.</string>
+    <string name="sunTalk_angry4_title">Hold on, it’s temporary</string>
+    <string name="sunTalk_angry4_body">Anger is fleeting. Don’t let it define your day or your actions.</string>
+    <string name="sunTalk_angry5_title">Let it go</string>
+    <string name="sunTalk_angry5_body">Holding onto anger only weighs you down. Release it for your own peace.</string>
+    <string name="sunTalk_angry6_title">Smile through it</string>
+    <string name="sunTalk_angry6_body">A smile can help you break the anger cycle. Try it.</string>
+    <string name="sunTalk_angry7_title">You’re in control</string>
+    <string name="sunTalk_angry7_body">Anger doesn’t control you unless you let it. You have the power to choose calm.</string>
+    <string name="sunTalk_angry8_title">Channel your energy</string>
+    <string name="sunTalk_angry8_body">Anger is energy. Use it to build something, not destroy.</string>
+    <string name="sunTalk_angry9_title">Think about tomorrow</string>
+    <string name="sunTalk_angry9_body">How you handle this moment will shape how you feel tomorrow. Think forwards.</string>
+    <string name="sunTalk_angry10_title">Take a walk</string>
+    <string name="sunTalk_angry10_body">Sometimes, stepping away is the best way to step forward. Take a breath.</string>
+    <string name="sunTalk_angry11_title">Focus on solutions</string>
+    <string name="sunTalk_angry11_body">Shift from the problem to the solution. Anger won’t fix what’s wrong.</string>
+    <string name="sunTalk_angry12_title">Pause, don’t react</string>
+    <string name="sunTalk_angry12_body">Reacting in anger rarely helps. Pause, think clearly, and respond with a cool mind.</string>
+    <string name="sunTalk_angry13_title">Find perspective</string>
+    <string name="sunTalk_angry13_body">Will this matter in a week, a month, or a year? Keep the big picture in mind.</string>
+    <string name="sunTalk_angry14_title">Anger is a teacher</string>
+    <string name="sunTalk_angry14_body">Anger highlights what matters to you. Learn from it without letting it take over.</string>
+    <string name="sunTalk_angry15_title">It’s okay to feel</string>
+    <string name="sunTalk_angry15_body">Anger is normal. Allow yourself to feel it, but don’t let it control you.</string>
+    <string name="sunTalk_angry16_title">Anger fades, memories stay</string>
+    <string name="sunTalk_angry16_body">Don’t let anger create moments you’ll regret. Act with kindness.</string>
+
+    <!-- Sun Talk bored -->
+    <string name="sunTalk_bored1_title">Time for something new!</string>
+    <string name="sunTalk_bored1_body">Boredom is a sign you’re ready for a new adventure. Try something you’ve never done before!</string>
+    <string name="sunTalk_bored2_title">Create your own fun</string>
+    <string name="sunTalk_bored2_body">What’s something you can create or build right now? Fun starts with you!</string>
+    <string name="sunTalk_bored3_title">Explore the unknown</string>
+    <string name="sunTalk_bored3_body">Boredom is a call to explore. Open a book, a map, or your imagination!</string>
+    <string name="sunTalk_bored4_title">Challenge yourself</string>
+    <string name="sunTalk_bored4_body">Set a small challenge for yourself and beat it. Excitement is around the corner!</string>
+    <string name="sunTalk_bored5_title">Every moment counts</string>
+    <string name="sunTalk_bored5_body">Even quiet moments can be meaningful. Find something to appreciate right now.</string>
+    <string name="sunTalk_bored6_title">Try something exciting!</string>
+    <string name="sunTalk_bored6_body">Do something unexpected. Let boredom push you toward spontaneity!</string>
+    <string name="sunTalk_bored7_title">Learn a new skill</string>
+    <string name="sunTalk_bored7_body">Use this time to grow! Pick up a skill you’ve always wanted to learn.</string>
+    <string name="sunTalk_bored8_title">Turn off autopilot</string>
+    <string name="sunTalk_bored8_body">Boredom means you’re on autopilot. Switch things up and take control!</string>
+    <string name="sunTalk_bored9_title">Connect with someone</string>
+    <string name="sunTalk_bored9_body">Reach out to a friend or family member. Conversations spark inspiration.</string>
+    <string name="sunTalk_bored10_title">Your inner artist awaits</string>
+    <string name="sunTalk_bored10_body">Paint, draw, or write something. Creativity thrives in boredom!</string>
+    <string name="sunTalk_bored11_title">Revisit old dreams</string>
+    <string name="sunTalk_bored11_body">Remember that hobby or dream you forgot about? Pick it back up!</string>
+    <string name="sunTalk_bored12_title">Go outside</string>
+    <string name="sunTalk_bored12_body">Step into nature and let the fresh air renew your mind.</string>
+    <string name="sunTalk_bored13_title">Play like a kid</string>
+    <string name="sunTalk_bored13_body">Do something funny and playful, like dancing or reading a book. Fun awaits!</string>
+    <string name="sunTalk_bored14_title">Write it out</string>
+    <string name="sunTalk_bored14_body">Write about your boredom. You might discover what you truly want!</string>
+    <string name="sunTalk_bored15_title">Turn it into gratitude</string>
+    <string name="sunTalk_bored15_body">Boredom means you have time to think. What are you grateful for today?</string>
+
+
+
+    <!-- Sun Talk Restless -->
+    <string name="sunTalk_restless1_title">Take some time</string>
+    <string name="sunTalk_restless1_body">It\'s okay to feel this way. Take a deep breath, count to five, and remind yourself you are safe.</string>
+    <string name="sunTalk_restless2_title">You’ve got this</string>
+    <string name="sunTalk_restless2_body">Anxiety doesn’t define you. You are stronger than this feeling, and it will pass.</string>
+    <string name="sunTalk_restless3_title">You’re not alone</string>
+    <string name="sunTalk_restless3_body">Many people feel this way. It’s okay to reach out for help when needed.</string>
+    <string name="sunTalk_restless4_title">One step at a time</string>
+    <string name="sunTalk_restless4_body">Focus on one thing at a time. You don’t have to solve everything right now.</string>
+    <string name="sunTalk_restless5_title">Title: It’s temporary</string>
+    <string name="sunTalk_restless5_body">This feeling is temporary. You will overcome it, and always do so.</string>
+    <string name="sunTalk_restless6_title">Your inner calm</string>
+    <string name="sunTalk_restless6_body">Inside you, there’s a place of calm. Close your eyes and try to find it.</string>
+    <string name="sunTalk_restless7_title">It’s okay to pause</string>
+    <string name="sunTalk_restless7_body">Take a moment to pause and reset. Your well-being matters.</string>
+    <string name="sunTalk_restless8_title">Small wins matter</string>
+    <string name="sunTalk_restless8_body">Celebrate small victories. Each one takes you closer to peace.</string>
+    <string name="sunTalk_restless9_title">Let it out</string>
+    <string name="sunTalk_restless9_body">It’s okay to express your feelings. Cry, talk, or write. Release the tension.</string>
+    <string name="sunTalk_restless10_title">This is not for forever</string>
+    <string name="sunTalk_restless10_body">Anxiety is a visitor, not a resident. It will leave in time.</string>
+    <string name="sunTalk_restless11_title">You’re brave</string>
+    <string name="sunTalk_restless11_body">Facing anxiety takes courage. You’re doing better than you think.</string>
+    <string name="sunTalk_restless12_title">Feel your  surroundings</string>
+    <string name="sunTalk_restless12_body">Focus on what you see, hear, and feel around you. Be present.</string>
+    <string name="sunTalk_restless13_title">It’s okay to be imperfect</string>
+    <string name="sunTalk_restless13_body">Nobody’s perfect. It’s okay to feel anxious; it’s part of being human.</string>
+    <string name="sunTalk_restless14_title">You deserve peace</string>
+    <string name="sunTalk_restless14_body">Peace is within reach. You’re allowed to rest and let go of worry.</string>
+
+
+
+
+    <!-- Sun Talk happy -->
+    <string name="sunTalk_happy1_title">Feel the joy!</string>
+    <string name="sunTalk_happy1_body">Happiness is contagious. Spread it everywhere you go!</string>
+    <string name="sunTalk_happy2_title">Life’s a gift</string>
+    <string name="sunTalk_happy2_body">Every smile you wear is a little celebration of life.</string>
+    <string name="sunTalk_happy3_title">Be in the moment</string>
+    <string name="sunTalk_happy3_body">Happiness isn’t in the future, it’s right here and now!</string>
+    <string name="sunTalk_happy4_title">Radiate positivity</string>
+    <string name="sunTalk_happy4_body">A happy heart lights up the darkest days!</string>
+    <string name="sunTalk_happy5_title">Embrace the light</string>
+    <string name="sunTalk_happy5_body">Happiness is not the absence of problems; it’s the strength to face them.</string>
+    <string name="sunTalk_happy6_title">Find your spark</string>
+    <string name="sunTalk_happy6_body">Happiness often comes from within. Trust your inner light to guide you.</string>
+    <string name="sunTalk_happy7_title">Enjoy the ride</string>
+    <string name="sunTalk_happy7_body">Happiness isn’t just a destination; it’s the journey.</string>
+    <string name="sunTalk_happy8_title">Feel your shine</string>
+    <string name="sunTalk_happy8_body">Let the warmth of positivity brighten your day.</string>
+    <string name="sunTalk_happy9_title">Your joy is yours</string>
+    <string name="sunTalk_happy9_body">No one can take your happiness away. It’s yours to keep!</string>
+    <string name="sunTalk_happy10_title">Heart full of smiles</string>
+    <string name="sunTalk_happy10_body">Every smile is a step closer to a brighter tomorrow.</string>
+    <string name="sunTalk_happy11_title">Let yourself shine</string>
+    <string name="sunTalk_happy11_body">Your happiness inspires others. Share it freely!</string>
+    <string name="sunTalk_happy12_title">Choose happiness</string>
+    <string name="sunTalk_happy12_body">Each day offers a choice. Embrace the joy around you!</string>
+
 
 
 

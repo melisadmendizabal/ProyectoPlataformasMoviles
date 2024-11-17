@@ -3,7 +3,10 @@ package com.uvg.freetofeel.dependencies
 import android.content.Context
 import androidx.room.Room
 import com.uvg.freetofeel.data.local.AppDatabase
+import com.uvg.freetofeel.data.local.dao.DailyRecoDAO
 import com.uvg.freetofeel.data.local.dao.FeelingDAO
+import com.uvg.freetofeel.repositories.DailyRecoRepository
+import com.uvg.freetofeel.repositories.DailyRecoRepositoryImpl
 import com.uvg.freetofeel.repositories.FeelingRepositoryImpl
 import com.uvg.freetofeel.repositories.FeelingsRepository
 
@@ -15,7 +18,7 @@ object Dependencies {
         return Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "FreeToFeel.db"
+            "full.db"
         ).build()
     }
 
@@ -34,8 +37,20 @@ object Dependencies {
         return FeelingRepositoryImpl(feelingDao)
     }
 
+    fun provideDailyRecoDao(context: Context):DailyRecoDAO{
+        return provideDatabase(context).dailyRecoDao()
+    }
+
+    fun provideDailyRecoRepository(context: Context):DailyRecoRepository{
+        val dailyRecoDAO = provideDailyRecoDao(context)
+        return DailyRecoRepositoryImpl(dailyRecoDAO)
+    }
+
     //otros providers
-      //unos llevan Impl
+    //unos llevan Impl
+
+
+
 
 
 }
