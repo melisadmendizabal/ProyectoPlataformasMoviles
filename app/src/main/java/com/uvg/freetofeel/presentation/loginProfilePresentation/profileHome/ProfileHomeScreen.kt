@@ -51,6 +51,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.uvg.freetofeel.R
 import com.uvg.freetofeel.SupabaseAuthViewModel
+import com.uvg.freetofeel.data.model.UserData
 
 @Composable
 fun ProfileHomeROUTE(
