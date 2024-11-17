@@ -18,7 +18,7 @@ object Dependencies {
         return Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "full.db"
+            "FreeToFeel.db"
         ).build()
     }
 
@@ -48,9 +48,5 @@ object Dependencies {
 
     //otros providers
     //unos llevan Impl
-
-
-
-
 
 }

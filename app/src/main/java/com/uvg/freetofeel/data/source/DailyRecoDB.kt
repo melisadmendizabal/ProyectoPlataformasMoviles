@@ -6,8 +6,8 @@ import com.uvg.freetofeel.data.model.DailyRecoModel
 class DailyRecoDB {
 private val dailyRecos: List<DailyRecoModel> = listOf(
     DailyRecoModel(title = R.string.dailyreco_title_example, body = R.string.dialyreco_text_example, completed = "ok", points = 10 ),
-    DailyRecoModel(title = R.string.dailyreco_title_example, body = R.string.dialyreco_text_example, completed = "ok", points = 10 ),
-    DailyRecoModel(title = R.string.dailyreco_title_example, body = R.string.dialyreco_text_example, completed = "ok", points = 10 )
+    DailyRecoModel(title = R.string.sunTalk_happy1_title, body = R.string.dialyreco_text_example, completed = "ok", points = 10 ),
+    DailyRecoModel(title = R.string.sunInput_title, body = R.string.dialyreco_text_example, completed = "ok", points = 10 )
 
 )
 
@@ -15,9 +15,7 @@ private val dailyRecos: List<DailyRecoModel> = listOf(
         return dailyRecos
     }
 
-//    fun getDailyRecoById(id: Int): DailyRecoModel {
-//        return dailyRecos.first {it.id}
-//    }
+
 
 
 }

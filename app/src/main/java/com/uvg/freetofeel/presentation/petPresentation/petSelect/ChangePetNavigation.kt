@@ -37,10 +37,11 @@ fun NavGraphBuilder.changepet(
                 navController.navigateToPetTalk(PetTalkDESTINATION)
             }
         )
-
         dailyRecoScreen(
             onAcceptDailyReco = {navController.navigateUp()}
         )
+
+
         //faltan?
 
 

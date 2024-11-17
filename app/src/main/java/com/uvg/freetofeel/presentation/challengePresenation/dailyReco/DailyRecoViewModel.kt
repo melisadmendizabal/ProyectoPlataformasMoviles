@@ -1,5 +1,6 @@
 package com.uvg.freetofeel.presentation.challengePresenation.dailyReco
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +15,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlin.concurrent.thread
 
 class DailyRecoViewModel (
     private val dailyRecoRepository: DailyRecoRepository,
@@ -36,6 +36,9 @@ class DailyRecoViewModel (
                 }
 
                 val dailyList = dailyRecoRepository.getDailyRecosByCompleted(dailyscreen.completed)
+                val Lista = dailyRecoRepository.getDailyRecos()
+                Log.d("DailyRecoViewModel", "Collection size: ${dailyList.size}")
+                Log.d("DailyRecoViewModel", "Collection size: ${Lista.size}")
                 val daily = dailyRecoRepository.getSingleRandomRecoByCompleted(dailyList.random().completed)
 
                 _state.update { state ->
