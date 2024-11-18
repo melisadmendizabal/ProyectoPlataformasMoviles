@@ -51,11 +51,65 @@
     <string name="pet_select_jelly_problem">Luto</string>
 
     <!-- DailyReco -->
+    <string name="dailyreco_val_completed">¡Completado!</string>
+    <string name="dailyreco_view">Aceptar</string>
+
+    <!-- Retos -->
     <string name="dailyreco_title_example">Consejo del día</string>
     <string name="dialyreco_text_example">¡Cuida la Tierra! Existen más de 1.5 millones de especies en la Tierra; cada una vale.
     Sal de tu cuarto y riega una planta, alimenta un animal o, por qué no, regala algo a alguien; ¡así valorarás sus vidas!</string>
-    <string name="dailyreco_val_completed">¡Completado!</string>
-    <string name="dailyreco_view">Aceptar</string>
+    <string name="dailyreco_title1">Escucha tus emociones</string>
+    <string name="dailyreco_text1">Hoy, date el tiempo para observar cómo te sientes sin juzgarte. Si te sientes triste, permite que esa emoción exista sin intentar cambiarla. Escríbelo en un diario, dibuja lo que sientes o simplemente siéntate en silencio. Recuerda que todas las emociones son válidas, y entenderlas te hará más fuerte.</string>
+    <string name="dailyreco_title2">Haz algo amable por un extraño</string>
+    <string name="dailyreco_text2">Sal a la calle con un propósito: haz algo amable por alguien que no conozcas. Puede ser ayudar a alguien a cruzar la calle, pagar un café a un desconocido, o simplemente sonreírle a alguien que parezca tener un mal día. Verás cómo un pequeño gesto puede transformar el día de alguien más.\.. ¡y el tuyo también!</string>
+    <string name="dailyreco_title3">Desconéctate para reconectar</string>
+    <string name="dailyreco_text3">Dedica todo el día a estar fuera del alcance de las pantallas. Guarda tu teléfono, apaga la televisión y encuentra formas creativas de pasar el tiempo: cocina una nueva receta, pinta, organiza tu casa o sal a explorar un parque. Descubre cómo estar presente en el momento puede enriquecer tu día.</string>
+    <string name="dailyreco_title4">Planifica un momento especial</string>
+    <string name="dailyreco_text4">Organiza un plan sencillo pero significativo para alguien que quieres. Puede ser preparar una cena especial, planear una noche de juegos o escribir una lista de razones por las que aprecias a esa persona. Este gesto no solo fortalecerá tu relación, sino que también te hará sentir más conectado.</string>
+    <string name="dailyreco_title5">Transforma un miedo</string>
+    <string name="dailyreco_text5">Reflexiona sobre un miedo que tengas y escribe cómo lo enfrentarías si no te detuviera. Luego, da un pequeño paso hacia superarlo, como investigar sobre ello o hablar con alguien de confianza. Enfrentar tus miedos en pequeños pasos puede ser un gran avance para tu crecimiento personal.</string>
+    <string name="dailyreco_title6">Convierte tu día en arte</string>
+    <string name="dailyreco_text6">Usa cualquier forma de expresión artística para capturar tu día. Puedes escribir un poema, hacer un dibujo, crear una canción o tomar fotografías que representen cómo te sientes. No necesitas ser un experto; lo importante es expresar tu esencia a través del arte.</string>
+    <string name="dailyreco_title7">Elige una meta pequeña</string>
+    <string name="dailyreco_text7">Piensa en una meta que siempre has querido alcanzar, pero que sientes demasiado lejana. Hoy, diseña un plan pequeño y realista para comenzar. Divide la meta en pasos simples y cumple el primero. Recuerda: cada gran logro comienza con un pequeño paso.</string>
+    <string name="dailyreco_title8">Cambia tu perspectiva</string>
+    <string name="dailyreco_text8">Dedica 10 minutos para ver una situación desde otra perspectiva. Si algo te molesta o preocupa, imagina cómo lo vería otra persona. Este ejercicio puede ayudarte a desarrollar empatía y entender que las cosas no siempre son lo que parecen.</string>
+    <string name="dailyreco_title9">Celebra tus avance</string>
+    <string name="dailyreco_text9">Haz una lista de los momentos en los que has superado dificultades en el pasado. Reconoce el esfuerzo que pusiste y lo lejos que has llegado. Recuerda que tienes la fuerza para superar cualquier desafío que enfrentes hoy.</string>
+    <string name="dailyreco_title10">Un día sin quejas</string>
+    <string name="dailyreco_text10">Comprométete a pasar todo el día sin quejarte. En lugar de enfocarte en lo negativo, busca algo positivo en cada situación. Este ejercicio puede cambiar la forma en que percibes tu día y aumentar tu gratitud.</string>
+    <string name="dailyreco_title11">Conecta contigo mismo</string>
+    <string name="dailyreco_text11">Dedica 10 minutos hoy para meditar. Encuentra un lugar tranquilo donde te sientas cómodo, cierra los ojos y respira profundamente. Concéntrate en el ritmo de tu respiración, permitiendo que tus pensamientos fluyan sin juzgarlos ni aferrarte a ellos. Es un momento para reconectar contigo mismo y calmar tu mente. ¡Verás cómo, al terminar, te sientes más relajado y en paz!</string>
+    <string name="dailyreco_title12">Día de gratitud</string>
+    <string name="dailyreco_text12">Tómate un momento para escribir tres cosas por las que estás agradecido hoy. No importa si son cosas pequeñas, como disfrutar una taza de café caliente, o grandes, como la compañía de un ser querido. Lo importante es enfocarte en lo positivo y permitir que esa gratitud ilumine tu día.</string>
+    <string name="dailyreco_title13">Escribe una carta</string>
+    <string name="dailyreco_text13">Hoy, escribe una carta a alguien importante para ti. Puede ser para un amigo que extrañas, un familiar que amas, o incluso para tu yo futuro. Escribe desde el corazón, expresando tus pensamientos, emociones y deseos. A veces, poner en palabras lo que sentimos puede ser profundamente liberador.</string>
+    <string name="dailyreco_title14">Momento offline</string>
+    <string name="dailyreco_text14">Desconéctate de las redes sociales por una hora hoy. Usa este tiempo para reconectar contigo mismo o hacer algo que realmente disfrutes. Puede ser leer un libro, pintar, cocinar tu plato favorito, o simplemente disfrutar de un paseo tranquilo. ¡Te sorprenderá lo refrescante que puede ser!</string>
+    <string name="dailyreco_title15">Escucha a alguien</string>
+    <string name="dailyreco_text15">Pregúntale a un amigo, colega o ser querido cómo fue su día. Escucha con atención, dejando a un lado distracciones, y hazle saber que realmente te importa lo que comparte. Una buena escucha puede fortalecer los lazos y alegrar a ambos.</string>
+    <string name="dailyreco_title16">Pasos conscientes</string>
+    <string name="dailyreco_text16">Da un paseo, pero esta vez hazlo con plena consciencia. Siente el suelo bajo tus pies, escucha el sonido de tus pasos y observa los pequeños detalles de tu entorno: los colores, los sonidos, el aire en tu rostro. Este ejercicio te ayudará a vivir el momento presente.</string>
+    <string name="dailyreco_title17">Cumple un pequeño objetivo</string>
+    <string name="dailyreco_text17">Hoy, elige una tarea que has estado posponiendo y termínala. Puede ser algo sencillo como ordenar un cajón, plantar una flor o responder un mensaje. Cumplir pequeños objetivos genera una gran satisfacción.</string>
+    <string name="dailyreco_title18">Regalo inesperado</string>
+    <string name="dailyreco_text18">Dale un pequeño detalle a alguien sin motivo alguno. Puede ser un cumplido, una tarjeta escrita a mano o incluso un simple "gracias". Los gestos espontáneos tienen el poder de alegrar cualquier día.</string>
+    <string name="dailyreco_title19">El arte de respirar</string>
+    <string name="dailyreco_text19">Practica la técnica de respiración 4\-7\-8: inhala en 4 segundos, mantén el aire durante 7, y exhala en 8. Es una técnica simple, pero eficaz para reducir la ansiedad y mejorar tu bienestar general.</string>
+    <string name="dailyreco_title20">Momento de reconexión</string>
+    <string name="dailyreco_text20">Llama a un amigo o familiar con el que no hablas desde hace tiempo. Tómate unos minutos para recordarle cuánto valoras su amistad y cuánto significa para ti.</string>
+    <string name="dailyreco_title21">Cuida tu entorno</string>
+    <string name="dailyreco_text21">Elige un pequeño espacio en tu hogar y ordena o limpia. Puede ser un escritorio, un estante o tu mesita de noche. Un ambiente organizado puede hacer maravillas para tu claridad mental.</string>
+    <string name="dailyreco_title22">Desafío saludable</string>
+    <string name="dailyreco_text22">Haz el esfuerzo de beber un vaso extra de agua hoy. Mantenerte hidratado mejora tu energía, concentración y salud en general. ¡Tu cuerpo y mente te lo agradecerán!</string>
+    <string name="dailyreco_title23">Celebra tus logros</string>
+    <string name="dailyreco_text23">Reflexiona sobre tus logros esta semana, grandes o pequeños. Reconocer tus avances fortalece tu confianza y te motiva a seguir adelante.</string>
+    <string name="dailyreco_title24">Aprende algo nuevo</string>
+    <string name="dailyreco_text24">Dedica 10 minutos a investigar un tema interesante o a practicar una nueva habilidad. Ampliar tus horizontes siempre será enriquecedor.</string>
+    <string name="dailyreco_title25">Comparte un halago</string>
+    <string name="dailyreco_text25">Encuentra algo que admires en alguien y házselo saber. Puede ser su sonrisa, su actitud positiva o algo que hizo. Un cumplido puede iluminar su día.</string>
+
+
 
     <!-- PetEvolved -->
     <string name="pet_evolved_topAppBar">Evoluciones</string>
