@@ -8,13 +8,19 @@ import androidx.lifecycle.ViewModel
 import com.uvg.freetofeel.data.model.UserLoginState
 import androidx.compose.runtime.State
 import androidx.lifecycle.viewModelScope
+import com.uvg.freetofeel.data.model.PetStories
+import com.uvg.freetofeel.data.model.UserData
+import com.uvg.freetofeel.data.model.UserWritings
 import com.uvg.freetofeel.data.network.SupabaseClient
 import com.uvg.freetofeel.utils.SharedPreferencesHelper
+import io.github.jan.supabase.gotrue.authenticatedSupabaseApi
 import io.github.jan.supabase.gotrue.gotrue
 import io.github.jan.supabase.gotrue.providers.builtin.Email
+import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.launch
+import java.time.Instant
 
-class SupabaseAuthViewModel:ViewModel() {
+class SupabaseAuthViewModel:ViewModel() {       //Sé que se llama Auth, pero tambien hace el resto de SupaCosas :)
     private val _userLoginState = mutableStateOf<UserLoginState>(UserLoginState.Loading)
     val userState: State<UserLoginState> = _userLoginState
 
@@ -117,4 +123,191 @@ class SupabaseAuthViewModel:ViewModel() {
             }
         }
     }
-}
+
+
+    fun saveUserData(name:String,points:Int){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["UsersData"].insert(
+                    UserData(
+                        name =name,
+                        points = points,
+                        lastLogin = Instant.now().toString()
+                    ),
+                    upsert = true
+                )
+                _userLoginState.value = UserLoginState.Success("Nice upload of U-data")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+            }
+        }
+    }
+
+    fun saveUserWritings(title:String,body:String,type:String) {
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["UsersWritings"].insert(
+                    UserWritings(
+                        title = title,
+                        body = body,
+                        type = type
+                    ),
+                    upsert = true
+                )
+                _userLoginState.value = UserLoginState.Success("Nice upload of U-writings")
+            } catch (e: Exception) {
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+            }
+        }
+    }
+
+        fun savePetStories(lazy:Int,hedge:Int,jelly:Int,bee:Int){
+            viewModelScope.launch {
+                try {
+                    _userLoginState.value = UserLoginState.Loading
+                    SupabaseClient.client.postgrest["PetStories"].insert(
+                        PetStories(
+                            lazy=lazy,
+                            hedge = hedge,
+                            jelly = jelly,
+                            bee=bee
+                        ),
+                        upsert = true
+                    )
+                    _userLoginState.value = UserLoginState.Success("Nice upload of U-storyProgress")
+                }
+                catch (e:Exception){
+                    _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+                }
+            }
+        }
+
+    fun getUserData(){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                val data = SupabaseClient.client.postgrest["UsersData"]
+                    .select().decodeSingle<UserData>()
+
+                _userLoginState.value = UserLoginState.Success("ID:${data.id}, Name:${data.name}, Points: ${data.points}")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+
+            }
+        }
+    }
+
+
+    fun getUserWritings(){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                val data = SupabaseClient.client.postgrest["UsersWritings"]
+                    .select().decodeSingle<UserWritings>()
+                _userLoginState.value = UserLoginState.Success("Data: ${data.id}") //cambiar a varios?
+//                val data2 = SupabaseClient.client.postgrest["UsersWritings"]
+//                    .select().decodeList<UserWritings>()
+                //Suspend???
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+
+            }
+        }
+
+    }
+
+    fun getPetStories(){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                val data = SupabaseClient.client.postgrest["PetStories"]
+                    .select().decodeSingle<PetStories>()
+                _userLoginState.value = UserLoginState.Success("Data: ${data.id}")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+
+            }
+        }
+    }
+
+    fun updateUserData(newPoints:Int){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["UsersData"]
+                    .update({
+                        UserData::points setTo newPoints
+                    }){
+                        UserData::id eq SupabaseClient.client.gotrue.currentUserOrNull()?.id
+                    }
+                _userLoginState.value = UserLoginState.Success("Updated correctly")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+            }
+        }
+    }
+
+    fun updateUserWritings(newTitle:String,newBody:String){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["UsersWritings"]
+                    .update({
+                        UserWritings::title setTo newTitle
+                        UserWritings::body setTo newBody
+                    }){
+                        UserWritings::userID eq SupabaseClient.client.gotrue.currentUserOrNull()?.id
+                    }
+                _userLoginState.value = UserLoginState.Success("Updated correctly")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+            }
+        }
+    }
+
+    fun updatePetStories(newLazy:String,newHedge:String,newJelly:String,newBee:String){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["PetStories"]
+                    .update({
+                        PetStories::lazy setTo newLazy
+                        PetStories::hedge setTo newHedge
+                        PetStories::jelly setTo newJelly
+                        PetStories::bee setTo newBee
+                    }){
+                        PetStories::id eq SupabaseClient.client.gotrue.currentUserOrNull()?.id
+                    }
+                _userLoginState.value = UserLoginState.Success("Updated correctly")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+            }
+        }
+    }
+
+    fun deleteUserWriting(id:Int){
+        viewModelScope.launch {
+            try {
+                _userLoginState.value = UserLoginState.Loading
+                SupabaseClient.client.postgrest["UsersWritings"]
+                    .delete {
+                        UserWritings::id eq id
+                    }
+                _userLoginState.value = UserLoginState.Success("Deleted correctly")
+            }
+            catch (e:Exception){
+                _userLoginState.value = UserLoginState.Error("Error ${e.message}")
+
+            }
+        }
+    }
+    }

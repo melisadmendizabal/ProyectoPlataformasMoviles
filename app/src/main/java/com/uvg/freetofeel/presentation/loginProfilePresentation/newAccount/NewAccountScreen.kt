@@ -214,7 +214,7 @@ fun NewAccountScreen(
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = {onCreateAccountClick()
             authViewModel.signUp(context = context, userEmail = inputEmail, userPassword = inputPassword)
-                         }
+                         authViewModel.saveUserData(name = inputUser, points = 0)}
             , enabled = isButtonEnabled) {
          Text(text = stringResource(id = R.string.CreateAcc))
         }

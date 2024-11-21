@@ -4,6 +4,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.DailyRecoDESTINATION
+import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.dailyRecoScreen
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.navigateToDailyReco
 import com.uvg.freetofeel.presentation.petPresentation.petHome.navigateToPetHome
 import com.uvg.freetofeel.presentation.petPresentation.petHome.pethomeScreen
@@ -30,12 +31,17 @@ fun NavGraphBuilder.changepet(
                 navController.navigateToPetSelect(PetSelectDESTINATION)
             },
             onTipDayPetScreenClick = {
-            navController.navigateToDailyReco(DailyRecoDESTINATION)
+                navController.navigateToDailyReco("ok")
             },
             onHistoryScreenPetHome = {
                 navController.navigateToPetTalk(PetTalkDESTINATION)
             }
         )
+        dailyRecoScreen(
+            onAcceptDailyReco = {navController.navigateUp()}
+        )
+
+
         //faltan?
 
 

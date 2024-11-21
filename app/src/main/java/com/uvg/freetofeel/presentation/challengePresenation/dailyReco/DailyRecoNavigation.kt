@@ -8,13 +8,15 @@ import com.uvg.freetofeel.presentation.petPresentation.petSelect.PetSelectROUTE
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object DailyRecoDESTINATION
+data class DailyRecoDESTINATION(
+    val completed:String
+)
 
 fun NavController.navigateToDailyReco(
-    destination: DailyRecoDESTINATION,
+    destination: String,
     navOptions: NavOptions? = null
 ){
-    this.navigate(destination, navOptions)
+    this.navigate(DailyRecoDESTINATION(completed = destination), navOptions)
 }
 
 fun NavGraphBuilder.dailyRecoScreen(

@@ -24,7 +24,10 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
     private final AbstractExternalDependencyFactory owner = this;
     private final AndroidxLibraryAccessors laccForAndroidxLibraryAccessors = new AndroidxLibraryAccessors(owner);
     private final CoilLibraryAccessors laccForCoilLibraryAccessors = new CoilLibraryAccessors(owner);
+    private final GotrueLibraryAccessors laccForGotrueLibraryAccessors = new GotrueLibraryAccessors(owner);
     private final KotlinxLibraryAccessors laccForKotlinxLibraryAccessors = new KotlinxLibraryAccessors(owner);
+    private final KtorLibraryAccessors laccForKtorLibraryAccessors = new KtorLibraryAccessors(owner);
+    private final PostgrestLibraryAccessors laccForPostgrestLibraryAccessors = new PostgrestLibraryAccessors(owner);
     private final VersionAccessors vaccForVersionAccessors = new VersionAccessors(providers, config);
     private final BundleAccessors baccForBundleAccessors = new BundleAccessors(objects, providers, config, attributesFactory, capabilityNotationParser);
     private final PluginAccessors paccForPluginAccessors = new PluginAccessors(providers, config);
@@ -71,6 +74,17 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
     }
 
     /**
+     * Group of libraries at <b>gotrue</b>
+     *
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public GotrueLibraryAccessors getGotrue() {
+        org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+        return laccForGotrueLibraryAccessors;
+    }
+
+    /**
      * Group of libraries at <b>kotlinx</b>
      *
      * @deprecated Will be removed in Gradle 9.0.
@@ -79,6 +93,28 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
     public KotlinxLibraryAccessors getKotlinx() {
         org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
         return laccForKotlinxLibraryAccessors;
+    }
+
+    /**
+     * Group of libraries at <b>ktor</b>
+     *
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public KtorLibraryAccessors getKtor() {
+        org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+        return laccForKtorLibraryAccessors;
+    }
+
+    /**
+     * Group of libraries at <b>postgrest</b>
+     *
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public PostgrestLibraryAccessors getPostgrest() {
+        org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+        return laccForPostgrestLibraryAccessors;
     }
 
     /**
@@ -116,6 +152,7 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         private final AndroidxCoreLibraryAccessors laccForAndroidxCoreLibraryAccessors = new AndroidxCoreLibraryAccessors(owner);
         private final AndroidxEspressoLibraryAccessors laccForAndroidxEspressoLibraryAccessors = new AndroidxEspressoLibraryAccessors(owner);
         private final AndroidxLifecycleLibraryAccessors laccForAndroidxLifecycleLibraryAccessors = new AndroidxLifecycleLibraryAccessors(owner);
+        private final AndroidxRoomLibraryAccessors laccForAndroidxRoomLibraryAccessors = new AndroidxRoomLibraryAccessors(owner);
         private final AndroidxUiLibraryAccessors laccForAndroidxUiLibraryAccessors = new AndroidxUiLibraryAccessors(owner);
 
         public AndroidxLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
@@ -201,6 +238,17 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public AndroidxLifecycleLibraryAccessors getLifecycle() {
             org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
             return laccForAndroidxLifecycleLibraryAccessors;
+        }
+
+        /**
+         * Group of libraries at <b>androidx.room</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public AndroidxRoomLibraryAccessors getRoom() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForAndroidxRoomLibraryAccessors;
         }
 
         /**
@@ -332,6 +380,7 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
     @Deprecated
     public static class AndroidxLifecycleLibraryAccessors extends SubDependencyFactory {
         private final AndroidxLifecycleRuntimeLibraryAccessors laccForAndroidxLifecycleRuntimeLibraryAccessors = new AndroidxLifecycleRuntimeLibraryAccessors(owner);
+        private final AndroidxLifecycleViewmodelLibraryAccessors laccForAndroidxLifecycleViewmodelLibraryAccessors = new AndroidxLifecycleViewmodelLibraryAccessors(owner);
 
         public AndroidxLifecycleLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
 
@@ -344,6 +393,17 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public AndroidxLifecycleRuntimeLibraryAccessors getRuntime() {
             org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
             return laccForAndroidxLifecycleRuntimeLibraryAccessors;
+        }
+
+        /**
+         * Group of libraries at <b>androidx.lifecycle.viewmodel</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public AndroidxLifecycleViewmodelLibraryAccessors getViewmodel() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForAndroidxLifecycleViewmodelLibraryAccessors;
         }
 
     }
@@ -368,6 +428,82 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public Provider<MinimalExternalModuleDependency> getKtx() {
             org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
             return create("androidx.lifecycle.runtime.ktx");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class AndroidxLifecycleViewmodelLibraryAccessors extends SubDependencyFactory {
+
+        public AndroidxLifecycleViewmodelLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>compose</b> with <b>androidx.lifecycle:lifecycle-viewmodel-compose</b> coordinates and
+         * with version reference <b>lifecycleViewmodelCompose</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getCompose() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("androidx.lifecycle.viewmodel.compose");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class AndroidxRoomLibraryAccessors extends SubDependencyFactory {
+
+        public AndroidxRoomLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>compiler</b> with <b>androidx.room:room-compiler</b> coordinates and
+         * with version reference <b>room</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getCompiler() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("androidx.room.compiler");
+        }
+
+        /**
+         * Dependency provider for <b>ktx</b> with <b>androidx.room:room-ktx</b> coordinates and
+         * with version reference <b>room</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getKtx() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("androidx.room.ktx");
+        }
+
+        /**
+         * Dependency provider for <b>runtime</b> with <b>androidx.room:room-runtime</b> coordinates and
+         * with version reference <b>room</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getRuntime() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("androidx.room.runtime");
         }
 
     }
@@ -538,6 +674,30 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
      * @deprecated Will be removed in Gradle 9.0.
      */
     @Deprecated
+    public static class GotrueLibraryAccessors extends SubDependencyFactory {
+
+        public GotrueLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>kt</b> with <b>io.github.jan-tennert.supabase:gotrue-kt</b> coordinates and
+         * with version reference <b>gotrueKt</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getKt() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("gotrue.kt");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
     public static class KotlinxLibraryAccessors extends SubDependencyFactory {
         private final KotlinxSerializationLibraryAccessors laccForKotlinxSerializationLibraryAccessors = new KotlinxSerializationLibraryAccessors(owner);
 
@@ -561,12 +721,134 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
      */
     @Deprecated
     public static class KotlinxSerializationLibraryAccessors extends SubDependencyFactory {
+        private final KotlinxSerializationJsonLibraryAccessors laccForKotlinxSerializationJsonLibraryAccessors = new KotlinxSerializationJsonLibraryAccessors(owner);
 
         public KotlinxSerializationLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
 
         /**
+         * Group of libraries at <b>kotlinx.serialization.json</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public KotlinxSerializationJsonLibraryAccessors getJson() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForKotlinxSerializationJsonLibraryAccessors;
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class KotlinxSerializationJsonLibraryAccessors extends SubDependencyFactory implements DependencyNotationSupplier {
+
+        public KotlinxSerializationJsonLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
          * Dependency provider for <b>json</b> with <b>org.jetbrains.kotlinx:kotlinx-serialization-json</b> coordinates and
-         * with version <b>1.6.3</b>
+         * with version <b>kotlinSerialization</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> asProvider() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("kotlinx.serialization.json");
+        }
+
+        /**
+         * Dependency provider for <b>v151</b> with <b>org.jetbrains.kotlinx:kotlinx-serialization-json</b> coordinates and
+         * with version reference <b>kotlinxSerializationJsonV151</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getV151() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("kotlinx.serialization.json.v151");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class KtorLibraryAccessors extends SubDependencyFactory {
+        private final KtorClientLibraryAccessors laccForKtorClientLibraryAccessors = new KtorClientLibraryAccessors(owner);
+        private final KtorKtorLibraryAccessors laccForKtorKtorLibraryAccessors = new KtorKtorLibraryAccessors(owner);
+
+        public KtorLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Group of libraries at <b>ktor.client</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public KtorClientLibraryAccessors getClient() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForKtorClientLibraryAccessors;
+        }
+
+        /**
+         * Group of libraries at <b>ktor.ktor</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public KtorKtorLibraryAccessors getKtor() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForKtorKtorLibraryAccessors;
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class KtorClientLibraryAccessors extends SubDependencyFactory {
+
+        public KtorClientLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>cio</b> with <b>io.ktor:ktor-client.cio</b> coordinates and
+         * with version reference <b>ktorClientCio</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getCio() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("ktor.client.cio");
+        }
+
+        /**
+         * Dependency provider for <b>core</b> with <b>io.ktor:ktor-client-core</b> coordinates and
+         * with version reference <b>ktorClientCore</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getCore() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("ktor.client.core");
+        }
+
+        /**
+         * Dependency provider for <b>json</b> with <b>io.ktor:ktor-client-json</b> coordinates and
+         * with version reference <b>ktorClientJson</b>
          * <p>
          * This dependency was declared in catalog libs.versions.toml
          *
@@ -575,7 +857,105 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         @Deprecated
         public Provider<MinimalExternalModuleDependency> getJson() {
             org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
-            return create("kotlinx.serialization.json");
+            return create("ktor.client.json");
+        }
+
+        /**
+         * Dependency provider for <b>okhttp</b> with <b>io.ktor:ktor-client-okhttp</b> coordinates and
+         * with version reference <b>ktorClientOkhttp</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getOkhttp() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("ktor.client.okhttp");
+        }
+
+        /**
+         * Dependency provider for <b>serialization</b> with <b>io.ktor:ktor-client-serialization</b> coordinates and
+         * with version reference <b>ktorClientSerialization</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getSerialization() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("ktor.client.serialization");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class KtorKtorLibraryAccessors extends SubDependencyFactory {
+        private final KtorKtorClientLibraryAccessors laccForKtorKtorClientLibraryAccessors = new KtorKtorClientLibraryAccessors(owner);
+
+        public KtorKtorLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Group of libraries at <b>ktor.ktor.client</b>
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public KtorKtorClientLibraryAccessors getClient() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return laccForKtorKtorClientLibraryAccessors;
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class KtorKtorClientLibraryAccessors extends SubDependencyFactory {
+
+        public KtorKtorClientLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>cio</b> with <b>io.ktor:ktor-client-cio</b> coordinates and
+         * with version reference <b>ktorClientCioVersion</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getCio() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("ktor.ktor.client.cio");
+        }
+
+    }
+
+    /**
+     * @deprecated Will be removed in Gradle 9.0.
+     */
+    @Deprecated
+    public static class PostgrestLibraryAccessors extends SubDependencyFactory {
+
+        public PostgrestLibraryAccessors(AbstractExternalDependencyFactory owner) { super(owner); }
+
+        /**
+         * Dependency provider for <b>kt</b> with <b>io.github.jan-tennert.supabase:postgrest-kt</b> coordinates and
+         * with version reference <b>gotrueKt</b>
+         * <p>
+         * This dependency was declared in catalog libs.versions.toml
+         *
+         * @deprecated Will be removed in Gradle 9.0.
+         */
+        @Deprecated
+        public Provider<MinimalExternalModuleDependency> getKt() {
+            org.gradle.internal.deprecation.DeprecationLogger.deprecateBehaviour("Accessing libraries or bundles from version catalogs in the plugins block.").withAdvice("Only use versions or plugins from catalogs in the plugins block.").willBeRemovedInGradle9().withUpgradeGuideSection(8, "kotlin_dsl_deprecated_catalogs_plugins_block").nagUser();
+            return create("postgrest.kt");
         }
 
     }
@@ -645,6 +1025,16 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public Provider<String> getEspressoCore() { return getVersion("espressoCore"); }
 
         /**
+         * Version alias <b>gotrueKt</b> with value <b>1.3.2</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getGotrueKt() { return getVersion("gotrueKt"); }
+
+        /**
          * Version alias <b>junit</b> with value <b>4.13.2</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
@@ -685,6 +1075,76 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public Provider<String> getKotlinSerialization() { return getVersion("kotlinSerialization"); }
 
         /**
+         * Version alias <b>kotlinxSerializationJsonV151</b> with value <b>1.5.1</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKotlinxSerializationJsonV151() { return getVersion("kotlinxSerializationJsonV151"); }
+
+        /**
+         * Version alias <b>ktorClientCio</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCio() { return getVersion("ktorClientCio"); }
+
+        /**
+         * Version alias <b>ktorClientCioVersion</b> with value <b>2.3.12</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCioVersion() { return getVersion("ktorClientCioVersion"); }
+
+        /**
+         * Version alias <b>ktorClientCore</b> with value <b>2.3.12</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientCore() { return getVersion("ktorClientCore"); }
+
+        /**
+         * Version alias <b>ktorClientJson</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientJson() { return getVersion("ktorClientJson"); }
+
+        /**
+         * Version alias <b>ktorClientOkhttp</b> with value <b>2.3.0</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientOkhttp() { return getVersion("ktorClientOkhttp"); }
+
+        /**
+         * Version alias <b>ktorClientSerialization</b> with value <b>2.3.4</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getKtorClientSerialization() { return getVersion("ktorClientSerialization"); }
+
+        /**
          * Version alias <b>lifecycleRuntimeKtx</b> with value <b>2.8.5</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
@@ -695,6 +1155,16 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
         public Provider<String> getLifecycleRuntimeKtx() { return getVersion("lifecycleRuntimeKtx"); }
 
         /**
+         * Version alias <b>lifecycleViewmodelCompose</b> with value <b>2.8.7</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getLifecycleViewmodelCompose() { return getVersion("lifecycleViewmodelCompose"); }
+
+        /**
          * Version alias <b>navigationCompose</b> with value <b>2.8.0-rc01</b>
          * <p>
          * If the version is a rich version and cannot be represented as a
@@ -703,6 +1173,26 @@ public class LibrariesForLibsInPluginsBlock extends AbstractExternalDependencyFa
          * This version was declared in catalog libs.versions.toml
          */
         public Provider<String> getNavigationCompose() { return getVersion("navigationCompose"); }
+
+        /**
+         * Version alias <b>room</b> with value <b>2.6.1</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getRoom() { return getVersion("room"); }
+
+        /**
+         * Version alias <b>roomKtx</b> with value <b>2.6.1</b>
+         * <p>
+         * If the version is a rich version and cannot be represented as a
+         * single version string, an empty string is returned.
+         * <p>
+         * This version was declared in catalog libs.versions.toml
+         */
+        public Provider<String> getRoomKtx() { return getVersion("roomKtx"); }
 
     }
 

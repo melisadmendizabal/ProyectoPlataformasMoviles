@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
@@ -37,13 +39,21 @@ fun FirstPetScreen(onFirstPetOk: ()-> Unit) {
             .background(color = MaterialTheme.colorScheme.inversePrimary), // Cambiar cuando se tengan los colores reales
         contentAlignment = Alignment.Center
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.lazy_back), // Se planeó que el perezoso sea el primero en salir
-            contentDescription = "Hábitat del perezoso",
-            alignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillHeight
-        )
+        Column (modifier = Modifier.fillMaxSize(),verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.cloud_top),
+                contentDescription = "Nubes superiores",
+                modifier = Modifier.fillMaxWidth(),
+                alignment = Alignment.TopCenter,
+
+                )
+            Image(
+                painter = painterResource(id = R.drawable.cloud_bot),
+                contentDescription = "Nubes Inferiores",
+                modifier = Modifier.fillMaxWidth(),
+                alignment = Alignment.BottomCenter,
+                )
+        }
     }
 
     Column(
@@ -52,11 +62,13 @@ fun FirstPetScreen(onFirstPetOk: ()-> Unit) {
         verticalArrangement = Arrangement.Center
     ) {
 
+
         AlertDialog(
             containerColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.4f),
             onDismissRequest = { /* Lógica al cerrar */ }, //posiblemente se quede vacío, porque solo hay aceptar
-            title = { Text(text = stringResource(id = R.string.first_pet_title)) },
-            text = { Text(text = stringResource(id = R.string.first_pet_body)) },
+            title = { Text(text = stringResource(id = R.string.first_pet_title), textAlign = TextAlign.Center) },
+            text = { Text(text = stringResource(id = R.string.first_pet_body1), textAlign = TextAlign.Justify) },
+
             confirmButton = {
                 Button(onClick = onFirstPetOk) {
                     Text(text = stringResource(id = R.string.first_pet_confirm))

@@ -116,7 +116,6 @@ fun ScreenBotNav(
                 .padding(innerPadding)
         ){
 
-
             changepet(navController)
 
             sunHomeScreen(onCommentClick = {navController.navigateToSunInput(SunInputDESTINATION)},
@@ -138,9 +137,7 @@ fun ScreenBotNav(
                 onBackProfileData = {navController.navigateUp()}
             )
 
-            dailyRecoScreen(
-                onAcceptDailyReco = {navController.navigateUp()}
-            )
+
             petTalkScreen(onElection = {navController.navigateUp()})
 
 
@@ -152,7 +149,7 @@ fun ScreenBotNav(
                 onSadClick = {navController.navigateToSunTalk("Sad")},
                 onRestlessClick = {navController.navigateToSunTalk("Restless")},
                 userName = "R&M") //Cambiar por el nombre real del usuario
-        sunTalkScreen(onAccept = {navController.popBackStack(); navController.navigateToSunHome(SunHomeDESTINATION)})
+            sunTalkScreen(onAccept = {navController.popBackStack(); navController.navigateToSunHome(SunHomeDESTINATION)})
 
         }
     }

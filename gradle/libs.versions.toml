@@ -57,6 +57,7 @@ ktor-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-runtime={group="androidx.room",name="room-runtime",version.ref="room"}
 androidx-room-compiler={group="androidx.room",name="room-compiler",version.ref="room"}
+postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "gotrueKt" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
