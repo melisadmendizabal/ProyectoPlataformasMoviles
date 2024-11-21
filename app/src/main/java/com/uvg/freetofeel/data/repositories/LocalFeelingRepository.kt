@@ -1,6 +1,6 @@
 package com.uvg.freetofeel.data.repositories
 
-import com.uvg.freetofeel.data.local.FeelingsDb
+import com.uvg.freetofeel.data.source.FeelingsDb
 import com.uvg.freetofeel.data.local.dao.FeelingDAO
 import com.uvg.freetofeel.data.local.dao.mapToEntity
 import com.uvg.freetofeel.data.local.entity.mapToModel
@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.first
 
 class LocalFeelingRepository(
     private val feelingDao:FeelingDAO,
-    private val feelingDb:FeelingsDb
+    private val feelingDb: FeelingsDb
 ){
     suspend fun getFeelings():List<Feeling>{
         val localFeelings = feelingDao.getAllFeelings().first()

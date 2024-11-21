@@ -1,6 +1,6 @@
 package com.uvg.freetofeel.repositories
 
-import com.uvg.freetofeel.data.local.FeelingsDb
+import com.uvg.freetofeel.data.source.FeelingsDb
 import com.uvg.freetofeel.data.local.dao.DailyRecoDAO
 import com.uvg.freetofeel.data.local.dao.FeelingDAO
 import com.uvg.freetofeel.data.local.dao.mapToEntity

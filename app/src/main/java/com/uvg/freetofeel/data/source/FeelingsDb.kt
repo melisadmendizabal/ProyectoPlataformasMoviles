@@ -1,4 +1,4 @@
-package com.uvg.freetofeel.data.local
+package com.uvg.freetofeel.data.source
 
 import com.uvg.freetofeel.R
 import com.uvg.freetofeel.data.model.Feeling
