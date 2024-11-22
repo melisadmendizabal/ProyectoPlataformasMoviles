@@ -259,6 +259,7 @@
     <string name="profile_home_myWritings">My writings</string>
     <string name="profile_home_viewB">View</string>
     <string name="profile_home_editB">Edit</string>
+    <string name="logout">Logout</string>
 
     <!-- Sun Feeling -->
     <string name="sunFeeling_ask">how do you feel today?</string>
@@ -453,13 +454,54 @@
     <string name="profile_data_addB">Add</string>
 
     <!-- ChallengeChosenScreen -->
-    <string name="challengeChosen_title">Breathing techniques</string>
-    <string name="challengeChosen_type">Relaxation</string>
-    <string name="challengeChosen_descripción1">Stand up, close your eyes and hold your breath for 10s.</string>
-    <string name="challengeChosen_descripción2">Release the air and stretch your entire body.</string>
-    <string name="challengeChosen_descripción3">Repeat the process with a sitting posture and then with a lying posture.</string>
-    <string name="challengeChosen_buttonBack">Back</string>
-    <string name="challengeChosen_buttonAccept">Accept</string>
+    <string name="challenge_emocional_type">Emotional</string>
+    <string name="challenge_emocional_title1">Gratitude Practice</string>
+    <string name="challenge_emocional_description1">Gratitude is a powerful emotional tool. Take a few minutes each day to reflect on the things you are grateful for. This can range from small things, like enjoying a cup of coffee, to significant achievements. Keeping a gratitude journal can help you focus on the positive and enhance your emotional well-being.</string>
+    <string name="challenge_emocional_title2">Emotional Expression</string>
+    <string name="challenge_emocional_description2">It’s essential to learn to express your emotions healthily. Talk to friends, family, or a therapist about how you feel. Open communication can help you process your emotions and reduce the emotional burden you may be experiencing.</string>
+    <string name="challenge_emocional_title3">Mindfulness Practice</string>
+    <string name="challenge_emocional_description3">Mindfulness allows you to be present in the moment, which can be very beneficial for your emotional health. Take time to meditate or simply breathe deeply. This will help you reduce anxiety and manage your emotions better.</string>
+    <string name="challenge_emocional_title4">Establishing Limits</string>
+    <string name="challenge_emocional_description4">Setting healthy boundaries is crucial for protecting your emotional well-being. Learn to say  &quot;no&quot; when something doesn\'t feel right. By doing so, you give yourself the necessary space to take care of yourself and avoid emotional burnout.</string>
+    <string name="challenge_emocional_title5"> Regular Exercise</string>
+    <string name="challenge_emocional_description5">Physical activity has a positive impact on your emotions. Exercise releases endorphins, known as &quot;happiness hormones.&quot; Try to incorporate at least 30 minutes of exercise into your daily routine, whether it\'s walking, doing yoga, or any activity you enjoy.</string>
+
+    <string name="challenge_fisico_type">Health</string>
+    <string name="challenge_fisico_title1">Maintain a Balanced Diet</string>
+    <string name="challenge_fisico_description1">A balanced diet is essential for your physical health. Include a variety of foods: fruits, vegetables, lean proteins, whole grains, and healthy fats. Try to limit the intake of processed foods and added sugars. This will not only help you maintain a healthy weight but also provide you with the energy needed for your daily activities.</string>
+    <string name="challenge_fisico_title2">Hydrate Properly</string>
+    <string name="challenge_fisico_description2">Hydration is key for the optimal functioning of the body. Drink enough water throughout the day, especially if you are active or it\'s hot outside. Water helps regulate body temperature, transport nutrients, and eliminate waste. Try to carry a water bottle with you to remind yourself to drink regularly.</string>
+    <string name="challenge_fisico_title3">Exercise Regularly</string>
+    <string name="challenge_fisico_description3">Regular physical activity is fundamental for maintaining good physical health. Aim for at least 150 minutes of moderate exercise per week, such as walking, swimming, or cycling. Exercise not only improves cardiovascular health but also helps strengthen muscles and boost your mood.</string>
+    <string name="challenge_fisico_title4">Get enough sleep</string>
+    <string name="challenge_fisico_description4">Adequate sleep is crucial for both physical and mental health. Aim to sleep between 7 and 9 hours each night. Good rest helps your body recover, improves concentration, and regulates mood. Establishing a sleep routine can help you achieve better rest.</string>
+    <string name="challenge_fisico_title5">Have Regular Medical Checkups</string>
+    <string name="challenge_fisico_description5">Regular medical check-ups are important for detecting health issues early. Schedule annual check-ups and stay up to date with recommended vaccinations and screenings. This will allow you to address any health problems before they become more serious.</string>
+
+
+    <string name="challenge_mental_type">Mental</string>
+    <string name="challenge_mental_title1">Practice Mindfulness</string>
+    <string name="challenge_mental_description1">Mindfulness involves being present in the current moment and recognizing your thoughts and feelings without judgment. Take time for meditation or breathing exercises. This practice can help reduce anxiety and stress, enhancing your emotional well-being.</string>
+    <string name="challenge_mental_title2">Maintain Social Connections</string>
+    <string name="challenge_mental_description2">Social connections are fundamental for mental health. Stay in touch with friends and family, and participate in community activities. Talking with others about your experiences can provide emotional support and a sense of belonging, which is crucial for your well-being.</string>
+    <string name="challenge_mental_title3">Establish Routines</string>
+    <string name="challenge_mental_description3">Having a daily routine can provide structure and predictability, which is beneficial for mental health. Try to set schedules for your daily activities, including time for work, relaxation, and exercise. This can help you feel more in control and reduce anxiety.</string>
+    <string name="challenge_mental_title4">Limit Exposure to Negative News</string>
+    <string name="challenge_mental_description4">Constant exposure to negative news can affect your mood and increase anxiety. Consider limiting your news and social media consumption. Instead, seek out sources of information that offer positive or inspiring stories to balance your perspective.</string>
+    <string name="challenge_mental_title5">Seek Professional Help</string>
+    <string name="challenge_mental_description5">Don\'t hesitate to seek professional help if you feel that your mental health issues are overwhelming. Therapists and counselors are trained to help you develop strategies to manage your emotions and challenges. Seeking support is a sign of strength, not weakness.</string>
+
+    <string name="challenge_espiri_type">Spiritual</string>
+    <string name="challenge_espiri_title1">Practice Gratitude</string>
+    <string name="challenge_espiri_description1">Gratitude is a powerful spiritual tool. By taking a moment each day to reflect on what you value in your life, you can elevate your spiritual energy and attract more positivity. Try keeping a gratitude journal where you note at least three things you are thankful for each day.</string>
+    <string name="challenge_espiri_title2">Meditate Regularly</string>
+    <string name="challenge_espiri_description2">Meditation is an essential practice for connecting with your inner self. Set aside time to sit in silence, focus on your breath, and let your thoughts flow without judgment. This not only reduces stress but also helps you find clarity and peace in your daily life.</string>
+    <string name="challenge_espiri_title3">Connect with Nature</string>
+    <string name="challenge_espiri_description3">Spending time outdoors can spiritually rejuvenate you. Nature has a healing effect that can help you reconnect with yourself and the world. Whether it\'s taking a walk in a park or simply sitting in your garden, allow the natural energy to envelop you.</string>
+    <string name="challenge_espiri_title4">Set Intentions</string>
+    <string name="challenge_espiri_description4">At the beginning of each day, take a moment to set your intentions. Ask yourself what you want to achieve and how you want to feel. By having clarity on your spiritual goals, you can direct your energy towards them and manifest positive changes in your life.</string>
+    <string name="challenge_espiri_title5">Seek Community</string>
+    <string name="challenge_espiri_description5">Surrounding yourself with people who share your spiritual interests can be transformative. Participate in meditation groups, workshops, or spiritual retreats. Connecting with others can provide support, inspiration, and new perspectives on your spiritual journey.</string>
 
     <!-- SunInputScreen -->
     <string name="sunInput_title">Write the title or date</string>

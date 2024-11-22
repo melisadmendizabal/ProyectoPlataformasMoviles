@@ -169,7 +169,7 @@ fun ProfileHomeScreen(onMyWriteClick: ()-> Unit,authViewModel: SupabaseAuthViewM
                 item{
                     Button(onClick = { onLogOutClick()
                         authViewModel.logout(context = context) }) {
-                        Text(text = "Padre, me cancelaron")
+                        Text(text = stringResource(id = R.string.logout) )
                     }
                 }
             }

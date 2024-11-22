@@ -60,9 +60,9 @@ fun ChallengeChosenROUTE(
 fun ChallengeChosenScreen(onButton:()->Unit) {
     var inputText by remember { mutableStateOf("") }
     val textexample = listOf(
-        stringResource(id = R.string.challengeChosen_descripción1),
-        stringResource(id = R.string.challengeChosen_descripción2),
-        stringResource(id = R.string.challengeChosen_descripción3),
+        stringResource(id = R.string.challenge_emocional_description1),
+        stringResource(id = R.string.challenge_emocional_description2),
+        stringResource(id = R.string.challenge_emocional_description3),
     )
 
     Column(Modifier.fillMaxSize()) {
@@ -98,13 +98,13 @@ fun ChallengeChosenScreen(onButton:()->Unit) {
         ) {
             Column(Modifier.padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally)
             {
-                Text(text = stringResource(id = R.string.challengeChosen_title),
+                Text(text = stringResource(id = R.string.challenge_emocional_title1),
                     fontSize = 25.sp,
                     fontWeight = FontWeight.ExtraBold,
                     color = MaterialTheme.colorScheme.primary
                 )
                 Spacer(modifier = Modifier.padding(2.dp))
-                Text(text = stringResource(id = R.string.challengeChosen_type),
+                Text(text = stringResource(id = R.string.challenge_emocional_type),
                     fontSize = 15.sp,
                     color = MaterialTheme.colorScheme.primary
                 )
@@ -141,11 +141,11 @@ fun ChallengeChosenScreen(onButton:()->Unit) {
                     horizontalArrangement = Arrangement.SpaceBetween) {
                     Button(onClick = onButton,
                         Modifier.fillMaxWidth().weight(0.5f).padding(horizontal = 10.dp)) {
-                        Text(text = stringResource(id = R.string.challengeChosen_buttonBack))
+                        Text(text = stringResource(id = R.string.sunInput_buttonCancel))
                     }
                     Button(onClick = onButton,  //Agregar lógica de sumar puntos
                         Modifier.fillMaxWidth().weight(0.5f).padding(horizontal = 10.dp)) {
-                        Text(text = stringResource(id = R.string.challengeChosen_buttonAccept),
+                        Text(text = stringResource(id = R.string.sunInput_buttonSave),
                             color = MaterialTheme.colorScheme.onPrimary)
                     }
                 }

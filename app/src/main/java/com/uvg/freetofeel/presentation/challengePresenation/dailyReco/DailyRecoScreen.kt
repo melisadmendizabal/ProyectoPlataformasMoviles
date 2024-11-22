@@ -96,7 +96,7 @@ fun DailyRecoScreen( onAcceptDailyReco: ()->Unit, state: DailyRecoState) {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = stringResource(id = R.string.dialyreco_text_example), //Ejemplo del texto
+                Text(text = stringResource(id =state.data?.body?: R.string.dialyreco_text_example), //Ejemplo del texto
                     textAlign = TextAlign.Justify,
                     color = MaterialTheme.colorScheme.onPrimary)
 

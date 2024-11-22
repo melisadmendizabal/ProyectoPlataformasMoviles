@@ -1,7 +1,6 @@
 package com.uvg.freetofeel.presentation.challengePresenation.challengeHome
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -15,6 +14,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.darkColorScheme
@@ -28,32 +29,41 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.uvg.freetofeel.R
-import com.uvg.freetofeel.LanguageViewModel
+import com.uvg.freetofeel.data.model.Challenge
 
 @Composable
 fun ChallengeHomeROUTE(
-    onSelect: (Any) -> Unit
+    onSelect: (Any) -> Unit,
+    viewModel: ChallengeHomeViewModel = viewModel(factory = ChallengeHomeViewModel.Factory)
 
 ){
-    ChallengeHomeScreen(
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    ChallengeHomeScreen(state = state,
         onSelect = onSelect
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
+fun ChallengeHomeScreen(onSelect: (Any) -> Unit, state: ChallengeHomeState) {
     var inputText by remember { mutableStateOf("") }
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-    val waaa = List(60){ stringResource(id = R.string.challenge_column1)}
 
+    val challenge = state.challenges
+    var selectedFilter by remember { mutableStateOf("all") }
+
+    val filteredChallenges = if (selectedFilter == "all") {
+        challenge
+    } else {
+        challenge.filter { it.filter == selectedFilter }
+    }
 
     Column(Modifier.fillMaxSize()) {
         Column(Modifier.background(MaterialTheme.colorScheme.primary)) {
@@ -72,36 +82,43 @@ fun ChallengeHomeScreen(onSelect:(Any)->Unit) {
                     .padding(5.dp)
             ) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
-
-                    items(4) { index ->
-                        itemsLazyRow(valueitem = stringResource(id = R.string.challenge_row1))
+                    items(listOf("all", "emocional", "fisico", "mental", "espiri")) { filter ->
+                        FilterChip(
+                            selected = selectedFilter == filter,
+                            onClick = { selectedFilter = filter },
+                            label = { Text(text = filter.capitalize()) },
+                            colors = FilterChipDefaults.filterChipColors(
+                                selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                                selectedLabelColor = MaterialTheme.colorScheme.onPrimary,
+                                disabledSelectedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
+                                disabledLabelColor = MaterialTheme.colorScheme.onSecondaryContainer
+                            )
+                        )
                     }
                 }
             }
         }
+
         Box(Modifier.padding(vertical = 10.dp, horizontal = 5.dp)) {
-            LazyColumn{
-                items(waaa.chunked(2)) { rowItems ->
+            LazyColumn {
+                items(filteredChallenges.chunked(2)) { rowItems ->
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                    ){
+                    ) {
                         for (item in rowItems) {
-                            itemsLazyColumn(valueitem = item,
-                                modifier = Modifier.weight(1f)){onSelect(item)}
+                            itemsLazyColumn(item, modifier = Modifier.weight(1f)) { onSelect(item) }
                         }
                     }
-
                 }
-
             }
-
         }
     }
 }
 
+
 @Composable
-fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun itemsLazyColumn(challenge: Challenge, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Box(
         modifier = modifier
             .padding(5.dp)
@@ -120,14 +137,13 @@ fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier, onClick: (
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(6.dp))
             ) {
-                AsyncImage(model =
-                "https://www.fanaticosdelasmascotas.cl/wp-content/uploads/2022/06/perro_salchicha_caracteristicas_shedara_weinsberg_shutterstock_portada.jpg"
+                AsyncImage(model = challenge.image
                     , contentDescription = "ChallengeImg")
             }
 
             Box(Modifier.fillMaxWidth()) {
                 Text(
-                    text = valueitem,
+                    text = stringResource(id = challenge.title),
                     Modifier.padding(horizontal = 9.dp, vertical = 3.dp),
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center
@@ -136,6 +152,7 @@ fun itemsLazyColumn(valueitem: String, modifier: Modifier = Modifier, onClick: (
         }
     }
 }
+
 @Composable
 fun itemsLazyRow(valueitem: String){
     Box(modifier = Modifier
@@ -154,7 +171,7 @@ fun itemsLazyRow(valueitem: String){
 @Composable
 fun PreviewSUnRecoScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        ChallengeHomeScreen(onSelect = {})
+        ChallengeHomeScreen(onSelect = {}, state = ChallengeHomeState())
     }
 }
 
@@ -162,6 +179,6 @@ fun PreviewSUnRecoScreenLight() {
 @Composable
 fun PreviewDailyRecoScreenDark() {
     MaterialTheme(colorScheme = darkColorScheme()) {
-        ChallengeHomeScreen(onSelect = {})
+        ChallengeHomeScreen(onSelect = {}, state = ChallengeHomeState())
     }
 }

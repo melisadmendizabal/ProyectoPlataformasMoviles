@@ -144,9 +144,6 @@ fun LoginInputScreen(
             Text(text = stringResource(id = R.string.login_button))
         }
 
-        TextButton(onClick = { /*TODO*/ }) {
-            Text(text = stringResource(id = R.string.forgot_password))
-        }
     }
 
 }
