@@ -22,8 +22,6 @@ interface FeelingDAO {
 
     @Query("SELECT * FROM FeelingEntity WHERE emotion = :emotion ORDER BY RANDOM() LIMIT 1")
     suspend fun getSingleRandomFeelingByEmotion(emotion: String): FeelingEntity
-
-
 }
 
 

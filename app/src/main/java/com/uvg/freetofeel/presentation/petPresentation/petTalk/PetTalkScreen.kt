@@ -1,5 +1,6 @@
 package com.uvg.freetofeel.presentation.petPresentation.petTalk
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -30,22 +32,32 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.uvg.freetofeel.LanguageViewModel
 import com.uvg.freetofeel.R
+import com.uvg.freetofeel.data.model.Pet
 import com.uvg.freetofeel.presentation.challengePresenation.dailyReco.DailyRecoScreen
 
+@SuppressLint("StateFlowValueCalledInComposition")
 @Composable
 fun PetTalkROUTE(
-    onElection: ()->Unit
+    onElection: ()->Unit,
+    viewModel: PetTalkViewModel = viewModel(factory=PetTalkViewModel.Factory)
 ){
+    val state2 by viewModel.state2.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsStateWithLifecycle()
     PetTalkScreen(
+        state = state,
+        state2 = state2,
         onElection = onElection)
 }
 
 
 
 @Composable
-fun PetTalkScreen(onElection: ()->Unit){
+fun PetTalkScreen(onElection: ()->Unit,state: PetTalkState,state2:PetTalkState){
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -69,16 +81,18 @@ fun PetTalkScreen(onElection: ()->Unit){
         Box(modifier = Modifier
             .fillMaxWidth()
             .weight(0.5f)
-            .background(MaterialTheme.colorScheme.secondaryContainer,   //Cambiar color
-                shape = RoundedCornerShape(topStart = 35.dp, topEnd = 35.dp))){
+            .background(
+                MaterialTheme.colorScheme.secondaryContainer,   //Cambiar color
+                shape = RoundedCornerShape(topStart = 35.dp, topEnd = 35.dp)
+            )){
             Column(modifier = Modifier
                 .fillMaxSize()
                 .padding(15.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceEvenly)
             {
-                Text(text = stringResource(id = R.string.pet_talk_title1), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-                Text(text = stringResource(id = R.string.pet_talk_body1)
+                Text(text = stringResource(id = state2.data2?.title?:R.string.pet_talk_title1), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+                Text(text = stringResource(id = state2.data2?.description?:R.string.pet_talk_body1)
                     , style = MaterialTheme.typography.bodyMedium
                 , textAlign = TextAlign.Center)
 
@@ -116,7 +130,7 @@ fun PetTalkScreen(onElection: ()->Unit){
 @Composable
 fun PreviewPetTalkScreenLight() {
     MaterialTheme(colorScheme = lightColorScheme()) {
-        PetTalkScreen( onElection = {})
+        PetTalkScreen( onElection = {}, state = PetTalkState(), state2 = PetTalkState())
     }
 }
 
@@ -126,6 +140,6 @@ fun PreviewPetTalkScreenDark() {
     MaterialTheme(
         colorScheme = darkColorScheme() // DarkMode
     ) {
-        PetTalkScreen(onElection = {})
+        PetTalkScreen(onElection = {}, state = PetTalkState(), state2 = PetTalkState())
     }
 }

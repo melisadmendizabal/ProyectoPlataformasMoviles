@@ -29,6 +29,133 @@
     <string name="pet_talk_option1B">Lo bueno es que ya no estás ahí</string>
     <string name="pet_talk_option1C">¡Qué valiente! La proxima vez te irá mejor</string>
 
+        <!-- PetTalk lazy-->
+    <string name="pet_lazy_title1">Solo alguien por ahí…</string>
+    <string name="pet_lazy_body1">Oh, hola… No te había visto por aquí. ¿Eres nuevo? Este es un lugar bonito, hay muchas cosas especiales… Ojalá poder ser especial yo también… Bueno, como sea, ya que estás recién llegando, ¿por qué no le das una visita al Sol? Te caerá bien</string>
+    <string name="pet_lazy_option1A">Gracias por la bienvenida</string>
+    <string name="pet_lazy_option1B">Ehh, ¿gracias?</string>
+    <string name="pet_lazy_option1C">¡Un gusto conocerte!</string>
+
+    <string name="pet_lazy_title2">Nada especial</string>
+    <string name="pet_lazy_body2">Oh, aquí estás de nuevo. ¿Ya encontraste a alguien especial? Ya sabes, alguien que pueda volar, nadar, correr, hacer algo…, que no solo esté recostado sin hacer…nada. Creo que tengo sueño… sí, mejor voy a dormir, ahora no quiero hacer nada.</string>
+    <string name="pet_lazy_option2A">Sí, ya encontré a otros más animados que tú.</string>
+    <string name="pet_lazy_option2B">Estar recostado todo el tiempo también es una buena actividad.</string>
+    <string name="pet_lazy_option2C">Oye, anímate un poco. ¡Tú también eres especial!</string>
+
+    <string name="pet_lazy_title3">¿Tal vez podría ser?</string>
+    <string name="pet_lazy_body3">Hola, otra vez. Sé que tal vez no te interesa, pero desde que llegaste he estado más pensativo, ¿sabes? Dime, ¿tú realmente crees que yo podría ser interesante? Me refiero, sé que no hago acciones completamente extraordinarias… pero ¿acaso eso no es justo lo que define lo que soy?</string>
+    <string name="pet_lazy_option3A">Realmente no me interesa</string>
+    <string name="pet_lazy_option3B">Sí, en algo tienes razón.</string>
+    <string name="pet_lazy_option3C">¡Bien! ¡Finalmente lo entendiste!</string>
+
+    <string name="pet_lazy_title4">Buenas noticias</string>
+    <string name="pet_lazy_body4">¡Mírame! ¡Logré trepar más de 5 árboles el día de hoy! Usualmente, solo logro trepar 2, porque luego veía cómo los otros lo hacían más rápido, y me ponía triste, porque yo no podía… Pero hoy me dije que lo iba a hacer a mi manera, aun me tardara. ¡Y este es el resultado!</string>
+    <string name="pet_lazy_option4A">Igual te tardaste… </string>
+    <string name="pet_lazy_option4B">Bien hecho, te felicito.</string>
+    <string name="pet_lazy_option4C">¡Me alegro mucho por ti!</string>
+
+    <string name="pet_lazy_title5">Una razón para sonreír</string>
+    <string name="pet_lazy_body5">Ahora no solo trepé 5 árboles, ¡intenté nadar! ¿Y sabes qué hice después? Dormir, dormir y dormir; con una única diferencia: por primera vez, no me sentí mal haciéndolo. Me hacía falta aceptar que dormir mucho es parte de mí, pero que no estoy condenado a hacer solo eso. Claro, me tardo haciendo las demás cosas, pero eso no significará que no lo intente. Gracias a ti, tuve la confianza para seguir intentándolo.</string>
+    <string name="pet_lazy_option5A">De nada</string>
+    <string name="pet_lazy_option5B">Siempre estaré ahí para ti.</string>
+    <string name="pet_lazy_option5C">Me alegro mucho, amigo.</string>
+
+    <!-- erizo -->
+    <string name="pet_hedge_title1">Un pequeño tropiezo</string>
+    <string name="pet_hedge_body1">Oh, lo siento… ¿te lastimé? No noté que estabas a la par. ¡Lo siento tanto! Oh, no… ¡pasó de nuevo! Lo siento tanto en serio… No me llevo bien con la gente, y encima me tropiezo con ellos sin darme cuenta… Oh, no… No estoy hecho para esto…</string>
+    <string name="pet_hedge_option1A">Deberías ver más a tus alrededores.</string>
+    <string name="pet_hedge_option1B">Todo bien.</string>
+    <string name="pet_hedge_option1C">Lo siento yo también, ¿estás bien?</string>
+
+    <string name="pet_hedge_title2">Pensamientos intrusivos</string>
+    <string name="pet_hedge_body2">Oh, no, eres tú de nuevo… ¿Vienes a reclamarme por lo de la otra vez? ¡Lo sabía! Sabía que me ibas a odiar. Ya te dije que no fue mi culpa. Pasé todo este tiempo pensando en cuánto me odiarías y me ibas a intentar hacer algo malo… Verdaderamente lo siento, no fue mi intención; entonces, no me lastimes, ni me grites, ni me odies, ¿sí?</string>
+    <string name="pet_hedge_option2A">¿¡Pero de qué hablas!?</string>
+    <string name="pet_hedge_option2B">Está bien.</string>
+    <string name="pet_hedge_option2C">No te preocupes, todo está bien.</string>
+
+    <string name="pet_hedge_title3">Sigues aquí</string>
+    <string name="pet_hedge_body3">Oh, eres… ¿tú? ¿Por qué me sigues hablando? Usualmente la mayoría me deja de hablar, siempre me terminan odiando, ¿por qué tú no? … Acaso… ¿te caigo bien? ¿en serio te caigo bien? Esto es… ¡increíble! Gracias, en verdad no sé qué decir.</string>
+    <string name="pet_hedge_option3A">Tampoco creas que tanto, eh.</string>
+    <string name="pet_hedge_option3B">No es nada.</string>
+    <string name="pet_hedge_option3C">Sí, ¡me caes bien!</string>
+
+    <string name="pet_hedge_title4">Una pregunta en mente</string>
+    <string name="pet_hedge_body4">Ey, hola. Ehm…, tengo una pregunta: ¿crees que le puedo agradar a más gente también? Digo, si lo conseguí una vez, también podría otras, ¿no? Es que… quiero hablarles a más personas. ¡Nunca había querido eso!, pero desde que llegaste tú… ese pensamiento cambió, ¿sabes?</string>
+    <string name="pet_hedge_option4A">Yo que tú, no intentaría</string>
+    <string name="pet_hedge_option4B">Tal vez sí.</string>
+    <string name="pet_hedge_option4C">¡Claro que sí! Tú puedes.</string>
+
+    <string name="pet_hedge_title5">Un nuevo amigo</string>
+    <string name="pet_hedge_body5">¡Tengo algo que contarte! Conocí a alguien más, ¡ahora es mi amigo! Le hablé luego de pensar lo que te dije la última vez. Resulta que también está intentando nuevas cosas, y conocer a alguien es una de ellas. ¡Nos llevamos bien! Gracias, porque sin ti no me hubiera animado a hablarle.</string>
+    <string name="pet_hedge_option5A">De nada.</string>
+    <string name="pet_hedge_option5B">¡Me alegro mucho!</string>
+    <string name="pet_hedge_option5C">¡Sigue haciendo muchos más amigos!</string>
+
+
+
+    <!-- bee -->
+    <string name="pet_bee_title1">Perdiendo el tiempo</string>
+    <string name="pet_bee_body1">Oye, disculpa, ¿te podrías mover? Estás justo en medio de mi flor a recolectar número 455 de hoy. Si no consigo esta flor, entonces me atrasaré con la 456, y la 457; en resumen, un desastre total. Bueno, ya me atrasaste más de mis 5 segundos de descanso; por favor muévete.</string>
+    <string name="pet_bee_option1A">Qué grosero.</string>
+    <string name="pet_bee_option1B">No sabía, perdón.</string>
+    <string name="pet_bee_option1C">No te preocupes, te la acerco.</string>
+
+    <string name="pet_bee_title2">¿Tú no haces nada?</string>
+    <string name="pet_bee_body2">Oye, otra vez tú, parado en frente de la misma flor. ¿Te podrías mover? Nunca te veo hacer algo productivo, ¿haces algo alguna vez? ¿No has considerado que pierdes demasiado tu tiempo? Todo el tiempo que pasas parado frente a flores podrías estar trabajando, ¿sabes?</string>
+    <string name="pet_bee_option2A">¿Y en qué te afecta?</string>
+    <string name="pet_bee_option2B">¡Pero sí estoy haciendo algo!</string>
+    <string name="pet_bee_option2C">Por tu salud, deberías descansar.</string>
+
+    <string name="pet_bee_title3">Por primera vez…</string>
+    <string name="pet_bee_body3">Oh…Hola. ¿Que por qué no estoy trabajando con mis flores? Bueno, algo raro pasó… Me cansé. Por primera vez en mi vida, sentí cansancio… ¡Qué feo se siente! Apenas si tengo energía para mantener mi vuelo… No sé cómo podré cumplir mi cuota de 999 flores… </string>
+    <string name="pet_bee_option3A">Te lo merecías.</string>
+    <string name="pet_bee_option3B">Descansa un rato y luego sigues.</string>
+    <string name="pet_bee_option3C">Es una señal para que pares</string>
+
+    <string name="pet_bee_title4">…olí una flor.</string>
+    <string name="pet_bee_body4">Oh, ¡hola! ¿Sabes cuál es el olor de las flores? Sé que te parecerá raro, pero hoy fue la primera vez que olí una flor. Siempre he trabajado con ellas, pero nunca me detuve a oler una de ellas. Siempre me decía que no tenía tiempo… ¿era eso cierto?</string>
+    <string name="pet_bee_option4A">¡Descubriste tu olfato!</string>
+    <string name="pet_bee_option4B">Las flores son bonitas.</string>
+    <string name="pet_bee_option4C">Me alegro de que te hayas tomado el tiempo.</string>
+
+    <string name="pet_bee_title5">Únicamente 10</string>
+    <string name="pet_bee_body5">Hola, ¿quieres una flor? Estoy regalando las que estoy consiguiendo. ¿Sabes?, descubrí que solo necesito 10 al día para sobrevivir, no 999. Entonces estoy paseando, recolectándolas, oliéndolas y regalándolas a los demás, ¡es más entretenido así! Por cierto, te quería agradecer. Sin ti, no me hubiera tomado el tiempo para…hacer todo esto.</string>
+    <string name="pet_bee_option5A">De nada. </string>
+    <string name="pet_bee_option5B">¡Te acepto la flor!</string>
+    <string name="pet_bee_option5C">¡Sigue regalando!</string>
+
+
+    <!-- jelly -->
+    <string name="pet_jelly_title1">Soledad dolorosa</string>
+    <string name="pet_jelly_body1">Hola, no te había visto por aquí. ¿Cómo te llamas? Bueno, igual al rato te irás, como siempre todo se va… Duele quedarse solo, ¿no crees? Duele querer tener a las personas que amas cerca todo el tiempo, pero ellas solo… se van.</string>
+    <string name="pet_jelly_option1A">Mejor me voy también.</string>
+    <string name="pet_jelly_option1B">Oye, no estés tan triste.</string>
+    <string name="pet_jelly_option1C">¿Algo en lo que te pueda apoyar? </string>
+
+    <string name="pet_jelly_title2">Una vida sin fin</string>
+    <string name="pet_jelly_body2">Oye, ¿tienes amigos? Es que los míos… Bueno, no importa. ¿Te cuento algo curioso? Yo vivo para siempre. No puedo morir, al menos, de viejo. Y sé que tal vez es algo que muchos otros quisieran, pero vivirlo no es agradable. Toda la gente se va y tú solo te quedas… solo.</string>
+    <string name="pet_jelly_option2A">Ya quisiera ser inmortal.</string>
+    <string name="pet_jelly_option2B">Buen dato curioso.</string>
+    <string name="pet_jelly_option2C">Conmigo no estás solo</string>
+
+    <string name="pet_jelly_title3">Los amigos que tuve</string>
+    <string name="pet_jelly_body3">No me gusta vivir para siempre. Recientemente, han muerto todos mis amigos; realmente los quería. Los recuerdo seguido… y lloro mucho cuando eso pasa. ¿Cuándo terminará este dolor?, ¿cuándo podré volver a ser feliz?, ¿cuándo los dejaré de recordar?</string>
+    <string name="pet_jelly_option3A">…</string>
+    <string name="pet_jelly_option3B">Lo siento por ti.</string>
+    <string name="pet_jelly_option3C">Aquí estoy para ti.</string>
+
+    <string name="pet_jelly_title4">Llorar no está mal</string>
+    <string name="pet_jelly_body4">Hace poco seguí recordando a mis amigos. Lloré mucho otra vez… y luego me calmé. El dolor seguía ahí, claro, pero no era tan fuerte como al principio. Pensé que llorar estaba mal, pero creo que me está ayudando. Creo que recordarlos tampoco está mal.</string>
+    <string name="pet_jelly_option4A">Llorar es malo.</string>
+    <string name="pet_jelly_option4B">Vas por buen camino.</string>
+    <string name="pet_jelly_option4C">Hay una lección en todo.</string>
+
+    <string name="pet_jelly_title5">El camino a seguir</string>
+    <string name="pet_jelly_body5">Ayer visité a las familias de mis amigos. Lloré un poco y me sentí mejor. Creo que eso es lo que resta por hacer: seguir adelante, recordando a los que ya no están. Y aunque a veces me sienta solo, saber que siempre hay alguien que me ama, o me amó.</string>
+    <string name="pet_jelly_option5A">Buena decisión.</string>
+    <string name="pet_jelly_option5B">Me alegra oír eso.</string>
+    <string name="pet_jelly_option5C">Nunca estás solo.</string>
+
     <!-- LoginInput -->
     <string name="login_input_title1">Un gusto tenerte de</string>
     <string name="login_input_title2">vuelta</string>
@@ -133,6 +260,7 @@
     <string name="profile_home_myWritings">Mis escritos</string>
     <string name="profile_home_viewB">Ver</string>
     <string name="profile_home_editB">Editar</string>
+    <string name="logout">Cerrar sesión</string>
 
     <!-- Sun Feeling -->
     <string name="sunFeeling_ask">¿cómo te sientes hoy?</string>
@@ -331,13 +459,54 @@
     <string name="profile_data_addB">Agregar</string>
 
     <!-- ChallengeChosenScreen -->
-    <string name="challengeChosen_title">Técnicas de respiración</string>
-    <string name="challengeChosen_type">Relajación</string>
-    <string name="challengeChosen_descripción1">Párate, cierra los ojos y mantén la respiración durante 10s.</string>
-    <string name="challengeChosen_descripción2">Libera el aire y estírate de cuerpo completo.</string>
-    <string name="challengeChosen_descripción3">Repite el proceso con una postura sentada y, luego, con una postura estando acostado.</string>
-    <string name="challengeChosen_buttonBack">Regresar</string>
-    <string name="challengeChosen_buttonAccept">Aceptar</string>
+    <string name="challenge_emocional_type">Emocional</string>
+    <string name="challenge_emocional_title1">Práctica de la Gratitud</string>
+    <string name="challenge_emocional_description1">La gratitud es una poderosa herramienta emocional. Tómate unos minutos al día para reflexionar sobre las cosas por las que estás agradecido. Esto puede incluir desde pequeñas cosas, como disfrutar de una taza de café, hasta grandes logros. Mantener un diario de gratitud puede ayudarte a enfocarte en lo positivo y a mejorar tu bienestar emocional.</string>
+    <string name="challenge_emocional_title2">Expresión Emocional</string>
+    <string name="challenge_emocional_description2">Es fundamental aprender a expresar tus emociones de manera saludable. Habla con amigos, familiares o un terapeuta sobre lo que sientes. La comunicación abierta puede ayudarte a procesar tus emociones y reducir la carga emocional que puedas estar sintiendo.</string>
+    <string name="challenge_emocional_title3">Práctica de la Atención Plena</string>
+    <string name="challenge_emocional_description3">La atención plena o mindfulness te permite estar presente en el momento actual, lo que puede ser muy beneficioso para tu salud emocional. Dedica tiempo a meditar o simplemente a respirar profundamente. Esto te ayudará a reducir la ansiedad y a manejar mejor tus emociones.</string>
+    <string name="challenge_emocional_title4">Establecimiento de Límites</string>
+    <string name="challenge_emocional_description4">Establecer límites saludables es crucial para proteger tu bienestar emocional. Aprende a decir "no" cuando algo no te sienta bien. Al hacerlo, te das el espacio necesario para cuidar de ti mismo y evitar el agotamiento emocional.</string>
+    <string name="challenge_emocional_title5">Ejercicio Regular</string>
+    <string name="challenge_emocional_description5">La actividad física tiene un impacto positivo en tus emociones. El ejercicio libera endorfinas, que son conocidas como las "hormonas de la felicidad". Intenta incorporar al menos 30 minutos de ejercicio en tu rutina diaria, ya sea caminando, haciendo yoga o cualquier actividad que disfrutes.</string>
+
+    <string name="challenge_fisico_type">Físico</string>
+    <string name="challenge_fisico_title1">Mantén una Dieta Equilibrada</string>
+    <string name="challenge_fisico_description1">Una dieta equilibrada es esencial para tu salud física. Incluye una variedad de alimentos: frutas, verduras, proteínas magras, granos enteros y grasas saludables. Trata de limitar el consumo de alimentos procesados y azúcares añadidos. Esto no solo te ayudará a mantener un peso saludable, sino que también te proporcionará la energía necesaria para tus actividades diarias.</string>
+    <string name="challenge_fisico_title2">Hidrátate Adecuadamente</string>
+    <string name="challenge_fisico_description2">La hidratación es clave para el funcionamiento óptimo del cuerpo. Bebe suficiente agua a lo largo del día, especialmente si estás activo o hace calor. El agua ayuda a regular la temperatura corporal, transporta nutrientes y elimina desechos. Intenta llevar una botella de agua contigo para recordar beber con frecuencia.</string>
+    <string name="challenge_fisico_title3">Realiza Ejercicio Regularmente</string>
+    <string name="challenge_fisico_description3">La actividad física regular es fundamental para mantener una buena salud física. Intenta realizar al menos 150 minutos de ejercicio moderado a la semana, como caminar, nadar o andar en bicicleta. El ejercicio no solo mejora la salud cardiovascular, sino que también ayuda a fortalecer los músculos y mejorar tu estado de ánimo.</string>
+    <string name="challenge_fisico_title4">Duerme lo Suficiente</string>
+    <string name="challenge_fisico_description4">El sueño adecuado es crucial para la salud física y mental. Intenta dormir entre 7 y 9 horas cada noche. Un buen descanso ayuda a tu cuerpo a recuperarse, mejora la concentración y regula el estado de ánimo. Establecer una rutina de sueño puede ayudarte a lograr un mejor descanso.</string>
+    <string name="challenge_fisico_title5">Haz Revisiones Médicas Regulares</string>
+    <string name="challenge_fisico_description5">Las revisiones médicas regulares son importantes para detectar problemas de salud a tiempo. Programa chequeos anuales y mantente al día con las vacunas y exámenes recomendados. Esto te permitirá abordar cualquier problema de salud antes de que se convierta en algo más serio.</string>
+
+
+    <string name="challenge_mental_type">Mental</string>
+    <string name="challenge_mental_title1">Practica la Atención Plena</string>
+    <string name="challenge_mental_description1">La atención plena, o mindfulness, implica estar presente en el momento actual y reconocer tus pensamientos y emociones sin juzgarlos. Dedica tiempo a la meditación o a ejercicios de respiración. Esta práctica puede ayudarte a reducir la ansiedad y el estrés, mejorando tu bienestar emocional.</string>
+    <string name="challenge_mental_title2">Mantén Conexiones Sociales</string>
+    <string name="challenge_mental_description2">Las relaciones sociales son fundamentales para la salud mental. Mantén contacto con amigos y familiares, y participa en actividades comunitarias. Hablar con otros sobre tus experiencias puede proporcionarte apoyo emocional y una sensación de pertenencia, lo que es crucial para tu bienestar.</string>
+    <string name="challenge_mental_title3">Establece Rutinas</string>
+    <string name="challenge_mental_description3">Tener una rutina diaria puede ofrecerte estructura y previsibilidad, lo que es beneficioso para la salud mental. Intenta establecer horarios para tus actividades diarias, incluido tiempo para trabajar, relajarte y hacer ejercicio. Esto puede ayudarte a sentirte más en control y reducir la ansiedad.</string>
+    <string name="challenge_mental_title4">Limita la Exposición a Noticias Negativas</string>
+    <string name="challenge_mental_description4">Estar constantemente expuesto a noticias negativas puede afectar tu estado de ánimo y aumentar la ansiedad. Considera limitar tu consumo de noticias y redes sociales. En su lugar, busca fuentes de información que ofrezcan historias positivas o inspiradoras para equilibrar tu perspectiva.</string>
+    <string name="challenge_mental_title5">Busca Ayuda Profesional</string>
+    <string name="challenge_mental_description5">No dudes en buscar ayuda profesional si sientes que tus problemas de salud mental son abrumadores. Los terapeutas y consejeros están capacitados para ayudarte a desarrollar estrategias para manejar tus emociones y desafíos. Buscar apoyo es un signo de fortaleza, no de debilidad.</string>
+
+    <string name="challenge_espiri_type">Espiritual</string>
+    <string name="challenge_espiri_title1">Practica la Gratitud</string>
+    <string name="challenge_espiri_description1">La gratitud es una poderosa herramienta espiritual. Al tomarte un momento cada día para reflexionar sobre lo que valoras en tu vida, puedes elevar tu energía espiritual y atraer más positividad. Intenta mantener un diario de gratitud donde anotes al menos tres cosas por las que estés agradecido cada día.</string>
+    <string name="challenge_espiri_title2">Medita Regularmente</string>
+    <string name="challenge_espiri_description2">La meditación es una práctica esencial para conectar con tu ser interior. Dedica tiempo a sentarte en silencio, enfocarte en tu respiración y dejar que tus pensamientos fluyan sin juicio. Esto no solo reduce el estrés, sino que también te ayuda a encontrar claridad y paz en tu vida diaria.</string>
+    <string name="challenge_espiri_title3">Conéctate con la Naturaleza</string>
+    <string name="challenge_espiri_description3">Pasar tiempo al aire libre puede renovarte espiritualmente. La naturaleza tiene un efecto curativo que puede ayudarte a reconectar contigo mismo y con el mundo. Ya sea dando un paseo por un parque o simplemente sentándote en tu jardín, permite que la energía natural te envuelva.</string>
+    <string name="challenge_espiri_title4">Establece Intenciones</string>
+    <string name="challenge_espiri_description4">Al comenzar el día, tómate un momento para establecer tus intenciones. Pregúntate qué deseas lograr y cómo quieres sentirte. Al tener claridad sobre tus objetivos espirituales, puedes dirigir tu energía hacia ellos y manifestar cambios positivos en tu vida.</string>
+    <string name="challenge_espiri_title5">Busca la Comunidad</string>
+    <string name="challenge_espiri_description5">Rodearte de personas que comparten tus intereses espirituales puede ser transformador. Participa en grupos de meditación, talleres o retiros espirituales. La conexión con otros puede ofrecerte apoyo, inspiración y nuevas perspectivas en tu camino espiritual.</string>
 
     <!-- SunInputScreen -->
     <string name="sunInput_title">Escribe el título o fecha</string>
