@@ -135,7 +135,7 @@ class SupabaseAuthViewModel:ViewModel() {       //Sé que se llama Auth, pero ta
                         points = points,
                         lastLogin = Instant.now().toString()
                     ),
-                    upsert = true
+                    upsert = false
                 )
                 _userLoginState.value = UserLoginState.Success("Nice upload of U-data")
             }
@@ -155,7 +155,7 @@ class SupabaseAuthViewModel:ViewModel() {       //Sé que se llama Auth, pero ta
                         body = body,
                         type = type
                     ),
-                    upsert = true
+                    upsert = false
                 )
                 _userLoginState.value = UserLoginState.Success("Nice upload of U-writings")
             } catch (e: Exception) {
@@ -175,7 +175,7 @@ class SupabaseAuthViewModel:ViewModel() {       //Sé que se llama Auth, pero ta
                             jelly = jelly,
                             bee=bee
                         ),
-                        upsert = true
+                        upsert = false
                     )
                     _userLoginState.value = UserLoginState.Success("Nice upload of U-storyProgress")
                 }
