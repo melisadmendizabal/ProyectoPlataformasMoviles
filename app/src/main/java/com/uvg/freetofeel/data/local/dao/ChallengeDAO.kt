@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.uvg.freetofeel.data.local.entity.ChallengeEntity
+import com.uvg.freetofeel.data.local.entity.FeelingEntity
 import com.uvg.freetofeel.data.model.Challenge
 import kotlinx.coroutines.flow.Flow
 
@@ -20,6 +21,9 @@ interface ChallengeDAO {
 
     @Query("SELECT * FROM ChallengeEntity WHERE filter = :filter")
     suspend fun getAllChallengsByFilter(filter: String): List<ChallengeEntity>
+
+    @Query("SELECT * FROM ChallengeEntity WHERE title = :title ORDER BY RANDOM() LIMIT 1")
+    suspend fun getSingleChallengeByTitle(title: String): ChallengeEntity
 }
 
 fun Challenge.mapToEntity():ChallengeEntity{
