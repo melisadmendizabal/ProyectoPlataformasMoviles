@@ -5,10 +5,13 @@ import androidx.room.Room
 import com.uvg.freetofeel.data.local.AppDatabase
 import com.uvg.freetofeel.data.local.dao.DailyRecoDAO
 import com.uvg.freetofeel.data.local.dao.FeelingDAO
+import com.uvg.freetofeel.data.local.dao.HistoryDAO
 import com.uvg.freetofeel.repositories.DailyRecoRepository
 import com.uvg.freetofeel.repositories.DailyRecoRepositoryImpl
 import com.uvg.freetofeel.repositories.FeelingRepositoryImpl
 import com.uvg.freetofeel.repositories.FeelingsRepository
+import com.uvg.freetofeel.repositories.HistoryPetsRepositoryImpl
+import com.uvg.freetofeel.repositories.HistoryRepository
 
 object Dependencies {
     @Volatile
@@ -44,6 +47,15 @@ object Dependencies {
     fun provideDailyRecoRepository(context: Context):DailyRecoRepository{
         val dailyRecoDAO = provideDailyRecoDao(context)
         return DailyRecoRepositoryImpl(dailyRecoDAO)
+    }
+
+    fun provideHistoryPetsDao(context: Context):HistoryDAO{
+        return provideDatabase(context).historyPetsDao()
+    }
+
+    fun provideHistoryPetsRepository(context: Context): HistoryRepository{
+        val historyDAO = provideHistoryPetsDao(context)
+        return HistoryPetsRepositoryImpl(historyDAO)
     }
 
     //otros providers

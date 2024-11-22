@@ -1,12 +1,15 @@
 package com.uvg.freetofeel.repositories
 
 import com.uvg.freetofeel.data.source.FeelingsDb
+import com.uvg.freetofeel.data.source.HistoryPetsDb
 import com.uvg.freetofeel.data.local.dao.DailyRecoDAO
 import com.uvg.freetofeel.data.local.dao.FeelingDAO
+import com.uvg.freetofeel.data.local.dao.HistoryDAO
 import com.uvg.freetofeel.data.local.dao.mapToEntity
 import com.uvg.freetofeel.data.local.entity.mapToModel
 import com.uvg.freetofeel.data.model.DailyRecoModel
 import com.uvg.freetofeel.data.model.Feeling
+import com.uvg.freetofeel.data.model.HistoryPets
 import com.uvg.freetofeel.data.source.DailyRecoDB
 import kotlinx.coroutines.flow.first
 
@@ -67,3 +70,31 @@ class DailyRecoRepositoryImpl(
 
 
 }
+
+class HistoryPetsRepositoryImpl(
+    private val historyDAO: HistoryDAO
+):HistoryRepository {
+
+
+    override suspend fun getHistories(): List<HistoryPets> {
+        val historyPetsDb = HistoryPetsDb()
+        val remoteHistoryPets = historyPetsDb.getAllHistories()
+        val localHistoryPets = remoteHistoryPets.map { historyPets -> historyPets.mapToEntity()}
+        historyDAO.insertAllHistory(localHistoryPets)
+
+        return historyDAO.getAllHistories().first().map { entity -> entity.mapToModel() }
+    }
+
+    override suspend fun getHistoriesByTipe(typePet: String): List<HistoryPets> {
+        val localHistoryPets = historyDAO.getHistoryPetsByType(typePet)
+        return localHistoryPets.map { entity -> entity.mapToModel() }
+    }
+
+    override suspend fun getSigleHistorybyOrder(idHistory: Int): HistoryPets {
+        val singleHistoryEntity = historyDAO.getHistoryPetById(idHistory)
+        return singleHistoryEntity.mapToModel()
+    }
+
+
+}
+
